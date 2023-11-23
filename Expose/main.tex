@@ -1,0 +1,136 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\author{Anisa Mecheraoui}
+
+\usepackage[ngerman]{babel}
+\usepackage[]{csquotes}
+\usepackage{titling}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[margin=2.5cm,includeheadfoot, footskip=80pt]{geometry}
+\usepackage[breaklinks]{hyperref}
+\usepackage{blindtext}
+\usepackage[nospace]{varioref}
+\usepackage[backend=biber,style=apa6]{biblatex}
+\usepackage{numprint}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usepackage{booktabs}
+\usepackage[justification=centering]{caption}
+\usepackage[titles]{tocloft}
+\usepackage{tabularx}
+\usepackage{setspace}
+\setstretch{1.5}
+\usepackage{sectsty}
+\sectionfont{\fontsize{14}{16.8}\selectfont}
+\subsectionfont{\fontsize{12}{14.4}\selectfont}
+\usepackage{amsmath}
+\usepackage{pgffor}
+\usepackage[roman]{parnotes}
+\usepackage{xifthen}
+\usepackage{units}
+\usepackage{xcolor}
+
+%bib referenc
+\addbibresource{myBib.bib}
+%graphicspath
+\graphicspath{{images/}}
+\definecolor{ba-blau}{HTML}{093a80}
+\setlength{\columnsep}{1cm}
+\newlength{\drop}
+\newcommand{\myLarge}[1]{{\fontsize{20pt}{24pt}\selectfont\color{ba-blau}#1}}
+\newcommand{\pageTitel}[1]{{\fontsize{14pt}{17pt}\selectfont\textbf{\color{ba-blau}#1}}}
+\fancypagestyle{style1}{
+    \setlength{\headheight}{10pt}
+    \pagestyle{fancy}
+    \fancyhead{}
+    \setlength{\headheight}{2cm}
+    \chead{\includegraphics[]{deckbild.jpeg} \\}
+    %pagefooter
+    \fancyfoot{}
+    \fancyfoot[R]{\thepage}
+}
+\fancypagestyle{Deckblatt}{
+    \setlength{\headheight}{10pt}
+    \pagestyle{fancy}
+    \fancyhead{}
+    \setlength{\headheight}{2cm}
+    \setlength{\headsep}{80pt}
+    \chead{\includegraphics[]{deckbild.jpeg} \\}
+    %pagefooter
+    \fancyfoot{}
+    \fancyfoot[R]{\thepage}
+}
+\addtokomafont{disposition}{\color{ba-blau}}
+\addtokomafont{sectionentry}{\color{ba-blau}}
+
+\begin{document}
+
+\thispagestyle{Deckblatt}
+%use different pagestyling
+\pagenumbering{gobble}
+
+%% title page
+\begin{center}
+    \myLarge {Titel der Bachelor Thesis} \\[3ex]
+    \includegraphics[width=3cm]{Platzhalter_logo.png} \\[3ex]
+    \large{Exposé erstellt im Rahmen des Bachelor Thesis Kolloquiums:
+} \\
+    \large{DD.MM.YYYY}
+\end{center}
+
+\renewcommand{\arraystretch}{2.5}
+\begin{table}[h]
+    \centering
+    \begin{tabularx}{\textwidth}{l c}
+        Studiengruppe: &  XX\_XX\_20XX-I \\
+        Name Studierender: & Max Mustermann\\
+        Anzahl der Wörter: & 0\\
+        (inkl. wörtliche Zitate / Fußnoten) & ~ \\
+        Anzahl der Wörter: & \\
+        (exkl. wörtliche Zitate / Fußnoten) & ~ \\
+        Akademischer Gutachter: & Prof. Mustermann\\
+        Betrieblicher Gutachter: & Herr Firma\\
+        Abgabedatum: & DD.MM.YYYY\\
+    \end{tabularx}
+\end{table}
+
+\newpage
+
+\pagestyle{style1}
+
+\pagenumbering{Roman}
+\setcounter{page}{1}
+\pageTitel{Gleichbehandlung der Geschlechter}\\
+Aus Gründen der besseren Lesbarkeit wird bei Personenbezeichnungen und personenbezogenen Hauptwörtern in diesem Projektbericht die maskuline Form verwendet. Entsprechende Begriffe gelten im Sinne der Gleichbehandlung grundsätzlich für alle Geschlechter. Die verkürzte Sprachform hat nur redaktionelle Gründe und beinhaltet keine Wertung
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
+
+%stores roman numbercounter
+\newcounter{preamblecounterstate}
+\setcounter{preamblecounterstate}{\value{page}}
+
+% use arabic numbers for actual content pages
+\pagenumbering{arabic}
+
+%includes pages written in the folder section
+%\include{sections/demoSection}
+\include{sections/kontext}
+\include{sections/erstellung}
+\include{sections/zielsetzung}
+
+\newpage
+
+% Set page number to Roman for bibliography
+\pagenumbering{Roman}
+
+%reads counter stored earlier
+\setcounter{page}{\value{preamblecounterstate}}
+
+\printbibliography
+\end{document}
