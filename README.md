@@ -1,0 +1,1 @@
+# barm-latex-vorlagen
