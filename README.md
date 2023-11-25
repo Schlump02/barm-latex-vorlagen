@@ -1,3 +1,3 @@
 # barm-latex-vorlagen
-Vorlage von Anisa \n
+Vorlage von Anisa
 Angepasst von Jona
