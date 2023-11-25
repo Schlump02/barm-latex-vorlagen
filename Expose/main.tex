@@ -1,5 +1,5 @@
+% this document uses paper size A4, default fontsize 12 and properties from the KoMa script scartl class
 \documentclass[a4paper,12pt]{scrartcl}
-\author{Anisa Mecheraoui}
 
 \usepackage[ngerman]{babel}
 \usepackage[]{csquotes}
@@ -20,10 +20,7 @@
 \usepackage[titles]{tocloft}
 \usepackage{tabularx}
 \usepackage{setspace}
-\setstretch{1.5}
 \usepackage{sectsty}
-\sectionfont{\fontsize{14}{16.8}\selectfont}
-\subsectionfont{\fontsize{12}{14.4}\selectfont}
 \usepackage{amsmath}
 \usepackage{pgffor}
 \usepackage[roman]{parnotes}
@@ -31,25 +28,32 @@
 \usepackage{units}
 \usepackage{xcolor}
 
-%bib referenc
+% add the author name here
+\author{}
+
+% location of bib and graphics
 \addbibresource{myBib.bib}
-%graphicspath
 \graphicspath{{images/}}
+
+% styling
+
 \definecolor{ba-blau}{HTML}{093a80}
 \setlength{\columnsep}{1cm}
 \newlength{\drop}
-\newcommand{\myLarge}[1]{{\fontsize{20pt}{24pt}\selectfont\color{ba-blau}#1}}
-\newcommand{\pageTitel}[1]{{\fontsize{14pt}{17pt}\selectfont\textbf{\color{ba-blau}#1}}}
-\fancypagestyle{style1}{
-    \setlength{\headheight}{10pt}
-    \pagestyle{fancy}
-    \fancyhead{}
-    \setlength{\headheight}{2cm}
-    \chead{\includegraphics[]{deckbild.jpeg} \\}
-    %pagefooter
-    \fancyfoot{}
-    \fancyfoot[R]{\thepage}
-}
+\newcommand{\documentTitle}[1]{{\fontsize{20pt}{24pt}\selectfont\color{ba-blau}#1}}
+\newcommand{\pageTitle}[1]{{\fontsize{14pt}{17pt}\selectfont\textbf{\color{ba-blau}#1}}}
+
+% set default line spacing
+\setstretch{1.5}
+
+% set section headings fontsizes and line spacing
+\sectionfont{\fontsize{14}{16.8}\selectfont}
+\subsectionfont{\fontsize{12}{14.4}\selectfont}
+% color section headings
+\addtokomafont{disposition}{\color{ba-blau}}
+\addtokomafont{sectionentry}{\color{ba-blau}}
+
+% styling of the title page header and footer
 \fancypagestyle{Deckblatt}{
     \setlength{\headheight}{10pt}
     \pagestyle{fancy}
@@ -61,18 +65,30 @@
     \fancyfoot{}
     \fancyfoot[R]{\thepage}
 }
-\addtokomafont{disposition}{\color{ba-blau}}
-\addtokomafont{sectionentry}{\color{ba-blau}}
+% styling of the default page header and footer
+\fancypagestyle{defaultPageStyle}{
+    \setlength{\headheight}{10pt}
+    \pagestyle{fancy}
+    \fancyhead{}
+    \setlength{\headheight}{2cm}
+    \chead{\includegraphics[]{deckbild.jpeg} \\}
+    %pagefooter
+    \fancyfoot{}
+    \fancyfoot[R]{\thepage}
+}
+
+% start of document
 
 \begin{document}
 
+% use different pagestyling
 \thispagestyle{Deckblatt}
-%use different pagestyling
+% ignore this page when numbering
 \pagenumbering{gobble}
 
-%% title page
+% title page
 \begin{center}
-    \myLarge {Titel der Bachelor Thesis} \\[3ex]
+    \documentTitle {Titel der Bachelor Thesis} \\[3ex]
     \includegraphics[width=3cm]{Platzhalter_logo.png} \\[3ex]
     \large{Exposé erstellt im Rahmen des Bachelor Thesis Kolloquiums:
 } \\
@@ -83,7 +99,7 @@
 \begin{table}[h]
     \centering
     \begin{tabularx}{\textwidth}{l c}
-        Studiengruppe: &  XX\_XX\_20XX-I \\
+        Studiengruppe: &  XX\_XS2X-XX \\
         Name Studierender: & Max Mustermann\\
         Anzahl der Wörter: & 0\\
         (inkl. wörtliche Zitate / Fußnoten) & ~ \\
@@ -97,12 +113,17 @@
 
 \newpage
 
-\pagestyle{style1}
-\pageTitel{Gleichbehandlung der Geschlechter}\\
+% use default page styling from now on
+\pagestyle{defaultPageStyle}
+
+\pageTitle{Gleichbehandlung der Geschlechter}\\
 Aus Gründen der besseren Lesbarkeit wird bei Personenbezeichnungen und personenbezogenen Hauptwörtern in diesem Projektbericht die maskuline Form verwendet. Entsprechende Begriffe gelten im Sinne der Gleichbehandlung grundsätzlich für alle Geschlechter. Die verkürzte Sprachform hat nur redaktionelle Gründe und beinhaltet keine Wertung
 \newpage
+
+% start page numbering in roman numerals
 \pagenumbering{Roman}
 \setcounter{page}{1}
+
 \tableofcontents
 \newpage
 \listoffigures
@@ -110,14 +131,14 @@ Aus Gründen der besseren Lesbarkeit wird bei Personenbezeichnungen und personen
 \listoftables
 \newpage
 
-%stores roman numbercounter
+% store last roman page number
 \newcounter{preamblecounterstate}
 \setcounter{preamblecounterstate}{\value{page}}
 
 % use arabic numbers for actual content pages
 \pagenumbering{arabic}
 
-%includes pages written in the folder section
+% include the pages stored in the section folder
 %\include{sections/demoSection}
 \include{sections/kontext}
 \include{sections/erstellung}
@@ -125,11 +146,11 @@ Aus Gründen der besseren Lesbarkeit wird bei Personenbezeichnungen und personen
 
 \newpage
 
-% Set page number to Roman for bibliography
+% set page numbering to roman for bibliography
 \pagenumbering{Roman}
-
-%reads counter stored earlier
+% read counter stored earlier
 \setcounter{page}{\value{preamblecounterstate}}
 
 \printbibliography
+
 \end{document}
