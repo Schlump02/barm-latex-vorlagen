@@ -12,8 +12,9 @@ LaTeX kann von jedem Textverarbeitungsprogramm gelesen werden. Unter Windwos 10 
 
 ### Nutzung einer Bib
 
-Für Quellenverweise kann eine Bib genutzt werden, die zu jeder Quelle die Informationen enthält, welche für einen Vollbeleg bzw. eine Fußnote wichtig sind.
-In den Vorlagen wird für alle eingefügten Quellen ein Literaturverzeichnis erstellt.
+In den Vorlagen wird für alle eingefügten Quellen automatisch ein Literaturverzeichnis erstellt.
+Eine .bib-Datei enthält Die dazu benötigten Informationen.
+
 Damit die Bib auch von der LaTeX Engine genutzt werden kann, muss sie zunächst verarbeitet werden.
 Dazu (bei Nutzung von MikTex) diese drei Befehle im Verzeichnis der `main.tex` ausführen;
 
@@ -25,7 +26,9 @@ pdflatex main.tex
 
 Nach der zweiten PDF-Erstellung sollte das Literaturverzeichnis vorhanden sein, sofern bereits Quellen im Dokument genutzt wurden.
 
-In der Vorlage wird bei der beispielhaften `myBib.bib` gearbeitet, eine beispielhafte Fußnote befindet sich in der `demoSection.tex`.
+In der Vorlage wird mit der beispielhaften `myBib.bib` gearbeitet, eine beispielhafte Fußnote befindet sich in der `demoSection.tex`.
+
+Zum automatischen Erstellen von bib-Daten aus Internetquellen kann <a href="https://www.zotero.org/">Zotero</a> genutzt werden.
 
 ## Autoren
 
