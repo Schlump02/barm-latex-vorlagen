@@ -7,8 +7,25 @@ LaTeX-Vorlagen für alle Dokumente erstellen, die für das Studium an der BA Rhe
 ## Nutzung
 
 LaTeX kann von jedem Textverarbeitungsprogramm gelesen werden. Unter Windwos 10 kann beispielsweise folgendes Setup genutzt werden;
-1. Installation des <a href="https://miktex.org/download">MikTeX-Paketmanagers</a>
-2. Installation des <a href="https://www.xm1math.net/texmaker/download.html">Texmaker-Editors</a>
+1. Installation von <a href="https://miktex.org/download">MikTeX</a>, einer TeX-Engine und TeX-Paketmanager
+2. Installation des <a href="https://www.xm1math.net/texmaker/download.html">Texmaker</a> Editors
+
+### Nutzung einer Bib
+
+Für Quellenverweise kann eine Bib genutzt werden, die zu jeder Quelle die Informationen enthält, welche für einen Vollbeleg bzw. eine Fußnote wichtig sind.
+In den Vorlagen wird für alle eingefügten Quellen ein Literaturverzeichnis erstellt.
+Damit die Bib auch von der LaTeX Engine genutzt werden kann, muss sie zunächst verarbeitet werden.
+Dazu (bei Nutzung von MikTex) diese drei Befehle im Verzeichnis der `main.tex` ausführen;
+
+```console
+pdflatex main.tex
+biber main
+pdflatex main.tex
+```
+
+Nach der zweiten PDF-Erstellung sollte das Literaturverzeichnis vorhanden sein, sofern bereits Quellen im Dokument genutzt wurden.
+
+In der Vorlage wird bei der beispielhaften `myBib.bib` gearbeitet, eine beispielhafte Fußnote befindet sich in der `demoSection.tex`.
 
 ## Autoren
 
