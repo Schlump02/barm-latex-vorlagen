@@ -1,0 +1,213 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/apasortcite//global/global}
+    \entry{goos_single_2002}{inbook}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=fc3c3bbf1e2070b04282f36795ea3e3e}{%
+           family={De\bibnamedelima Clercq},
+           familyi={D\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=01a9a78dc76dc5eb7c1fbc61615b1c87}{%
+           family={Davida},
+           familyi={D\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+        {{hash=9e96ad5d06c26498bee30b446e8fc235}{%
+           family={Frankel},
+           familyi={F\bibinitperiod},
+           given={Yair},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=8fe0cc778b9d7f0306f2585e01cbf9bf}{%
+           family={Rees},
+           familyi={R\bibinitperiod},
+           given={Owen},
+           giveni={O\bibinitperiod}}}%
+      }
+      \name{editorb}{3}{}{%
+        {{hash=97b8779c08da200ee2eb194bdc10ae4f}{%
+           family={Goos},
+           familyi={G\bibinitperiod},
+           given={Gerhard},
+           giveni={G\bibinitperiod}}}%
+        {{hash=84d4ea2bd3ec736effccd97ee64d09ef}{%
+           family={Hartmanis},
+           familyi={H\bibinitperiod},
+           given={Juris},
+           giveni={J\bibinitperiod}}}%
+        {{hash=4e6d4340bf56539a33dcad95ee6e8fc5}{%
+           family={Van\bibnamedelima Leeuwen},
+           familyi={V\bibinitperiod\bibinitdelim L\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{fc3c3bbf1e2070b04282f36795ea3e3e}
+      \strng{fullhash}{fc3c3bbf1e2070b04282f36795ea3e3e}
+      \strng{bibnamehash}{fc3c3bbf1e2070b04282f36795ea3e3e}
+      \strng{authorbibnamehash}{fc3c3bbf1e2070b04282f36795ea3e3e}
+      \strng{authornamehash}{fc3c3bbf1e2070b04282f36795ea3e3e}
+      \strng{authorfullhash}{fc3c3bbf1e2070b04282f36795ea3e3e}
+      \strng{editorbibnamehash}{2effe3423ec30eb96c9e4e6532d8e99a}
+      \strng{editornamehash}{195c200937b8b72c9c4dc94c7d45da3e}
+      \strng{editorfullhash}{2effe3423ec30eb96c9e4e6532d8e99a}
+      \strng{editorbbibnamehash}{3dfcf72b5841d3fc75d0df4fe9034b68}
+      \strng{editorbnamehash}{522af9cbd4958b79cc9ddb9b46943274}
+      \strng{editorbfullhash}{3dfcf72b5841d3fc75d0df4fe9034b68}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Infrastructure Security}
+      \field{editorbtype}{redactor}
+      \field{isbn}{978-3-540-44309-4 978-3-540-45831-9}
+      \field{langid}{english}
+      \field{note}{Series Title: Lecture Notes in Computer Science}
+      \field{title}{Single Sign-On Architectures}
+      \field{urlday}{25}
+      \field{urlmonth}{11}
+      \field{urlyear}{2023}
+      \field{volume}{2437}
+      \field{year}{2002}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{40\bibrangedash 58}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1007/3-540-45831-X_4
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/3-540-45831-X_4
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/3-540-45831-X_4
+      \endverb
+    \endentry
+  \enddatalist
+  \datalist[entry]{nyt/global//global/global}
+    \entry{goos_single_2002}{inbook}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=fc3c3bbf1e2070b04282f36795ea3e3e}{%
+           family={De\bibnamedelima Clercq},
+           familyi={D\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=01a9a78dc76dc5eb7c1fbc61615b1c87}{%
+           family={Davida},
+           familyi={D\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+        {{hash=9e96ad5d06c26498bee30b446e8fc235}{%
+           family={Frankel},
+           familyi={F\bibinitperiod},
+           given={Yair},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=8fe0cc778b9d7f0306f2585e01cbf9bf}{%
+           family={Rees},
+           familyi={R\bibinitperiod},
+           given={Owen},
+           giveni={O\bibinitperiod}}}%
+      }
+      \name{editorb}{3}{}{%
+        {{hash=97b8779c08da200ee2eb194bdc10ae4f}{%
+           family={Goos},
+           familyi={G\bibinitperiod},
+           given={Gerhard},
+           giveni={G\bibinitperiod}}}%
+        {{hash=84d4ea2bd3ec736effccd97ee64d09ef}{%
+           family={Hartmanis},
+           familyi={H\bibinitperiod},
+           given={Juris},
+           giveni={J\bibinitperiod}}}%
+        {{hash=4e6d4340bf56539a33dcad95ee6e8fc5}{%
+           family={Van\bibnamedelima Leeuwen},
+           familyi={V\bibinitperiod\bibinitdelim L\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{fc3c3bbf1e2070b04282f36795ea3e3e}
+      \strng{fullhash}{fc3c3bbf1e2070b04282f36795ea3e3e}
+      \strng{bibnamehash}{fc3c3bbf1e2070b04282f36795ea3e3e}
+      \strng{authorbibnamehash}{fc3c3bbf1e2070b04282f36795ea3e3e}
+      \strng{authornamehash}{fc3c3bbf1e2070b04282f36795ea3e3e}
+      \strng{authorfullhash}{fc3c3bbf1e2070b04282f36795ea3e3e}
+      \strng{editorbibnamehash}{2effe3423ec30eb96c9e4e6532d8e99a}
+      \strng{editornamehash}{195c200937b8b72c9c4dc94c7d45da3e}
+      \strng{editorfullhash}{2effe3423ec30eb96c9e4e6532d8e99a}
+      \strng{editorbbibnamehash}{3dfcf72b5841d3fc75d0df4fe9034b68}
+      \strng{editorbnamehash}{522af9cbd4958b79cc9ddb9b46943274}
+      \strng{editorbfullhash}{3dfcf72b5841d3fc75d0df4fe9034b68}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Infrastructure Security}
+      \field{editorbtype}{redactor}
+      \field{isbn}{978-3-540-44309-4 978-3-540-45831-9}
+      \field{langid}{english}
+      \field{note}{Series Title: Lecture Notes in Computer Science}
+      \field{title}{Single Sign-On Architectures}
+      \field{urlday}{25}
+      \field{urlmonth}{11}
+      \field{urlyear}{2023}
+      \field{volume}{2437}
+      \field{year}{2002}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{40\bibrangedash 58}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1007/3-540-45831-X_4
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/3-540-45831-X_4
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/3-540-45831-X_4
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
