@@ -32,7 +32,7 @@ Zum automatischen Erstellen von bib-Daten aus Internetquellen kann <a href="http
 
 ### Fußnoten
 
-Um BA gerechte Fußnoten zu setzen sollte `\fullfootcite{ID_aus_der_bib}` genutzt werden. Sollte die Fußnote zu lang werden muss mit `\newpage` vor dem Satz mit der Fußnote gespielt werden.
+Um einen Vollbeleg als Fußnote zu setzen, sollte `\fullfootcite{ID_aus_der_bib}` genutzt werden. Sollte die Fußnote zu lang werden, muss mit `\newpage` vor dem Satz mit der Fußnote gespielt werden.
 
 ## Autoren
 
