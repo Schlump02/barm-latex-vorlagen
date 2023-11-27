@@ -10,3 +10,5 @@ TODO.md
 *.xml
 *.gz
 *.toc
+*.bbl
+*.blg
