@@ -30,12 +30,15 @@
 \usepackage{sectsty}
 \usepackage{units}
 \usepackage{xcolor}
+\usepackage{hyperref}
 
-% ### add your information here ###
-\usepackage[pdfauthor={Your Name},
-            pdftitle={The Title},
-            pdfsubject={The Subject},
-            pdfkeywords={Some Keywords}]{hyperref}
+% set metadata for the PDF
+\hypersetup{
+    pdfauthor={Your Name},      % Add your name here
+    pdftitle={The Title},       % Add the document title here
+    pdfsubject={The Subject},   % Add the subject of the document here
+    pdfkeywords={Some Keywords} % Add relevant keywords here
+}
 
 % location of bib and graphics
 \addbibresource{myBib.bib}
