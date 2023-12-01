@@ -12,4 +12,6 @@ TODO.md
 *.toc
 *.bbl
 *.blg
+*.fdb_latexmk
+*.fls
 .DS_Store

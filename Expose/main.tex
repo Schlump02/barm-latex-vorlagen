@@ -48,7 +48,7 @@
 % definitions
 
 \definecolor{ba-blau}{HTML}{093a80}
-\newcommand{\documentTitle}[1]{{\fontsize{20pt}{24pt}\selectfont\color{ba-blau}#1}}
+\newcommand{\documentTitle}[1]{{\fontsize{20pt}{24pt}\selectfont\textbf{\color{ba-blau}#1}}}
 \newcommand{\pageTitle}[1]{{\fontsize{14pt}{17pt}\selectfont\textbf{\color{ba-blau}#1}}}
 % define command for for using full reference in footnote
 \newcommand{\fullfootcite}[1]{
@@ -85,6 +85,7 @@
     \pagestyle{fancy}
     \fancyhead{}
     \setlength{\headheight}{2cm}
+    \setlength{\headsep}{40pt}
     \chead{\includegraphics[]{deckbild.jpeg} \\}
     %pagefooter
     \fancyfoot{}
@@ -105,23 +106,23 @@
     \documentTitle {Titel der Bachelor Thesis} \\[3ex]
     \includegraphics[width=3cm]{Platzhalter_logo.png} \\[3ex]
     \large{Exposé erstellt im Rahmen des Bachelor Thesis Kolloquiums:
-} \\
+    } \\
     \large{DD.MM.YYYY}
 \end{center}
 
 \renewcommand{\arraystretch}{2.5}
 \begin{table}[h]
-    \centering
-    \begin{tabularx}{\textwidth}{l c}
-        Studiengruppe: &  XX\_XS2X\_XX \\
-        Name Studierender: & Max Mustermann\\
-        Anzahl der Wörter: & 0\\
-        (inkl. wörtliche Zitate / Fußnoten) & ~ \\
-        Anzahl der Wörter: & \\
-        (exkl. wörtliche Zitate / Fußnoten) & ~ \\
-        Akademischer Gutachter: & Prof. Mustermann\\
-        Betrieblicher Gutachter: & Herr Firma\\
-        Abgabedatum: & DD.MM.YYYY\\
+    \setlength{\tabcolsep}{32pt}
+    \begin{tabularx}{\textwidth}{l l}
+        Studiengruppe:                      & XX\_XS2X\_XX     \\
+        Name Studierender:                  & Max Mustermann   \\
+        Anzahl der Wörter:                  & 0                \\ [-15pt]
+        (inkl. wörtliche Zitate / Fußnoten) & ~                \\
+        Anzahl der Wörter:                  & 0                \\ [-15pt]
+        (exkl. wörtliche Zitate / Fußnoten) & ~                \\
+        Akademischer Gutachter:             & Prof. Mustermann \\
+        Betrieblicher Gutachter:            & Herr Firma       \\
+        Abgabedatum:                        & DD.MM.YYYY       \\
     \end{tabularx}
 \end{table}
 
