@@ -48,7 +48,7 @@
 
 \definecolor{ba-blau}{HTML}{093a80}
 \newcommand{\documentTitle}[1]{{\fontsize{20pt}{24pt}\selectfont\color{ba-blau}#1}}
-\newcommand{\pageTitle}[1]{{\fontsize{14pt}{17pt}\selectfont\textbf{\color{ba-blau}#1}}}
+\newcommand{\pageTitel}[1]{{\fontsize{14pt}{17pt}\selectfont\textbf{\color{ba-blau}#1}}}
 % define command for for using full reference in footnote
 \newcommand{\fullfootcite}[1]{
   \footnote{\fullcite{#1}}
@@ -60,8 +60,8 @@
 \setstretch{1.5}
 
 % set section headings fontsizes and line spacing
-\sectionfont{\fontsize{14}{16.8}\selectfont}
-\subsectionfont{\fontsize{12}{14.4}\selectfont}
+\sectionfont{\fontsize{14}{16.8}\selectfont\fontfamily{ptm}\selectfont}
+\subsectionfont{\fontsize{12}{14.4}\selectfont\fontfamily{ptm}\selectfont}
 % color section headings
 \addtokomafont{disposition}{\color{ba-blau}}
 \addtokomafont{sectionentry}{\color{ba-blau}}
@@ -129,7 +129,7 @@
 % use default page styling from now on
 \pagestyle{defaultPageStyle}
 
-\pageTitle{Gleichbehandlung der Geschlechter}\\
+\pageTitel{Gleichbehandlung der Geschlechter}\\
 Aus Gründen der besseren Lesbarkeit wird bei Personenbezeichnungen und personenbezogenen Hauptwörtern in diesem Projektbericht die maskuline Form verwendet. Entsprechende Begriffe gelten im Sinne der Gleichbehandlung grundsätzlich für alle Geschlechter. Die verkürzte Sprachform hat nur redaktionelle Gründe und beinhaltet keine Wertung
 \newpage
 
@@ -164,6 +164,6 @@ Aus Gründen der besseren Lesbarkeit wird bei Personenbezeichnungen und personen
 % read counter stored earlier
 \setcounter{page}{\value{preamblecounterstate}}
 
-\printbibliography
+\printbibliography[title={Literaturverzeichnis}]
 
 \end{document}
