@@ -34,18 +34,6 @@ Zum automatischen Erstellen von bib-Daten aus Internetquellen kann <a href="http
 
 Um einen Vollbeleg als Fußnote zu setzen, sollte `\fullfootcite{ID_aus_der_bib}` genutzt werden. Sollte die Fußnote zu lang werden, muss mit `\newpage` vor dem Satz mit der Fußnote gespielt werden.
 
-## Autoren
-
-Basierend auf einer ursprünglichen Vorlage von Jan Bauer.
-
-Erweitert durch die Mitwirkenden (Collaborators) an diesem Repository.
-
-## Lizenz / License
-
-Creative Commons CC BY 4.0
-
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
-
 ## Arbeiten mit LaTeX in Visual Studio Code unter macOS und Windows
 
 ### Schritt 1: TeX Live herunterladen und installieren
@@ -69,10 +57,90 @@ Für Windows-Benutzer: Fügen Sie nach der Installation die TeX Live-Executable 
 #### Fügen Sie die folgenden Snippets in Ihre JSON-Datei ein (innerhalb der `{}` Ihrer Datei):
 ```json
 "latex-workshop.latex.tools": [
- // Fügen Sie hier die Tools-Konfiguration ein
+ {
+  "name": "latexmk",
+  "command": "latexmk",
+  "args": [
+   "-synctex=1",
+   "-interaction=nonstopmode",
+   "-file-line-error",
+   "-pdf",
+   "-outdir=%OUTDIR%",
+   "%DOC%"
+  ],
+  "env": {}
+ },
+ {
+  "name": "xelatex",
+  "command": "xelatex",
+  "args": [
+   "-synctex=1",
+   "-interaction=nonstopmode",
+   "-file-line-error",
+   "%DOC%"
+  ],
+  "env": {}
+ },
+ {
+  "name": "pdflatex",
+  "command": "pdflatex",
+  "args": [
+   "-synctex=1",
+   "-interaction=nonstopmode",
+   "-file-line-error",
+   "%DOC%"
+  ],
+  "env": {}
+ },
+ {
+  "name": "bibtex",
+  "command": "bibtex",
+  "args": [
+   "%DOCFILE%"
+  ],
+  "env": {}
+ }
 ],
+
 "latex-workshop.latex.recipes": [
- // Fügen Sie hier die Rezepte-Konfiguration ein
+ {
+  "name": "pdfLaTeX",
+  "tools": [
+   "pdflatex"
+  ]
+ },
+ {
+  "name": "latexmk 🔃",
+  "tools": [
+   "latexmk"
+  ]
+ },
+ {
+  "name": "xelatex",
+  "tools": [
+   "xelatex"
+  ]
+ },
+ {
+  "name": "pdflatex ➞ bibtex ➞ pdflatex`×2",
+  "tools": [
+   "pdflatex",
+   "bibtex",
+   "pdflatex",
+   "pdflatex"
+  ]
+ },
+ {
+ "name": "xelatex ➞ bibtex ➞ xelatex`×2",
+ "tools": [
+   "xelatex",
+   "bibtex",
+   "xelatex",
+   "xelatex"
+  ]
+ }
+]
+
 ]
 ```
 
@@ -89,3 +157,16 @@ Für Windows-Benutzer: Fügen Sie nach der Installation die TeX Live-Executable 
 - In der oberen rechten Ecke gibt es einen Button, um die PDF-Vorschau zu öffnen.
 
 Dieser Leitfaden hilft Ihnen, den grundlegenden Prozess der Einrichtung und Verwendung von LaTeX in Visual Studio Code unter macOS und Windows zu verstehen. Beachten Sie, dass weitere Anpassungen und erweiterte Konfigurationen möglich sind, je nach Ihren spezifischen Bedürfnissen und Präferenzen.
+
+
+## Autoren
+
+Basierend auf einer ursprünglichen Vorlage von Jan Bauer.
+
+Erweitert durch die Mitwirkenden (Collaborators) an diesem Repository.
+
+## Lizenz / License
+
+Creative Commons CC BY 4.0
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
