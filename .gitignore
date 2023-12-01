@@ -12,3 +12,4 @@ TODO.md
 *.toc
 *.bbl
 *.blg
+.DS_Store
