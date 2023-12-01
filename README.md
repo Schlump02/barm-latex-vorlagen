@@ -46,46 +46,46 @@ Creative Commons CC BY 4.0
 
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
 
-## Working with LaTeX in Visual Studio Code on macOS and Windows
+## Arbeiten mit LaTeX in Visual Studio Code unter macOS und Windows
 
-### Step 1: Download & Install TeX Live
-- **Windows users:** Download `texlive.iso`.
-- **Mac users:** Download `MacTeX.pkg`.
+### Schritt 1: TeX Live herunterladen und installieren
+- **Windows-Benutzer:** Laden Sie `texlive.iso` herunter.
+- **Mac-Benutzer:** Laden Sie `MacTeX.pkg` herunter.
 
-#### Installation references:
-- [TeX Live on Windows](https://tug.org/texlive/acquire-netinstall.html)
-- [Installing MacTeX](http://www.tug.org/mactex/)
+#### Installationsreferenzen:
+- [TeX Live unter Windows](https://tug.org/texlive/acquire-netinstall.html)
+- [MacTeX installieren](http://www.tug.org/mactex/)
 
-For Windows users, after installation, add TeX Live executables to your system PATH.
+Für Windows-Benutzer: Fügen Sie nach der Installation die TeX Live-Executable Ihrem System-PATH hinzu.
 
-### Step 2: Download & Install Visual Studio Code
-- Download Visual Studio Code from the [official website](https://code.visualstudio.com/) and install it.
+### Schritt 2: Visual Studio Code herunterladen und installieren
+- Laden Sie Visual Studio Code von der [offiziellen Webseite](https://code.visualstudio.com/) herunter und installieren Sie es.
 
-### Step 3: Install & Configure LaTeX Workshop in VS Code
-- After installing, open Visual Studio Code.
-- Press `Shift + Ctrl + P` (Windows) or `Shift + Cmd + P` (macOS) to show all commands.
-- Type `Open User Settings JSON` and open the first item.
+### Schritt 3: LaTeX Workshop in VS Code installieren und konfigurieren
+- Nach der Installation öffnen Sie Visual Studio Code.
+- Drücken Sie `Shift + Ctrl + P` (Windows) oder `Shift + Cmd + P` (macOS), um alle Befehle anzuzeigen.
+- Geben Sie `Open User Settings JSON` ein und öffnen Sie das erste Element.
 
-#### Add the following snippets to your JSON file (inside the `{}` of your file):
+#### Fügen Sie die folgenden Snippets in Ihre JSON-Datei ein (innerhalb der `{}` Ihrer Datei):
 ```json
 "latex-workshop.latex.tools": [
- // Add tools configuration here
+ // Fügen Sie hier die Tools-Konfiguration ein
 ],
 "latex-workshop.latex.recipes": [
- // Add recipes configuration here
+ // Fügen Sie hier die Rezepte-Konfiguration ein
 ]
 ```
 
-#### Tools Configuration:
-- Add configurations for different LaTeX tools like `latexmk`, `xelatex`, `pdflatex`, `bibtex`, etc.
+#### Tools-Konfiguration:
+- Fügen Sie Konfigurationen für verschiedene LaTeX-Tools wie `latexmk`, `xelatex`, `pdflatex`, `bibtex` usw. hinzu.
 
-#### Recipes Configuration:
-- Define different recipes for how your LaTeX documents should be compiled, like `pdfLaTeX`, `latexmk`, `xelatex`.
+#### Rezepte-Konfiguration:
+- Definieren Sie verschiedene Rezepte, wie Ihre LaTeX-Dokumente kompiliert werden sollen, z.B. `pdfLaTeX`, `latexmk`, `xelatex`.
 
-### Compiling a LaTeX Document
-- Open a `.tex` file or create a new one.
-- To compile the file, press `Ctrl + Alt + B` (Windows) or `Option + Cmd + B` (macOS).
-- You can also choose other recipes from the sidebar.
-- There is a button in the top right corner to open the PDF preview.
+### Kompilieren eines LaTeX-Dokuments
+- Öffnen Sie eine `.tex`-Datei oder erstellen Sie eine neue.
+- Um die Datei zu kompilieren, drücken Sie `Ctrl + Alt + B` (Windows) oder `Option + Cmd + B` (macOS).
+- Sie können auch andere Rezepte aus der Seitenleiste wählen.
+- In der oberen rechten Ecke gibt es einen Button, um die PDF-Vorschau zu öffnen.
 
-This guide helps you through the basic process of setting up and using LaTeX in Visual Studio Code on macOS and Windows. Note that further customizations and advanced configurations are possible, depending on your specific needs and preferences.
+Dieser Leitfaden hilft Ihnen, den grundlegenden Prozess der Einrichtung und Verwendung von LaTeX in Visual Studio Code unter macOS und Windows zu verstehen. Beachten Sie, dass weitere Anpassungen und erweiterte Konfigurationen möglich sind, je nach Ihren spezifischen Bedürfnissen und Präferenzen.
