@@ -15,3 +15,4 @@ TODO.md
 *.fdb_latexmk
 *.fls
 .DS_Store
+.vscode/ltex.hiddenFalsePositives.de-DE.txt
