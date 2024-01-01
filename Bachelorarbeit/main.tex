@@ -35,6 +35,7 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage[printonlyused]{acronym}
+\usepackage{appendix}
 
 %\definecolor{darkgray}{gray}{0.2} % Dunkelgrauer Hintergrund
 %\definecolor{dkgreen}{rgb}{0,0.6,0}
@@ -209,7 +210,9 @@
 \include{sections/zielsetzung}
 
 \newpage
-
+\appendix
+\input{anhang/anhang.tex}
+\newpage
 % set page numbering to roman for bibliography
 \pagenumbering{Roman}
 % read counter stored earlier
