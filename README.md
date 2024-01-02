@@ -18,9 +18,9 @@ In Visual Studio Code kann die Erweiterung <b>LaTeX Workshop</b> wie folgt genut
 2. ggf. Installation von [MikTeX](https://miktex.org/download), einer TeX-Engine und TeX-Paketmanager
 3. Installation der Erweiterung [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) (am einfachsten direkt im VS Code Marketplace)
 4. Anpassung der VS Code-Einstellungen:
-  - `Shift + Ctrl + P` (Windows) oder `Shift + Cmd + P` (macOS), um alle Befehle anzuzeigen
-  - `Open User Settings JSON` eingeben und auswählen
-  - Den untenstehenden JSON-Content in die `settings.json` einfügen (JSON-innerhalb der {}, JSON_Formatierung beachten)
+    - `Shift + Ctrl + P` (Windows) oder `Shift + Cmd + P` (macOS) für die Befehlseingabe
+    - `Open User Settings JSON` eingeben und auswählen
+    - Den untenstehenden JSON-Content in die `settings.json` einfügen (innerhalb der {}, JSON-Formatierung beachten)
 
 ```json
     "latex-workshop.message.latexlog.exclude": [".*"],
