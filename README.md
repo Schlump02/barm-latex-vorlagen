@@ -72,7 +72,8 @@ Das fertige PDF-Dokument wird nach einigen Sekunden im selben Ordner generiert w
 
 Jedes Kapitel sowie Gliederungen etc. befinden sich in einer jeweils seperaten .tex-Datei im Ordner `sections`.
 Die `main.tex` importiert Diese mit dem `\include`-Befehl. Zudem definiert sie die Formatierung und den Aufbau des Dokuments (Kopfzeilen, Seitenzahlen, Deckblatt uvm.).
-Eine beispielhafte Verwendung vieler nützlicher LaTeX-Befehle wird in der demoSection.tex gezeigt.
+
+Eine beispielhafte Verwendung vieler nützlicher LaTeX-Befehle wird in der `demoSection.tex` gezeigt.
 
 ### Quellenverweise
 
