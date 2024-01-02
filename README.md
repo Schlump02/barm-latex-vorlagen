@@ -6,7 +6,7 @@ LaTeX-Vorlagen für alle Dokumente erstellen, die für das Studium an der BA Rhe
 
 ## Setup
 
-LaTeX kann von jedem Textverarbeitungsprogramm gelesen werden. Unter Windwos 10 kann beispielsweise folgendes Setup genutzt werden;
+LaTeX kann von jedem Textverarbeitungsprogramm gelesen werden. Unter Windows kann beispielsweise folgendes Setup genutzt werden;
 1. Installation von <a href="https://miktex.org/download">MikTeX</a>, einer TeX-Engine und TeX-Paketmanager
 2. Installation des <a href="https://www.xm1math.net/texmaker/download.html">Texmaker</a> Editors
 
