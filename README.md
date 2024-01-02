@@ -80,7 +80,11 @@ Eine beispielhafte Verwendung vieler nützlicher LaTeX-Befehle wird in der `demo
 #### Nutzung einer Bib
 
 In den Vorlagen wird für alle eingefügten Quellen automatisch ein Literaturverzeichnis erstellt.
-Eine .bib-Datei enthält Die dazu benötigten Informationen.
+Die dazu benötigten Informationen (Autor, Titel etc.) müssen in eine .bib-Datei eingetragen werden.
+
+In der Vorlage wird mit der beispielhaften `myBib.bib` gearbeitet, eine beispielhafte Fußnote befindet sich in der `demoSection.tex`.
+
+Zum automatischen Erstellen von bib-Daten aus Internetquellen kann <a href="https://www.zotero.org/">Zotero</a> genutzt werden.
 
 Damit die Bib auch von der LaTeX Engine genutzt werden kann, muss sie zunächst verarbeitet werden.
 Dazu (bei Nutzung von MikTex) diese drei Befehle im Verzeichnis der `main.tex` ausführen;
@@ -91,15 +95,11 @@ biber main
 pdflatex main.tex
 ```
 
-Nach der zweiten PDF-Erstellung sollte das Literaturverzeichnis vorhanden sein, sofern bereits Quellen im Dokument genutzt wurden.
-
-In der Vorlage wird mit der beispielhaften `myBib.bib` gearbeitet, eine beispielhafte Fußnote befindet sich in der `demoSection.tex`.
-
-Zum automatischen Erstellen von bib-Daten aus Internetquellen kann <a href="https://www.zotero.org/">Zotero</a> genutzt werden.
+Nach der zweiten PDF-Erstellung sollte das Literaturverzeichnis vorhanden sein, sofern bereits Quellen im Dokument genutzt wurden. Im oben beschriebenen VS Code Setup werden diese drei Schritte automatisch ausgeführt.
 
 #### Fußnoten
 
-Fußnoten können mit dem `\footcite` Befehl gesetzt werden, wie auf der DemoSeite gezeigt. Wenn die .bib-Datei verändert wurde, muss der `biber` Kommandozeilenbefehl ausgeführt werden.
+Fußnoten können mit dem `\footcite` Befehl gesetzt werden, wie auf der Demo-Seite (`demoSection.tex`) gezeigt. Wenn die .bib-Datei verändert wurde, muss der `biber` Kommandozeilenbefehl ausgeführt werden.
 Um einen Vollbeleg als Fußnote zu setzen, sollte `\fullfootcite{ID_aus_der_bib}` genutzt werden. Sollte die Fußnote zu lang werden, muss mit `\newpage` vor dem Satz mit der Fußnote gespielt werden.
 
 ## Autoren
