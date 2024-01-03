@@ -109,6 +109,13 @@
 \newcommand{\listappendixname}{Anhangsverzeichnis}
 \newlistof{appendices}{app}{\listappendixname}
 
+\newcommand{\anhangsec}[1]{
+   \subsection{#1}
+   \label{sec:\thesubsection}
+   \addcontentsline{app}{subsection}{\protect\numberline{\thesubsection}\nameref{sec:\thesubsection}}
+}
+
+
 % styling
 
 % set default line spacing
