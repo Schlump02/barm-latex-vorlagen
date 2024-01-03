@@ -62,6 +62,7 @@ In Visual Studio Code kann die Erweiterung <b>LaTeX Workshop</b> wie folgt genut
             ]
         },
     ],
+]
 ```
 Im JSON wird festgelegt, dass bei jeder Ausführung die Befehle pdflatex ➞ biber ➞ pdflatex * 2 verwendet werden, welche zuvor definiert wurden.
 
