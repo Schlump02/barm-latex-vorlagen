@@ -1,6 +1,7 @@
 TODO.md
 
 *.synctex
+*.synctex(busy)
 *.pdf
 *.aux
 *.bcf
