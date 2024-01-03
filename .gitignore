@@ -16,5 +16,6 @@ TODO.md
 *.blg
 *.fdb_latexmk
 *.fls
+*.app
 .DS_Store
 .vscode/ltex.hiddenFalsePositives.de-DE.txt
