@@ -108,11 +108,20 @@
 \newcommand{\listappendixname}{}
 \newlistof{appendices}{app}{\listappendixname}
 
+% Neuen Zähler definieren
+\newcounter{anhangsubsec}
+\renewcommand{\theanhangsubsec}{\arabic{anhangsubsec}}
+
+% Neuen Befehl definieren
 \newcommand{\anhangsec}[1]{
-   \subsection{#1}
-   \label{sec:\thesubsection}
-   \addcontentsline{app}{subsection}{\protect\numberline{\thesubsection}\nameref{sec:\thesubsection}}
+   \stepcounter{anhangsubsec} % Zähler erhöhen
+   \subsection*{A\theanhangsubsec\ #1} % Stern-Version, um die automatische Nummerierung zu unterdrücken
+   \label{sec:A\theanhangsubsec}
+   \addcontentsline{toc}{subsection}{\protect\numberline{A\theanhangsubsec} #1}
+   \addcontentsline{app}{subsection}{\protect\numberline{A\theanhangsubsec} #1}
 }
+
+
 
 
 % styling
@@ -219,15 +228,17 @@
 \include{sections/zielsetzung}
 
 \newpage
-\appendix
+\begin{appendices}
 \input{anhang/anhang}
+\end{appendices}
 
 % set page numbering to roman for bibliography
 \pagenumbering{Roman}
 % read counter stored earlier
 \setcounter{page}{\value{preamblecounterstate}}
-
 \printbibliography[title={Literaturverzeichnis}]
+
+\newpage
 \pagenumbering{gobble}
 \include{sections/ehrenwort}
 \end{document}
