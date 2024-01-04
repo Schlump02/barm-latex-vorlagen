@@ -208,10 +208,16 @@
 
 \tableofcontents
 \newpage
+
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
 \listoffigures
 \newpage
+
+\addcontentsline{toc}{section}{Tabellenverzeichnis}
 \listoftables
 \newpage
+
+\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
 \include{sections/abkuerzungsV}
 
 % store last roman page number
@@ -236,6 +242,8 @@
 \pagenumbering{Roman}
 % read counter stored earlier
 \setcounter{page}{\value{preamblecounterstate}}
+
+\addcontentsline{toc}{section}{Literaturverzeichnis}
 \printbibliography[title={Literaturverzeichnis}]
 
 \newpage
