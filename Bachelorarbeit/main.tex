@@ -111,7 +111,7 @@
 \newcounter{anhangsubsec}
 \renewcommand{\theanhangsubsec}{\arabic{anhangsubsec}}
 
-% Neuen Befehl definieren
+% Anhang-Subsections
 \newcommand{\anhangsec}[1]{
    \stepcounter{anhangsubsec}
    \subsection*{A\theanhangsubsec\ #1} % Stern-Version, um die automatische Nummerierung zu unterdrücken
@@ -120,7 +120,8 @@
    \addcontentsline{app}{subsection}{\protect\numberline{A\theanhangsubsec} #1}
 }
 
-
+% create captions where the text on the page ends with a footnotemark
+\newcommand{\captionwithfootnotemark}[1]{\caption[#1]{#1\footnotemark}}
 
 
 % styling
