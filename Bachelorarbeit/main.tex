@@ -108,13 +108,12 @@
 \newcommand{\listappendixname}{}
 \newlistof{appendices}{app}{\listappendixname}
 
-% Neuen Zähler definieren
 \newcounter{anhangsubsec}
 \renewcommand{\theanhangsubsec}{\arabic{anhangsubsec}}
 
 % Neuen Befehl definieren
 \newcommand{\anhangsec}[1]{
-   \stepcounter{anhangsubsec} % Zähler erhöhen
+   \stepcounter{anhangsubsec}
    \subsection*{A\theanhangsubsec\ #1} % Stern-Version, um die automatische Nummerierung zu unterdrücken
    \label{sec:A\theanhangsubsec}
    \addcontentsline{toc}{subsection}{\protect\numberline{A\theanhangsubsec} #1}
