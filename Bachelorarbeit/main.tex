@@ -40,6 +40,8 @@
 \usepackage[none]{hyphenat}
 \sloppy
 
+
+% Dark Mode for code blocks
 %\definecolor{darkgray}{gray}{0.2} % Dunkelgrauer Hintergrund
 %\definecolor{dkgreen}{rgb}{0,0.6,0}
 %\definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -65,7 +67,7 @@
 %  lineskip=-0.5pt
 %}
 
-%Light Mode
+% Light Mode for code blocks
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
@@ -118,7 +120,7 @@
 % Anhang-Subsections
 \newcommand{\anhangsec}[1]{
    \stepcounter{anhangsubsec}
-   \subsection*{A\theanhangsubsec\ #1} % Stern-Version, um die automatische Nummerierung zu unterdrücken
+   \subsection*{A\theanhangsubsec\ #1} % asterisk to suppress automatic numbering
    \label{sec:A\theanhangsubsec}
    \addcontentsline{toc}{subsection}{\protect\numberline{A\theanhangsubsec} #1}
    \addcontentsline{app}{subsection}{\protect\numberline{A\theanhangsubsec} #1}
