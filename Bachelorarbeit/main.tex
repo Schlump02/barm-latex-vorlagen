@@ -189,6 +189,7 @@
 % start page numbering in roman numerals
 \pagenumbering{Roman}
 \setcounter{page}{1}
+\renewcommand{\footrulewidth}{0.4pt}
 
 \tableofcontents
 \newpage
@@ -230,5 +231,7 @@
 
 \newpage
 \pagenumbering{gobble}
+\renewcommand{\footrulewidth}{0pt}
 \include{sections/nebeninhalte/ehrenwort}
+
 \end{document}
