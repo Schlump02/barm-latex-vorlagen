@@ -17,7 +17,7 @@
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{float}
-\usepackage[top=1.2cm, left=2.5cm, right=2.5cm, bottom=3cm, includeheadfoot, footskip=60pt]{geometry}
+\usepackage[top=1.2cm, left=2.5cm, right=2.5cm, bottom=4cm, includeheadfoot, footskip=40pt]{geometry}
 \usepackage{blindtext}
 \usepackage[nospace]{varioref}
 \usepackage[backend=biber, style=apa, sorting=nyt]{biblatex}
@@ -104,6 +104,7 @@
 % definitions
 
 \definecolor{ba-blau}{HTML}{093a80}
+\definecolor{dark_gray}{rgb}{0.4,0.4,0.4}
 \newcommand{\documentTitle}[1]{{\fontsize{20pt}{24pt}\selectfont\textbf{\color{ba-blau}#1}}}
 \newcommand{\pageTitle}[1]{{\fontsize{14pt}{17pt}\selectfont\textbf{\color{ba-blau}#1}}}
 % define command for for using full reference in footnote
@@ -152,7 +153,7 @@
     \chead{\includegraphics[]{deckbild.jpeg} \\}
     %pagefooter
     \fancyfoot{}
-    \fancyfoot[R]{\thepage}
+    \fancyfoot[R]{\thepage}% place page numbers in the lower right corner
 }
 % styling of the default page header and footer
 \fancypagestyle{defaultPageStyle}{
@@ -164,8 +165,12 @@
     \chead{\includegraphics[]{deckbild.jpeg} \\}
     %pagefooter
     \fancyfoot{}
-    \fancyfoot[R]{\thepage}
+    \fancyfoot[R]{\thepage}% place page numbers in the lower right corner
 }
+% color horizontal lines in header / footer
+\renewcommand{\headrule}{\color{dark_gray}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}
+\renewcommand{\footrule}{\color{dark_gray}\hrule width\headwidth height\footrulewidth \vskip-\footrulewidth}
+\renewcommand{\headrulewidth}{0.4pt}
 
 % start of document
 
