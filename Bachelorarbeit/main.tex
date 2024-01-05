@@ -177,14 +177,14 @@
 \pagenumbering{gobble}
 
 % title page
-\include{sections/deckblatt}
+\include{sections/nebeninhalte/deckblatt}
 
 % use default page styling from now on
 \pagestyle{defaultPageStyle}
 
-\include{sections/vorwort}
-\include{sections/sperrvermerk}
-\include{sections/gleichbehandlung}
+\include{sections/nebeninhalte/vorwort}
+\include{sections/nebeninhalte/sperrvermerk}
+\include{sections/nebeninhalte/gleichbehandlung}
 
 % start page numbering in roman numerals
 \pagenumbering{Roman}
@@ -202,7 +202,7 @@
 \newpage
 
 \addcontentsline{toc}{section}{Abkürzungsverzeichnis}
-\include{sections/abkuerzungsV}
+\include{sections/nebeninhalte/abkuerzungsverzeichnis}
 
 % store last roman page number
 \newcounter{preamblecounterstate}
@@ -212,14 +212,12 @@
 \pagenumbering{arabic}
 
 % include the pages stored in the section folder
-\include{sections/demoSection}
-\include{sections/kontext}
-\include{sections/erstellung}
-\include{sections/zielsetzung}
+\include{sections/textinhalte/demoSection}
+\include{sections/textinhalte/kapitelvorlage}
 
 \newpage
 \begin{appendices}
-\input{anhang/anhang}
+\input{sections/nebeninhalte/anhang/anhang}
 \end{appendices}
 
 % set page numbering to roman for bibliography
@@ -232,5 +230,5 @@
 
 \newpage
 \pagenumbering{gobble}
-\include{sections/ehrenwort}
+\include{sections/nebeninhalte/ehrenwort}
 \end{document}
