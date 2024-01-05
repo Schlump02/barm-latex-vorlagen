@@ -1,6 +1,6 @@
 \section{Demo-Seite}
 %Falls keine Seitenanzahl vorhanden ist  dann:\footcite[Vgl.][]{DemoQuelle}
-Demo-Quelle \footcite[Vgl.][\printfield{pages}]{DemoQuelle}
+Demo-Quelle \footcite[Vgl.][\printfield{pages}]{DemoQuelle}.
 
 \begin{center}
     \begin{table}[h]
@@ -26,22 +26,25 @@ Demo-Quelle \footcite[Vgl.][\printfield{pages}]{DemoQuelle}
         Dönerteller & 15€ \\
         \hline
     \end{tabular}
-    \caption{Beispiel Tabelle.}
+    \captionwithfootnotemark{Beispiel Tabelle.}% Die (verpflichtende) Quellenangabe hierzu wird durch den \footcitetext-Befehl weiter unten gesetzt
     \label{tab:example}
     \end{table}
-    \end{center}
+\end{center}
+\footcitetext[Vgl.][\printfield{pages}]{DemoQuelle}
 
 Die Tabelle zeigt den Preis eines Dönertellers, dieser lässt sich wie folgt berechnen:
 \begin{equation}
     15 = \sum_{n=1}^{10} \frac{n}{20} + \sum_{k=1}^{5} \frac{2k}{10} - \sum_{i=1}^{3} i
 \end{equation}
+
 \newpage
 Der folgende Abschnitt könnte hilfreich für eine Ausarbeitung in der Informatik sein.
 \begin{figure}[h]
-\begin{lstlisting}
-    def hello_world():
-        print("Hello, World!")
-\end{lstlisting}
-\caption{Ausschnitt aus main.py.}
-\label{fig:meincode}
+    \begin{lstlisting}
+        def hello_world():
+            print("Hello, World!")
+    \end{lstlisting}
+    \captionwithfootnotemark{Ausschnitt aus main.py.}% Die (verpflichtende) Quellenangabe hierzu wird durch den \footnotetext-Befehl weiter unten gesetzt
+    \label{fig:meincode}
 \end{figure}
+\footnotetext{Quelle: Eigene Erstellung}
