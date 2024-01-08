@@ -200,15 +200,14 @@
 \tableofcontents
 \newpage
 
-\addcontentsline{toc}{section}{Abbildungsverzeichnis}
 \listoffigures
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
 \newpage
 
-\addcontentsline{toc}{section}{Tabellenverzeichnis}
 \listoftables
+\addcontentsline{toc}{section}{Tabellenverzeichnis}
 \newpage
 
-\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
 \include{sections/nebeninhalte/abkuerzungsverzeichnis}
 
 % store last roman page number
@@ -232,8 +231,8 @@
 % read counter stored earlier
 \setcounter{page}{\value{preamblecounterstate}}
 
-\addcontentsline{toc}{section}{Literaturverzeichnis}
 \printbibliography[title={Literaturverzeichnis}]
+\addcontentsline{toc}{section}{Literaturverzeichnis}
 
 \newpage
 \pagenumbering{gobble}

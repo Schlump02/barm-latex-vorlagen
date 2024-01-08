@@ -3,10 +3,12 @@
 %Nur im Text verwendete Abkürzungen werden angezeigt.
 %2x Kompilieren für Aktualisierung des Abkürzungsverzeichnisses.
 \section*{Abkürzungsverzeichnis}
-\begin{acronym}[BluMä] % In den eckigen Klammern euer längstes Acronym reinschreiben, dies bestimmt dann das Spacing
+\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+
+\begin{acronym}[BluMä] % In den eckigen Klammern das längste Acronym schreiben, dies bestimmt dann das Spacing
   \acro{KHZ}{Kilohertz}
   \acro{CPU}{Central Processing Unit}
-  % Falls eine Abkürzung in der Mehrzahl nicht einfach auf "s" endet muss das speziell eingestellt werden.
+  % Falls eine Abkürzung in der Mehrzahl nicht einfach auf "s" endet, muss das speziell eingestellt werden.
   \acro{BluM}{Blaue lustige Maus}
   \acroplural{BluM}[BluMä]{Blaue lustige Mäuse}
 \end{acronym}
