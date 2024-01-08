@@ -172,6 +172,10 @@
 \renewcommand{\footrule}{\color{dark_gray}\hrule width\headwidth height\footrulewidth \vskip-\footrulewidth}
 \renewcommand{\headrulewidth}{0.4pt}
 
+% place the dots that lead to the page numbers in the table of contents
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}% for subsections
+
 
 % start of document
 
