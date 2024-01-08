@@ -40,6 +40,34 @@
 \usepackage[none]{hyphenat}
 \sloppy
 
+% set metadata for the PDF
+\hypersetup{
+    pdfauthor={},                 % Add your name here
+    pdftitle={Exposé},            % Add the document title here
+    pdfsubject={},                % Add the subject of the document here
+    pdfkeywords={}                % Add relevant keywords here
+}
+
+% location of bib and graphics
+\addbibresource{myBib.bib}
+\graphicspath{{images/}}
+
+% definitions
+
+\definecolor{ba-blau}{HTML}{093a80}
+\definecolor{dark_gray}{rgb}{0.4,0.4,0.4}
+\newcommand{\documentTitle}[1]{{\fontsize{20pt}{24pt}\selectfont\textbf{\color{ba-blau}#1}}}
+\newcommand{\pageTitle}[1]{{\fontsize{14pt}{17pt}\selectfont\textbf{\color{ba-blau}#1}}}
+% define command for for using full reference in footnote
+\newcommand{\fullfootcite}[1]{
+  \footnote{\fullcite{#1}}
+}
+
+% create captions where the text on the page ends with a footnotemark
+\newcommand{\captionwithfootnotemark}[1]{\caption[#1]{#1\footnotemark}}
+
+
+% styling
 
 % Dark Mode for code blocks
 %\definecolor{darkgray}{gray}{0.2} % Dunkelgrauer Hintergrund
@@ -89,35 +117,6 @@
   tabsize=3
 }
 
-% set metadata for the PDF
-\hypersetup{
-    pdfauthor={},                 % Add your name here
-    pdftitle={Exposé},            % Add the document title here
-    pdfsubject={},                % Add the subject of the document here
-    pdfkeywords={}                % Add relevant keywords here
-}
-
-% location of bib and graphics
-\addbibresource{myBib.bib}
-\graphicspath{{images/}}
-
-% definitions
-
-\definecolor{ba-blau}{HTML}{093a80}
-\definecolor{dark_gray}{rgb}{0.4,0.4,0.4}
-\newcommand{\documentTitle}[1]{{\fontsize{20pt}{24pt}\selectfont\textbf{\color{ba-blau}#1}}}
-\newcommand{\pageTitle}[1]{{\fontsize{14pt}{17pt}\selectfont\textbf{\color{ba-blau}#1}}}
-% define command for for using full reference in footnote
-\newcommand{\fullfootcite}[1]{
-  \footnote{\fullcite{#1}}
-}
-
-% create captions where the text on the page ends with a footnotemark
-\newcommand{\captionwithfootnotemark}[1]{\caption[#1]{#1\footnotemark}}
-
-
-% styling
-
 % set default line spacing
 \setstretch{1.5}
 
@@ -157,6 +156,10 @@
 \renewcommand{\footrule}{\color{dark_gray}\hrule width\headwidth height\footrulewidth \vskip-\footrulewidth}
 \renewcommand{\headrulewidth}{0.4pt}
 
+% place the dots that lead to the page numbers in the table of contents
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}} % for subsections
+
 
 % start of document
 
@@ -184,12 +187,12 @@
 \tableofcontents
 \newpage
 
-\addcontentsline{toc}{section}{Abbildungsverzeichnis}
 \listoffigures
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
 \newpage
 
-\addcontentsline{toc}{section}{Tabellenverzeichnis}
 \listoftables
+\addcontentsline{toc}{section}{Tabellenverzeichnis}
 \newpage
 
 % store last roman page number
@@ -199,20 +202,18 @@
 % use arabic numbers for actual content pages
 \pagenumbering{arabic}
 
-% include the pages stored in the section folder
+% include the text section pages located in the given folder
 \include{sections/textinhalte/demoSection}
 \include{sections/textinhalte/zielsetzung}
 \include{sections/textinhalte/kontext}
 \include{sections/textinhalte/erstellung}
-
-\newpage
 
 % set page numbering to roman for bibliography
 \pagenumbering{Roman}
 % read counter stored earlier
 \setcounter{page}{\value{preamblecounterstate}}
 
-\addcontentsline{toc}{section}{Literaturverzeichnis}
 \printbibliography[title={Literaturverzeichnis}]
+\addcontentsline{toc}{section}{Literaturverzeichnis}
 
 \end{document}
