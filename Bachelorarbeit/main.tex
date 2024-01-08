@@ -40,6 +40,49 @@
 \usepackage[none]{hyphenat}
 \sloppy
 
+% set metadata for the PDF
+\hypersetup{
+    pdfauthor={},                 % Add your name here
+    pdftitle={Bachelor Thesis},   % Add the document title here
+    pdfsubject={},                % Add the subject of the document here
+    pdfkeywords={}                % Add relevant keywords here
+}
+
+% location of bib and graphics
+\addbibresource{myBib.bib}
+\graphicspath{{images/}}
+
+% definitions
+
+\definecolor{ba-blau}{HTML}{093a80}
+\definecolor{dark_gray}{rgb}{0.4,0.4,0.4}
+\newcommand{\documentTitle}[1]{{\fontsize{20pt}{24pt}\selectfont\textbf{\color{ba-blau}#1}}}
+\newcommand{\pageTitle}[1]{{\fontsize{14pt}{17pt}\selectfont\textbf{\color{ba-blau}#1}}}
+% define command for for using full reference in footnote
+\newcommand{\fullfootcite}[1]{
+  \footnote{\fullcite{#1}}
+}
+
+\newcommand{\listappendixname}{}
+\newlistof{appendices}{app}{\listappendixname}
+
+\newcounter{anhangsubsec}
+\renewcommand{\theanhangsubsec}{\arabic{anhangsubsec}}
+
+% Anhang-Subsections
+\newcommand{\anhangsec}[1]{
+   \stepcounter{anhangsubsec}
+   \subsection*{A\theanhangsubsec\ #1} % asterisk to suppress automatic numbering
+   \label{sec:A\theanhangsubsec}
+   \addcontentsline{toc}{subsection}{\protect\numberline{A\theanhangsubsec} #1}
+   \addcontentsline{app}{subsection}{\protect\numberline{A\theanhangsubsec} #1}
+}
+
+% create captions where the text on the page ends with a footnotemark
+\newcommand{\captionwithfootnotemark}[1]{\caption[#1]{#1\footnotemark}}
+
+
+% styling
 
 % Dark Mode for code blocks
 %\definecolor{darkgray}{gray}{0.2} % Dunkelgrauer Hintergrund
@@ -89,50 +132,6 @@
   tabsize=3
 }
 
-% set metadata for the PDF
-\hypersetup{
-    pdfauthor={},                 % Add your name here
-    pdftitle={Bachelor Thesis},   % Add the document title here
-    pdfsubject={},                % Add the subject of the document here
-    pdfkeywords={}                % Add relevant keywords here
-}
-
-% location of bib and graphics
-\addbibresource{myBib.bib}
-\graphicspath{{images/}}
-
-% definitions
-
-\definecolor{ba-blau}{HTML}{093a80}
-\definecolor{dark_gray}{rgb}{0.4,0.4,0.4}
-\newcommand{\documentTitle}[1]{{\fontsize{20pt}{24pt}\selectfont\textbf{\color{ba-blau}#1}}}
-\newcommand{\pageTitle}[1]{{\fontsize{14pt}{17pt}\selectfont\textbf{\color{ba-blau}#1}}}
-% define command for for using full reference in footnote
-\newcommand{\fullfootcite}[1]{
-  \footnote{\fullcite{#1}}
-}
-
-\newcommand{\listappendixname}{}
-\newlistof{appendices}{app}{\listappendixname}
-
-\newcounter{anhangsubsec}
-\renewcommand{\theanhangsubsec}{\arabic{anhangsubsec}}
-
-% Anhang-Subsections
-\newcommand{\anhangsec}[1]{
-   \stepcounter{anhangsubsec}
-   \subsection*{A\theanhangsubsec\ #1} % asterisk to suppress automatic numbering
-   \label{sec:A\theanhangsubsec}
-   \addcontentsline{toc}{subsection}{\protect\numberline{A\theanhangsubsec} #1}
-   \addcontentsline{app}{subsection}{\protect\numberline{A\theanhangsubsec} #1}
-}
-
-% create captions where the text on the page ends with a footnotemark
-\newcommand{\captionwithfootnotemark}[1]{\caption[#1]{#1\footnotemark}}
-
-
-% styling
-
 % set default line spacing
 \setstretch{1.5}
 
@@ -174,7 +173,7 @@
 
 % place the dots that lead to the page numbers in the table of contents
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections
-\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}% for subsections
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}} % for subsections
 
 
 % start of document
@@ -221,7 +220,7 @@
 % use arabic numbers for actual content pages
 \pagenumbering{arabic}
 
-% include the pages stored in the section folder
+% include the text section pages located in the given folder
 \include{sections/textinhalte/demoSection}
 \include{sections/textinhalte/kapitelvorlage}
 
