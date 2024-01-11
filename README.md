@@ -4,6 +4,10 @@
 
 LaTeX-Vorlagen für alle Dokumente erstellen, die für das Studium an der BA Rhein-Main benötigt werden (Handout, Seminararbeit, Bachelor-Thesis etc.).
 
+## Hinweis
+
+Die Nutzung von TeX/LaTeX zur Erstellung der Bachelor Thesis muss in jedem Fall zuvor mit dem akademischen Betreuer abgesprochen worden sein. Sollte die Thesis unternehmensinterne bzw. vertrauliche Informationen enthalten, muss mit dem betrieblichen Betreuer abgesprochen werden, ob die Erstellung der Thesis nur mit unternehmenseigenen Mitteln erlaubt ist.
+
 ## Setup
 
 LaTeX kann von jedem Textverarbeitungsprogramm gelesen werden. Unter Windows kann beispielsweise folgendes Setup genutzt werden;
@@ -19,8 +23,8 @@ In Visual Studio Code kann die Erweiterung <b>LaTeX Workshop</b> wie folgt genut
 3. Installation der Erweiterung [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) (am einfachsten direkt im VS Code Marketplace)
 4. Anpassung der VS Code-Einstellungen:
     - `Shift + Ctrl + P` (Windows) oder `Shift + Cmd + P` (macOS) für die Befehlseingabe
-    - `Open User Settings JSON` eingeben und auswählen
-    - Den untenstehenden JSON-Content in die `settings.json` einfügen (innerhalb der {}, JSON-Formatierung beachten)
+    - `Open User Settings (JSON)` eingeben und auswählen
+    - Den untenstehenden JSON-Content in die `settings.json` einfügen und abspeichern (den Text innerhalb der {} einfügen, JSON-Formatierung beachten)
 
 ```json
     "latex-workshop.message.latexlog.exclude": [".*"],
@@ -65,7 +69,7 @@ In Visual Studio Code kann die Erweiterung <b>LaTeX Workshop</b> wie folgt genut
 ```
 Im JSON wird festgelegt, dass bei jeder Ausführung die Befehle pdflatex ➞ biber ➞ pdflatex * 2 verwendet werden, welche zuvor definiert wurden.
 
-Ein Dokument kann dann kompiliert werden, indem die entsprechende main.tex geöffnet und dort der grüne Ausführen-Button oben rechts oder `Ctrl + Alt + B` verwendet wird.
+Ein Dokument kann nun kompiliert werden, indem die entsprechende main.tex geöffnet und dort der grüne Ausführen-Button oben rechts oder `Ctrl + Alt + B` verwendet wird.
 Das fertige PDF-Dokument wird nach einigen Sekunden im selben Ordner generiert worden sein.
 
 ## Nutzung
