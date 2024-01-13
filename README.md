@@ -112,6 +112,24 @@ Basierend auf einer ursprünglichen Vorlage von Jan Bauer.
 
 Erweitert durch die Mitwirkenden (Collaborators) an diesem Repository.
 
+## Print Anpassungen
+
+Für den beidseitigen Druck ist es wichtig, dass die Seitenzahlen und Ränder korrekt eingestellt sind. In Büchern und professionellen Dokumenten wechseln sich die Seitenzahlen üblicherweise zwischen den Außenkanten der Seiten ab.
+
+### Was muss geändert werden?
+Bei der Documentclass muss die Option "twoside hinzugefügt werden.
+
+```LaTeX
+\documentclass[a4paper,12pt,twoside]{scrartcl}
+```
+Beim defaultPageStyle muss beim "fancyfoot" "LE, RO" (Left Even, Right Odd) eingefügt werden oder "LO, RE" (Left Odd, Right Even) so wie ihr es mögt. 
+
+```LaTeX
+\fancyfoot[LO,RE]{\thepage}
+```
+
+Es kann sein dass wenn man bedenkt dass das Deckblatt als erste Seite rechts im gebundenen Buch ist dass die Seitenzahlen dann doch innen liegen und nicht außen. Testet das vorher mit dem Adobe Reader oder dem pdf24 Reader und stellt auf 2 Seiten ansicht aber mit Deckblatt einzeln oben. Wechselt dann die "LE, RO" anordnung. 
+
 ## Lizenz / License
 
 Creative Commons CC BY 4.0
