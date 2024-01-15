@@ -137,7 +137,6 @@
     \chead{\includegraphics[]{deckbild.jpeg} \\}
     %pagefooter
     \fancyfoot{}
-    \fancyfoot[R]{\thepage}% place page numbers in the lower right corner
 }
 % styling of the default page header and footer
 \fancypagestyle{defaultPageStyle}{
@@ -150,6 +149,7 @@
     %pagefooter
     \fancyfoot{}
     \fancyfoot[R]{\thepage}% place page numbers in the lower right corner
+    %\fancyfoot[LE,RO]{\thepage}% or use this command to alternate the page number position. See README.md for more info
 }
 % color horizontal lines in header / footer
 \renewcommand{\headrule}{\color{dark_gray}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}
