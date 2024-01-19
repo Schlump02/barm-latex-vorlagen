@@ -106,9 +106,10 @@ Nach der zweiten PDF-Erstellung sollte das Literaturverzeichnis vorhanden sein, 
 Fußnoten können mit dem `\footcite` Befehl gesetzt werden, wie auf der Demo-Seite (`demoSection.tex`) gezeigt. Wenn die .bib-Datei verändert wurde, muss der `biber` Kommandozeilenbefehl ausgeführt werden.
 Um einen Vollbeleg als Fußnote zu setzen, sollte `\fullfootcite` genutzt werden. Sollte die Fußnote zu lang werden, muss mit `\newpage` vor dem Satz mit der Fußnote gespielt werden.
 
-### Position der Seitenzahlen abwechseln lassen
+#### Position der Seitenzahlen abwechseln lassen
 
 Für den beidseitigen Druck ist es wichtig, dass die Seitenzahlen und Ränder korrekt eingestellt sind. In Büchern und gebundenen Dokumenten befinden sich die Seitenzahlen üblicherweise jeweils an den Außenkanten der Seiten.
+Hinweis: BA möchte anscheinend einseitigen Druck, privat kann man das natürlich trotzdem Beidseitig drucken.
 
 #### Änderungen in der main.tex
 Bei der `Documentclass` muss die Option "twoside" hinzugefügt werden.
