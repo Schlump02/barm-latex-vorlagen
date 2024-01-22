@@ -80,7 +80,8 @@
 
 % create captions where the text on the page ends with a footnotemark
 \newcommand{\captionwithfootnotemark}[1]{\caption[#1]{#1\footnotemark}}
-
+% do not force all \footcite texts to end with a dot
+\renewcommand{\bibfootnotewrapper}[1]{\bibsentence#1\addspace}
 
 % styling
 
