@@ -1,15 +1,6 @@
 % this document uses paper size A4, default fontsize 12 and properties from the KoMa script scartl class
 \documentclass[a4paper, 12pt]{scrartcl}
 
-% these packages are often needed but not strictly necessary
-%\usepackage{numprint}
-%\usepackage{pgfplots}
-%\pgfplotsset{compat=1.16}
-%\usepackage{amsmath}
-%\usepackage{pgffor}
-%\usepackage[roman]{parnotes}
-%\usepackage{xifthen}
-
 % necessary imports
 \usepackage[ngerman]{babel}
 \usepackage[]{csquotes}
@@ -45,19 +36,21 @@
     pdfauthor={},                 % Add your name here
     pdftitle={Bachelor Thesis},   % Add the document title here
     pdfsubject={},                % Add the subject of the document here
-    pdfkeywords={}                % Add relevant keywords here
+    pdfkeywords={},               % Add relevant keywords here
+    % attribution required by license CC BY 4.0
+    pdfcreator={enabled by https://github.com/Schlump02/barm-latex-vorlagen}
 }
 
 % location of bib and graphics
 \addbibresource{myBib.bib}
 \graphicspath{{images/}}
 
+
 % definitions
 
 \definecolor{ba-blau}{HTML}{093a80}
 \definecolor{dark_gray}{rgb}{0.4,0.4,0.4}
-\newcommand{\documentTitle}[1]{{\fontsize{20pt}{24pt}\selectfont\textbf{\color{ba-blau}#1}}}
-\newcommand{\pageTitle}[1]{{\fontsize{14pt}{17pt}\selectfont\textbf{\color{ba-blau}#1}}\\}
+
 % define command for for using full reference in footnote
 \newcommand{\fullfootcite}[1]{
   \footnote{\fullcite{#1}}
@@ -83,14 +76,16 @@
 % do not force all \footcite texts to end with a dot
 \renewcommand{\bibfootnotewrapper}[1]{\bibsentence#1\addspace}
 
+
 % styling
 
-% Dark Mode for code blocks
+% dark mode colors for code blocks
 %\definecolor{darkgray}{gray}{0.2} % Dunkelgrauer Hintergrund
 %\definecolor{dkgreen}{rgb}{0,0.6,0}
 %\definecolor{gray}{rgb}{0.5,0.5,0.5}
 %\definecolor{mauve}{rgb}{0.58,0,0.82}
 %
+% styling for dark mode code blocks
 %\lstset{ 
 %  language=python,
 %  aboveskip=3mm,
@@ -111,11 +106,12 @@
 %  lineskip=-0.5pt
 %}
 
-% Light Mode for code blocks
+% light mode colors for code blocks
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
+% styling for code blocks
 \lstset{frame=tb,
   language=python,
   aboveskip=3mm,
@@ -151,8 +147,6 @@
     \setlength{\headheight}{2cm}
     \setlength{\headsep}{80pt}
     \chead{\includegraphics[]{deckbild.jpeg} \\}
-    %pagefooter
-    \fancyfoot{}
 }
 % styling of the default page header and footer
 \fancypagestyle{defaultPageStyle}{
@@ -165,12 +159,17 @@
     %pagefooter
     \fancyfoot{}
     \fancyfoot[R]{\thepage}% place page numbers in the lower right corner
-    %\fancyfoot[LE,RO]{\thepage}% or use this command to alternate the page number position. See README.md for more info
+    %\fancyfoot[LE,RO]{\thepage}% or use this command to alternate the page number position. See README.md for more info first.
 }
-% color horizontal lines in header / footer
+% color horizontal lines in header and footer
 \renewcommand{\headrule}{\color{dark_gray}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}
 \renewcommand{\footrule}{\color{dark_gray}\hrule width\headwidth height\footrulewidth \vskip-\footrulewidth}
 \renewcommand{\headrulewidth}{0.4pt}
+
+% styling of the document title
+\newcommand{\documentTitle}[1]{{\fontsize{20pt}{24pt}\selectfont\textbf{\color{ba-blau}#1}}}
+%styling of non-chapter page titles
+\newcommand{\pageTitle}[1]{{\fontsize{14pt}{17pt}\selectfont\textbf{\color{ba-blau}#1}}\\}
 
 % place the dots that lead to the page numbers in the table of contents
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections
@@ -240,6 +239,7 @@
 \newpage% needed for correct page numbering
 \pagenumbering{gobble}% remove page numbering
 \renewcommand{\footrulewidth}{0pt}
+
 \include{sections/nebeninhalte/ehrenwort}
 
 \end{document}
