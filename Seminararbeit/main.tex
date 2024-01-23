@@ -1,0 +1,217 @@
+% this document uses paper size A4, default fontsize 12 and properties from the KoMa script scartl class
+\documentclass[a4paper,12pt]{scrartcl}
+
+% necessary imports
+\usepackage[ngerman]{babel}
+\usepackage[]{csquotes}
+\usepackage{titling}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[top=1.2cm, left=2.5cm, right=2.5cm, bottom=4cm, includeheadfoot, footskip=40pt]{geometry}
+\usepackage{blindtext}
+\usepackage[nospace]{varioref}
+\usepackage[backend=biber, style=apa6, sorting=none]{biblatex}
+\usepackage{booktabs}
+\usepackage[font=footnotesize, justification=centering]{caption}
+\usepackage[titles]{tocloft}
+\usepackage{tabularx}
+\usepackage{setspace}
+\usepackage{sectsty}
+\usepackage{units}
+\usepackage{xcolor}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[printonlyused]{acronym}
+\usepackage[titletoc]{appendix}
+
+% optional: disable automatic hyphenation (Silbentrennung)
+\usepackage[none]{hyphenat}
+\sloppy
+
+% set metadata for the PDF
+\hypersetup{
+    pdfauthor={},                 % Add your names here
+    pdftitle={Seminararbeit},     % Add the document title here
+    pdfsubject={},                % Add the subject of the document here
+    pdfkeywords={},               % Add relevant keywords here
+    % attribution required by license CC BY 4.0
+    pdfcreator={enabled by https://github.com/Schlump02/barm-latex-vorlagen}
+}
+
+% location of bib and graphics
+\addbibresource{myBib.bib}
+\graphicspath{{images/}}
+
+
+% definitions
+
+\definecolor{ba-blau}{HTML}{093a80}
+\definecolor{dark_gray}{rgb}{0.4,0.4,0.4}
+
+% define command for for using full reference in footnote
+\newcommand{\fullfootcite}[1]{
+  \footnote{\fullcite{#1}}
+}
+
+% create captions where the text on the page ends with a footnotemark
+\newcommand{\captionwithfootnotemark}[1]{\caption[#1]{#1\footnotemark}}
+% do not force all \footcite texts to end with a dot
+\renewcommand{\bibfootnotewrapper}[1]{\bibsentence#1\addspace}
+
+
+% styling
+
+% dark mode colors for code blocks
+%\definecolor{darkgray}{gray}{0.2} % Dunkelgrauer Hintergrund
+%\definecolor{dkgreen}{rgb}{0,0.6,0}
+%\definecolor{gray}{rgb}{0.5,0.5,0.5}
+%\definecolor{mauve}{rgb}{0.58,0,0.82}
+%
+% styling for dark mode code blocks
+%\lstset{ 
+%  language=python,
+%  aboveskip=3mm,
+%  belowskip=3mm,
+%  showstringspaces=false,
+%  columns=flexible,
+%  basicstyle={\small\ttfamily\color{white}}, % Textfarbe weiß
+%  backgroundcolor=\color{darkgray},          % Dunkler Hintergrund
+%  numbers=left,
+%  numberstyle=\tiny\color{gray},
+%  keywordstyle=\color{blue},
+%  commentstyle=\color{dkgreen},
+%  stringstyle=\color{mauve},
+%  breaklines=true,
+%  breakatwhitespace=true,
+%  tabsize=3,
+%  frame=none,  % Keine Linien oben und unten
+%  lineskip=-0.5pt
+%}
+
+% light mode colors for code blocks
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+% styling for light mode code blocks
+\lstset{frame=tb,
+  language=python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+% set default line spacing
+\setstretch{1.5}
+
+% set section headings fontsizes and line spacing
+\sectionfont{\fontsize{14}{16.8}\selectfont\fontfamily{ptm}\selectfont}
+\subsectionfont{\fontsize{12}{14.4}\selectfont\fontfamily{ptm}\selectfont}
+% color section headings
+\addtokomafont{disposition}{\color{ba-blau}}
+\addtokomafont{sectionentry}{\color{ba-blau}}
+
+% styling of the title page header and footer
+\fancypagestyle{Deckblatt}{
+    \setlength{\headheight}{10pt}
+    \pagestyle{fancy}
+    \fancyhead{}
+    \setlength{\headheight}{2cm}
+    \setlength{\headsep}{80pt}
+    \chead{\includegraphics[]{deckbild.jpeg} \\}
+}
+% styling of the default page header and footer
+\fancypagestyle{defaultPageStyle}{
+    \setlength{\headheight}{10pt}
+    \pagestyle{fancy}
+    \fancyhead{}
+    \setlength{\headheight}{2cm}
+    \setlength{\headsep}{40pt}
+    \chead{\includegraphics[]{deckbild.jpeg} \\}
+    %pagefooter
+    \fancyfoot{}
+    \fancyfoot[R]{\thepage}% place page numbers in the lower right corner
+    %\fancyfoot[LE,RO]{\thepage}% or use this command to alternate the page number position. See README.md for more info first.
+}
+% color horizontal lines in header and footer
+\renewcommand{\headrule}{\color{dark_gray}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}
+\renewcommand{\footrule}{\color{dark_gray}\hrule width\headwidth height\footrulewidth \vskip-\footrulewidth}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% styling of the document title
+\newcommand{\documentTitle}[1]{{\fontsize{20pt}{24pt}\selectfont\textbf{\color{ba-blau}#1}}}
+%styling of non-chapter page titles
+\newcommand{\pageTitle}[1]{{\fontsize{14pt}{17pt}\selectfont\textbf{\color{ba-blau}#1}}\\}
+
+% place the dots that lead to the page numbers in the table of contents
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}} % for subsections
+
+
+% start of document
+
+\begin{document}
+
+% use different pagestyling
+\thispagestyle{Deckblatt}
+% ignore this page when numbering
+\pagenumbering{gobble}
+
+% title page
+\include{sections/nebeninhalte/deckblatt}
+
+% use default page styling from now on
+\pagestyle{defaultPageStyle}
+
+\include{sections/nebeninhalte/sperrvermerk}% remove this if not needed
+\include{sections/nebeninhalte/gleichbehandlung}
+
+% start page numbering in roman numerals
+\pagenumbering{Roman}
+\setcounter{page}{1}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\tableofcontents
+\newpage
+
+\listoffigures
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+\newpage
+
+\listoftables
+\addcontentsline{toc}{section}{Tabellenverzeichnis}
+\newpage
+
+% store last roman page number
+\newcounter{preamblecounterstate}
+\setcounter{preamblecounterstate}{\value{page}}
+
+% use arabic numbers for actual content pages
+\pagenumbering{arabic}
+
+% include the text section pages located in the given folder
+\include{sections/textinhalte/demoSection}
+\include{sections/textinhalte/kapitelvorlage}
+
+% set page numbering to roman for bibliography
+\pagenumbering{Roman}
+% read counter stored earlier
+\setcounter{page}{\value{preamblecounterstate}}
+
+\printbibliography[title={Literaturverzeichnis}]
+\addcontentsline{toc}{section}{Literaturverzeichnis}
+
+\end{document}
