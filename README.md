@@ -123,10 +123,13 @@ Wenn die in [Setup mit VS Code](https://github.com/Schlump02/barm-latex-vorlagen
 
 Nach der zweiten PDF-Erstellung sollte das Literaturverzeichnis vorhanden sein, sofern bereits Quellen im Dokument genutzt wurden.
 
+Diese Schritte müssen jedesmal neu ausgeführt werden, wenn sich die Daten in der .bib.Datei ändern.
+
 #### Fußnoten
 
-Fußnoten können mit dem `\footcite` Befehl gesetzt werden, wie auf der Demo-Seite (`demoSection.tex`) gezeigt. Wenn die .bib-Datei verändert wurde, muss wie beschrieben wieder der `biber`-Kommandozeilenbefehl ausgeführt werden.
-Um einen Vollbeleg als Fußnote zu setzen, sollte `\fullfootcite` genutzt werden. Sollte die Fußnote zu lang werden, muss mit `\newpage` vor dem Satz mit der Fußnote gespielt werden.
+Kurzbelege in Form von Fußnoten können mit den Befehlen `\directcite` oder `\indirectcite` gesetzt werden, je nachdem, ob es sich um ein wörtliches oder sinngemäßes Zitat handelt. Optional können in den Kurzbelegen individuelle Seitenzahlen angegeben werden, wie auf der Demo-Seite (`demoSection.tex`) gezeigt.
+
+Es ist nicht erforderlich, einen Vollbeleg als Fußnote zu setzen.
 
 ### Cleanup-Skript
 
