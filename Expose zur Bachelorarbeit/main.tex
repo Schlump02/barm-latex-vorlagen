@@ -117,9 +117,14 @@
 % set default line spacing
 \setstretch{1.5}
 
-% set section headings fontsizes and line spacing
+% set section headings fontsizes, font family (Times New Roman) and line spacing
 \sectionfont{\fontsize{14}{16.8}\selectfont\fontfamily{ptm}\selectfont}
 \subsectionfont{\fontsize{12}{14.4}\selectfont\fontfamily{ptm}\selectfont}
+\subsubsectionfont{\fontsize{12}{14.4}\selectfont\fontfamily{ptm}\selectfont}
+\paragraphfont{\fontsize{12}{14.4}\selectfont\fontfamily{ptm}\selectfont}
+% Allow up to 4 levels of sectioning
+\setcounter{secnumdepth}{4}
+\newcommand{\subsubsubsection}[1]{\paragraph{#1}\leavevmode\\}
 % color section headings
 \addtokomafont{disposition}{\color{ba-blau}}
 \addtokomafont{sectionentry}{\color{ba-blau}}
@@ -154,7 +159,7 @@
 % styling of the document title
 \newcommand{\documentTitle}[1]{{\fontsize{20pt}{24pt}\selectfont\textbf{\color{ba-blau}#1}}}
 %styling of non-chapter page titles
-\newcommand{\pageTitle}[1]{{\fontsize{14pt}{17pt}\selectfont\textbf{\color{ba-blau}#1}}\\}
+\newcommand{\pageTitle}[1]{{\fontsize{14pt}{17pt}\selectfont\fontfamily{ptm}\textbf{\color{ba-blau}#1}}\\}
 
 % place the dots that lead to the page numbers in the table of contents
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections
