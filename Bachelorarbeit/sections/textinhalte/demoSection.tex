@@ -1,7 +1,5 @@
 \section{Demo-Seite}
 Auf dieser Seite befinden sich Umsetzungsbeispiele für häufig benötigte Elemente im Fließtext.\\
-%Falls keine Seitenanzahl vorhanden ist  dann:\footcite[Vgl.][]{DemoQuelle}
-Demo-Quelle \footcite[Vgl.][\printfield{pages}]{DemoQuelle}.
 
 \begin{center}
     \begin{table}[h]
@@ -63,19 +61,23 @@ Erzwungene Langschreibweise: \acl{CPU}
 \subsection{Zitierbeispiele}
 \subsubsection{Beispiel für jeden Quelltyp}% "Vgl." steht nur in Fußnoten für indirekte (nicht wörtliche) Zitate.
 
-Buch/Monografie\footcite[Vgl.][\printfield{pages}]{theisen2011}\\
-Sammelwerk\footcite[Vgl.][\printfield{pages}]{maier2004}\\
-Zeitschriften-/Journalartikel\footcite[Vgl.][\printfield{pages}]{chodorowreich2022loan}\\
-Zeitungsartikel\footcite[Vgl.][\printfield{pages}]{dick2012neugierige}\\
-Internet\footcite[Vgl.][]{capital2014}\\
+Buch/Monografie\indirectcite{theisen2011}\\
+Sammelwerk\indirectcite{maier2004}\\
+Zeitschriften-/Journalartikel\indirectcite{chodorowreich2022loan}\\
+Zeitungsartikel\indirectcite{dick2012neugierige}\\
+Internet\indirectcite{capital2014}\\
 Gesetztestext\footnote{Vgl. §433 Abs. 1 Satz 1 BGB}\nocite{bgb}\\
-Gerichtsurteil\footcite[Vgl.][\printfield{pages}]{bverfgh1968}\\
-öffentliches Dokument\footcite[Vgl.][\printfield{pages}]{eu2022access}\\
-internes Dokument\footcite[Vgl.][\printfield{pages}]{abcorganigramm}\\% muss auf separatem Datenträger beigefügt werden
-(unvollständige Quellenangaben)\footcite[Vgl.][]{blankmaier}
+Gerichtsurteil\indirectcite{bverfgh1968}\\
+öffentliches Dokument\indirectcite{eu2022access}\\
+internes Dokument\indirectcite{abcorganigramm}\\% muss auf separatem Datenträger beigefügt werden
+(unvollständige Quellenangaben)\indirectcite{blankmaier}
 
-\subsubsection{Beispiel für verschiedene Arten von Zitaten}
+\newpage
+\subsubsection{Beispiele für verschiedene Arten von Zitaten}% Es genügt den Anforderungen, Kurzbelege zu setzen, die auf den Vollbeleg im Literaturverzeichnis verweisen.
 
+indirektes Zitat (Seitenzahlen aus der .bib)\indirectcite{theisen2011}\\% Indirekte (sinngemäße) Zitate geben den Inhalt der Quelle in eigenen Worten wieder.
+indirektes Zitat (individuelle Seitenzahlen)\indirectcite[23f.]{theisen2011}\\% f. (folgend) bezeichnet diese und die nächste Seite
+direktes Zitat (Seitenzahlen aus der .bib)\directcite{theisen2011}\\% Direkte Zitate geben den Wortlaut der Quelle wieder. Sie müssen in Anführungszeichen gesetzt werden.
+direktes Zitat (individuelle Seitenzahlen)\directcite[23f.]{theisen2011}
 
 \subsubsubsection{Beispiel für eine sub-sub-sub-Überschrift}% Diese Vorlage unterstützt (technisch und moralisch) nur vierfache Untergliederung
-(siehe oben)

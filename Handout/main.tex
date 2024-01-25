@@ -53,9 +53,17 @@
 \definecolor{ba-blau}{HTML}{093a80}
 \definecolor{dark_gray}{rgb}{0.4,0.4,0.4}
 
-% define command for for using full reference in footnote
-\newcommand{\fullfootcite}[1]{
-  \footnote{\fullcite{#1}}
+% define command for quickly creating an indirect citation
+\newcommand{\indirectcite}[2][]{
+  \ifthenelse{\equal{#1}{}}
+  {\footcite[Vgl.][\printfield{pages}]{#2}} 
+  {\footcite[Vgl.][#1]{#2}}
+}
+% define command for quickly creating a direct qoute citation
+\newcommand{\directcite}[2][]{
+  \ifthenelse{\equal{#1}{}}
+  {\footcite[\printfield{pages}]{#2}} 
+  {\footcite[#1]{#2}}
 }
 
 \newcommand{\listappendixname}{}
