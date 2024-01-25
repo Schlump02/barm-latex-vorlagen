@@ -123,7 +123,7 @@ Wenn die in [Setup mit VS Code](https://github.com/Schlump02/barm-latex-vorlagen
 
 Nach der zweiten PDF-Erstellung sollte das Literaturverzeichnis vorhanden sein, sofern bereits Quellen im Dokument genutzt wurden.
 
-Diese Schritte müssen jedesmal neu ausgeführt werden, wenn sich die Daten in der .bib.Datei ändern.
+Diese Schritte müssen jedesmal neu ausgeführt werden, wenn sich die Daten in der .bib-Datei ändern.
 
 #### Fußnoten
 
