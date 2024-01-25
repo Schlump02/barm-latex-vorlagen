@@ -2,10 +2,10 @@
 
 ## Motivation
 
-In diesem Repository befinden sich LaTeX-Vorlagen für alle wichtigen Dokumente, die im Laufe Studiums an der BA Rhein-Main erstellt werden müssen. Dazu zählen u.a. [Handout](https://github.com/Schlump02/barm-latex-vorlagen/blob/main/Handout/Beispiel.pdf), [Seminararbeit](https://github.com/Schlump02/barm-latex-vorlagen/blob/main/Seminararbeit/Beispiel.pdf) und [Bachelor Thesis](https://github.com/Schlump02/barm-latex-vorlagen/blob/main/Bachelorarbeit/Beispiel.pdf). Durch die Verwendung dieser Vorlagen spart man sich die lästige Formatierung in Word kann sich sicher sein, dass die resultierenden Arbeiten die formalen Ansprüche der BA einhalten können.
+In diesem Repository befinden sich LaTeX-Vorlagen für alle wichtigen Dokumente, die im Laufe Studiums an der BA Rhein-Main erstellt werden müssen. Dazu zählen u.a. [Handout](https://github.com/Schlump02/barm-latex-vorlagen/blob/main/Handout/Beispiel.pdf), [Seminararbeit](https://github.com/Schlump02/barm-latex-vorlagen/blob/main/Seminararbeit/Beispiel.pdf) und [Bachelor Thesis](https://github.com/Schlump02/barm-latex-vorlagen/blob/main/Bachelorarbeit/Beispiel.pdf). Durch die Verwendung dieser Vorlagen spart man sich die lästige Formatierung in Word und kann sich sicher sein, dass die resultierenden Arbeiten die formalen Ansprüche der BA einhalten können.
 
 > [!TIP]
-> Wird diese Vorlage zum ersten Mal genutzt, ist es wärmstens empfohlen, für einen einfachen Einstieg diese README (Anleitung) *vollständig* zu lesen.
+> Für einen einfachen Einstieg in LaTeX wird es wärmstens empfohlen, diese README (Anleitung) *vollständig* zu lesen.
 
 Trotz größter Sorgfalt kann es zu Fehlern oder veralteten Informationen kommen. In diesem Fall bitte gerne direkt die Ersteller kontaktieren oder ein neues Issue (oben links auf dieser Webseite) aufmachen.
 
