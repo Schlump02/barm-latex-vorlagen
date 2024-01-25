@@ -52,8 +52,15 @@
 \definecolor{dark_gray}{rgb}{0.4,0.4,0.4}
 
 % define command for for using full reference in footnote
-\newcommand{\fullfootcite}[1]{
-  \footcite[Vgl.][\printfield{pages}]{#1}
+\newcommand{\indirectcite}[2][]{
+  \ifthenelse{\equal{#1}{}}
+  {\footcite[Vgl.][\printfield{pages}]{#2}} 
+  {\footcite[Vgl.][#1]{#2}}
+}
+\newcommand{\directcite}[2][]{
+  \ifthenelse{\equal{#1}{}}
+  {\footcite[\printfield{pages}]{#2}} 
+  {\footcite[#1]{#2}}
 }
 
 \newcommand{\listappendixname}{}
