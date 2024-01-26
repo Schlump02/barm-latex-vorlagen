@@ -25,11 +25,11 @@ Am einfachsten kann die Vorlage genutzt werden, indem man dieses Repository mit 
 2. ggf. [VS Code](https://code.visualstudio.com/) installieren
 3. [Diesem](https://code.visualstudio.com/docs/sourcecontrol/intro-to-git) kurzen Tutorial folgen
 
-Git(hub) eigent sich besonders, wenn man in Zusammenarbeit mit Anderen ein Dokument erstellt. Dazu einfach ein privates [neues Repository](https://docs.github.com/de/repositories/creating-and-managing-repositories/creating-a-new-repository) erstellen und die benötigten Dateien aus dieser Vorlage dort hinein kopieren. Wen man anschließend die Gruppenmitglieder [als Mitbearbeiter hinzufügt](https://docs.github.com/de/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository), können sie sich das Repository klonen und jeder kann Änderungen vornehmen und veröffentlichen.
+Git(hub) eignet sich besonders, wenn man in Zusammenarbeit mit Anderen ein Dokument erstellt. Dazu einfach ein privates [neues Repository](https://docs.github.com/de/repositories/creating-and-managing-repositories/creating-a-new-repository) erstellen und die benötigten Dateien aus dieser Vorlage dort hinein kopieren. Wen man anschließend die Gruppenmitglieder [als Mitbearbeiter hinzufügt](https://docs.github.com/de/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository), können sie sich das Repository klonen und jeder kann Änderungen vornehmen und veröffentlichen.
 
 Zudem stellt ein eigenes Repository auch ein Backup aller früheren Versionen der eigenen Arbeit dar, wodurch Veränderungen leicht nachvollzogen und Datenverluste vermieden werden können.
 
-Wer trotz allem kein Git verwenden will, kann die Dateien auch als zip-Archiv herunterladen. Dazu auf dieser Seite oben rechts auf den grünen `Code`-Button klicken und `Download ZIP` auswählen.
+Wer trotz allem kein Git verwenden will, kann die Dateien auch als zip-Archiv herunterladen. Dazu auf dieser Webseite oben rechts auf den grünen `Code`-Button klicken und `Download ZIP` auswählen.
 
 ### Setup mit VS Code
 
