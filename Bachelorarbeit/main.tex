@@ -84,6 +84,32 @@
 % do not force all \footcite texts to end with a dot
 \renewcommand{\bibfootnotewrapper}[1]{\bibsentence#1\addspace}
 
+% create a counter for the numbering in Verzeichnis headlines
+\newcounter{verzeichnisnummer}
+\renewcommand{\theverzeichnisnummer}{\Roman{verzeichnisnummer}\ }% Counter representation
+\setcounter{verzeichnisnummer}{1}% start value
+
+% implement counter in the headlines
+\addto\captionsngerman{\renewcommand{\listfigurename}{\theverzeichnisnummer Abbildungsverzeichnis}}
+\newcommand{\showlistoffigures}{
+  \listoffigures
+  \addcontentsline{toc}{section}{\theverzeichnisnummer Abbildungsverzeichnis}
+  \stepcounter{verzeichnisnummer}
+  \newpage
+}
+\addto\captionsngerman{\renewcommand{\listtablename}{\theverzeichnisnummer Tabellenverzeichnis}}
+\newcommand{\showlistoftables}{
+  \listoftables
+  \addcontentsline{toc}{section}{\theverzeichnisnummer Tabellenverzeichnis}
+  \stepcounter{verzeichnisnummer}
+  \newpage
+}
+\newcommand{\bib}{
+  \printbibliography[title={\theverzeichnisnummer Literaturverzeichnis}]
+  \addcontentsline{toc}{section}{\theverzeichnisnummer Literaturverzeichnis}
+  \newpage
+}
+
 
 % styling
 
@@ -216,13 +242,10 @@
 \tableofcontents
 \newpage
 
-\listoffigures
-\addcontentsline{toc}{section}{Abbildungsverzeichnis}
-\newpage
+\showlistoffigures
 
-\listoftables
-\addcontentsline{toc}{section}{Tabellenverzeichnis}
-\newpage
+\showlistoftables
+
 
 \include{sections/nebeninhalte/abkuerzungsverzeichnis}
 
@@ -246,10 +269,9 @@
 % read counter stored earlier
 \setcounter{page}{\value{preamblecounterstate}}
 
-\printbibliography[title={Literaturverzeichnis}]
-\addcontentsline{toc}{section}{Literaturverzeichnis}
+% Literaturverzeichnis
+\bib
 
-\newpage% needed for correct page numbering
 \pagenumbering{gobble}% remove page numbering
 \renewcommand{\footrulewidth}{0pt}
 

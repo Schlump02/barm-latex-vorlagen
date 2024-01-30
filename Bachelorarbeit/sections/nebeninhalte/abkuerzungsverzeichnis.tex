@@ -2,8 +2,11 @@
 % hier ist die Doku https://www.ctan.org/pkg/acronym
 % Nur im Text verwendete Abkürzungen werden angezeigt.
 % 2x Kompilieren für Aktualisierung des Abkürzungsverzeichnisses.
-\section*{Abkürzungsverzeichnis}
-\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+
+% Überschrift
+\section*{\theverzeichnisnummer Abkürzungsverzeichnis}
+\addcontentsline{toc}{section}{\theverzeichnisnummer Abkürzungsverzeichnis}
+\stepcounter{verzeichnisnummer}
 
 % Wichtig: die Abkürzungen müssen in alphabetischer Reihenfolge eingetragen werden
 
