@@ -1,5 +1,6 @@
 TODO.md
 rename.sh
+tester.tex
 
 *.synctex
 *.synctex(busy)
@@ -18,5 +19,6 @@ rename.sh
 *.fdb_latexmk
 *.fls
 *.app
+*.mf
 .DS_Store
 .vscode/ltex.hiddenFalsePositives.de-DE.txt
