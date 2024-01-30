@@ -1,15 +1,18 @@
-%Das Abkürzungsverzeichnis benutzt das package acronym
-%hier ist die Doku https://www.ctan.org/pkg/acronym
-%Nur im Text verwendete Abkürzungen werden angezeigt.
-%2x Kompilieren für Aktualisierung des Abkürzungsverzeichnisses.
+% Das Abkürzungsverzeichnis benutzt das package acronym
+% hier ist die Doku https://www.ctan.org/pkg/acronym
+% Nur im Text verwendete Abkürzungen werden angezeigt.
+% 2x Kompilieren für Aktualisierung des Abkürzungsverzeichnisses.
 \section*{Abkürzungsverzeichnis}
 \addcontentsline{toc}{section}{Abkürzungsverzeichnis}
 
+% Wichtig: die Abkürzungen müssen in alphabetischer Reihenfolge eingetragen werden
+
 \begin{acronym}[BluMä] % In den eckigen Klammern das längste Acronym schreiben, dies bestimmt dann das Spacing
-  \acro{KHZ}{Kilohertz}
-  \acro{CPU}{Central Processing Unit}
   % Falls eine Abkürzung in der Mehrzahl nicht einfach auf "s" endet, muss das speziell eingestellt werden.
   \acro{BluM}{Blaue lustige Maus}
   \acroplural{BluM}[BluMä]{Blaue lustige Mäuse}
+  \acro{CPU}{Central Processing Unit}
+  \acro{KHZ}{Kilohertz}
 \end{acronym}
+
 \newpage
