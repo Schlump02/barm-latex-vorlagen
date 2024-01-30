@@ -64,18 +64,18 @@
   {\footcite[#1]{#2}}
 }
 
-\newcommand{\listappendixname}{}
+% Anhang
+\newcommand{\listappendixname}{Anhangsverzeichnis}% name (resulting in headline) is optional
 \newlistof{appendices}{app}{\listappendixname}
-
+% counter for Anhang-Subsections
 \newcounter{anhangsubsec}
 \renewcommand{\theanhangsubsec}{\arabic{anhangsubsec}}
-
-% Anhang-Subsections
+% command to create Anhang-Subsections
 \newcommand{\anhangsec}[1]{
    \stepcounter{anhangsubsec}
-   \subsection*{A\theanhangsubsec\ #1} % asterisk to suppress automatic numbering
+   \subsection*{A\theanhangsubsec\ #1}% asterisk to suppress automatic numbering
    \label{sec:A\theanhangsubsec}
-   \addcontentsline{toc}{subsection}{\protect\numberline{A\theanhangsubsec} #1}
+   %\addcontentsline{toc}{subsection}{\protect\numberline{A\theanhangsubsec} #1}% add subsection headline to table of contents
    \addcontentsline{app}{subsection}{\protect\numberline{A\theanhangsubsec} #1}
 }
 
