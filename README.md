@@ -158,6 +158,17 @@ Im `defaultPageStyle` muss im Bereich "fancyfoot" je nach Bedarf entweder "LE,RO
 
 Wenn das Deckblatt als erste Seite rechts im gebundenen Buch liegt, kann es sein, dass die Seitenzahlen dann doch innen liegen und nicht außen. Getestet werden kann dies z.B. mit dem Adobe Reader oder dem [pdf24 Reader](https://www.pdf24.org/de/) in der 2-Seiten-Ansicht mit Deckblatt einzeln oben.
 
+## Barrierefreiheits- und PDF/A-Standards
+
+> [!NOTE]  
+> Die BA macht zum PDF-Standard keine Vorgaben. Der folgende Abschnitt ist rein informativ und auf dem Stand vom Februar 2024.
+
+Es gibt bestimmte PDF-Standards, die auf Langzeitarchivierung (PDF/A) oder auf Barrierefreiheit (PDF/UA) oder beides (z.B. PDF/A-2a) ausgelegt sind.
+
+Leider ist es zurzeit noch nicht möglich, mithilfe von LaTeX ein barrierefreies PDF zu erstellen. Das [LaTeX Project](https://www.latex-project.org/) hat es sich im Rahmen des Vorhabens [Tagged PDF](https://www.latex-project.org/publications/2020-FMi-TUB-tb129mitt-tagpdf.pdf) zum Ziel gesetzt, bis 2025 umfassende Barrierefreiheitsstandards in den LaTeX-Kernel zu integrieren.
+
+Einige PDF/A-Standards sind jedoch bereits heute erreichbar. [Dieser](https://texwelt.de/fragen/758/pdfa-konforme-dokumente-mit-latex) Thread zeigt konkrete Schritte zur Umsetzung auf. Eine Übersicht und Erklärung zu PDF/A-Standards findet sich z.B. [hier](https://www.bundesarchiv.de/DE/Content/Downloads/Anbieten/Behoerdenberatung/beratungsangebote-einfuehrung-eab-empfehlungen-pdf-a-versionen.pdf?__blob=publicationFile).
+
 ## Autoren
 
 Basierend auf einer ursprünglichen Vorlage von Jan Bauer.
