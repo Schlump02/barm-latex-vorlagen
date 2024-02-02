@@ -94,8 +94,8 @@ Das fertige PDF-Dokument `main.pdf` wird nach einigen Sekunden im selben Ordner 
 
 ## Nutzung
 
-Jeder logische Abschnitt der Arbeit befinden sich in einer jeweils seperaten .tex-Datei im Ordner `sections`.
-Die `main.tex` importiert Diese mit dem `\include`-Befehl. Zudem definiert sie die Formatierung und den Aufbau des Dokuments (Kopfzeilen, Seitenzahlen, Zitierweise uvm.).
+Jeder logische Abschnitt der Arbeit (Kapitel, Verzeichnisse etc.) befindet sich in einer eigenen .tex-Datei im Ordner `sections`.
+Diese werden von der `main.tex` mit dem `\include`-Befehl importiert. Zudem definiert die `main.tex` die Formatierung und den Aufbau des Dokuments (Kopfzeilen, Seitenzahlen, Zitierweise uvm.).
 
 Eine beispielhafte Verwendung vieler nützlicher LaTeX-Befehle wird in der `demoSection.tex` gezeigt.
 
