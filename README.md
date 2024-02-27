@@ -129,6 +129,8 @@ Diese Schritte müssen jedesmal neu ausgeführt werden, wenn sich die Daten in d
 
 Kurzbelege in Form von Fußnoten können mit den Befehlen `\directcite` oder `\indirectcite` gesetzt werden, je nachdem, ob es sich um ein wörtliches oder sinngemäßes Zitat handelt. Optional können in den Kurzbelegen individuelle Seitenzahlen angegeben werden, wie auf der Demo-Seite (`demoSection.tex`) gezeigt.
 
+Um eine Fußnote in einer Tabellen- oder Bildunterschrift zu setzen, muss `\captionwithfootnotemark` und später `\footcitetext` oder `\footnotetext` genutzt werden. Die genaue Verwendung dieser Befehle wird in der `demoSection.tex` gezeigt. `\directcite` oder `\indirectcite` funktionieren in diesem Fall nicht korrekt. Wenn die in eckigen Klammern angegebenen Argumente in `\footcitetext[Vgl.][\printfield{pages}]{...}\\` nicht verwendet werden, sollten die eckigen Klammern zwar leer gelassen, aber nicht entfernt werden.
+
 Es ist nicht erforderlich, einen Vollbeleg als Fußnote zu setzen.
 
 ### Cleanup-Skript
