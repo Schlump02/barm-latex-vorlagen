@@ -7,7 +7,7 @@ In diesem Repository befinden sich LaTeX-Vorlagen für alle wichtigen Dokumente,
 > [!TIP]
 > Für einen einfachen Einstieg in LaTeX wird es wärmstens empfohlen, diese README (Anleitung) *vollständig* zu lesen.
 
-Trotz größter Sorgfalt kann es zu Fehlern oder veralteten Informationen kommen. In diesem Fall bitte gerne direkt die Ersteller kontaktieren oder ein neues Issue (oben links auf dieser Webseite) aufmachen.
+Trotz größter Sorgfalt kann es zu Fehlern oder veralteten Informationen kommen. In diesem Fall bitte gerne direkt die Ersteller kontaktieren (z.B. Discord: Schlump02) oder ein neues Issue (oben links auf dieser Webseite) aufmachen.
 
 ## Hinweis zur Bachelor Thesis
 
