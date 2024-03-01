@@ -173,7 +173,13 @@
 \paragraphfont{\fontsize{12}{14.4}\selectfont\fontfamily{ptm}\selectfont}
 % Allow up to 4 levels of sectioning
 \setcounter{secnumdepth}{4}
-\newcommand{\subsubsubsection}[1]{\paragraph{#1}\leavevmode\\}
+\setcounter{tocdepth}{4}
+\newcounter{subsubsubsection}[subsubsection]
+\newcommand{\subsubsubsection}[1]{
+    \refstepcounter{subsubsubsection}
+    \paragraph{#1}
+    \leavevmode\\
+}
 % color section headings
 \addtokomafont{disposition}{\color{ba-blau}}
 \addtokomafont{sectionentry}{\color{ba-blau}}
