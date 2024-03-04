@@ -25,7 +25,7 @@ Am einfachsten kann die Vorlage genutzt werden, indem man dieses Repository mit 
 2. ggf. [VS Code](https://code.visualstudio.com/) installieren
 3. [Diesem](https://code.visualstudio.com/docs/sourcecontrol/intro-to-git) kurzen Tutorial folgen
 
-Git(hub) eignet sich besonders, wenn man in Zusammenarbeit mit Anderen ein Dokument erstellt. Dazu einfach ein privates [neues Repository](https://docs.github.com/de/repositories/creating-and-managing-repositories/creating-a-new-repository) erstellen und die benötigten Dateien aus dieser Vorlage dort hinein kopieren. Wen man anschließend die Gruppenmitglieder [als Mitbearbeiter hinzufügt](https://docs.github.com/de/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository), können sie sich das Repository klonen und jeder kann Änderungen vornehmen und veröffentlichen.
+Git(hub) eignet sich besonders, wenn man in Zusammenarbeit mit Anderen ein Dokument erstellt. Dazu einfach ein privates [neues Repository](https://docs.github.com/de/repositories/creating-and-managing-repositories/creating-a-new-repository) erstellen und die benötigten Dateien aus dieser Vorlage dort hinein kopieren. Wenn man anschließend die Gruppenmitglieder [als Mitbearbeiter hinzufügt](https://docs.github.com/de/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository), können sie sich das Repository klonen und jeder kann Änderungen vornehmen und veröffentlichen.
 
 Zudem stellt ein eigenes Repository auch ein Backup aller früheren Versionen der eigenen Arbeit dar, wodurch Veränderungen leicht nachvollzogen und Datenverluste vermieden werden können.
 
@@ -52,6 +52,8 @@ In Visual Studio Code kann die Erweiterung <b>LaTeX Workshop</b> wie folgt genut
             "args": [
                 "-synctex=1",
                 "-interaction=nonstopmode",
+                "-aux-directory=latex-cache",
+                "-output-directory=latex-cache",
                 "-file-line-error",
                 "%DOC%"
             ],
@@ -61,7 +63,17 @@ In Visual Studio Code kann die Erweiterung <b>LaTeX Workshop</b> wie folgt genut
             "name": "biber",
             "command": "biber",
             "args": [
+                "--output_directory=latex-cache",
                 "%DOCFILE%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "copyPDF",
+            "command": "copy",
+            "args": [
+                "latex-cache\\main.pdf",
+                "main.pdf"
             ],
             "env": {}
         }
@@ -73,13 +85,15 @@ In Visual Studio Code kann die Erweiterung <b>LaTeX Workshop</b> wie folgt genut
                 "pdflatex",
                 "biber",
                 "pdflatex",
-                "pdflatex"
+                "pdflatex",
+                "copyPDF"
             ]
         },
         {
             "name": "pdfLaTeX",
             "tools": [
-                "pdflatex"
+                "pdflatex",
+                "copyPDF"
             ]
         },
     ],
