@@ -227,6 +227,12 @@
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections
 \renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}} % for subsections
 
+% add some spacing after the number in the footnote
+\let\oldfootnote\footnote
+\renewcommand\footnote[1]{\oldfootnote{\hspace{0.2em}#1}}
+\let\oldfootnotetext\footnotetext
+\renewcommand\footnotetext[1]{\oldfootnotetext{\hspace{0.2em}#1}}
+
 
 % start of document
 
