@@ -6,7 +6,6 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
-\usepackage[]{csquotes}
 \usepackage{titling}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
@@ -30,9 +29,14 @@
 \usepackage[printonlyused]{acronym}
 \usepackage[titletoc]{appendix}
 
+% display quotation marks ("") as their german counterparts („“)
+\usepackage{csquotes}
+\MakeOuterQuote{"}
+
 % optional: disable automatic hyphenation (Silbentrennung)
 \usepackage[none]{hyphenat}
 \sloppy
+
 
 % set metadata for the PDF
 \hypersetup{

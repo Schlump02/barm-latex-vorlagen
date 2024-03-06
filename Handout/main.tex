@@ -2,8 +2,10 @@
 \documentclass[a4paper, 12pt]{scrartcl}
 
 % necessary imports
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
-\usepackage[]{csquotes}
 \usepackage{titling}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
@@ -28,6 +30,10 @@
 \usepackage[titletoc]{appendix}
 \usepackage{graphicx}
 \usepackage{pgffor} % For the \foreach loop
+
+% display quotation marks ("") as their german counterparts („“)
+\usepackage{csquotes}
+\MakeOuterQuote{"}
 
 % optional: disable automatic hyphenation (Silbentrennung)
 \usepackage[none]{hyphenat}
