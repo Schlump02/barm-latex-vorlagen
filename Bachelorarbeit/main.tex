@@ -61,14 +61,14 @@
 % define command for quickly creating an indirect citation
 \newcommand{\indirectcite}[2][]{
   \ifthenelse{\equal{#1}{}}
-  {\footcite[Vgl.][\printfield{pages}]{#2}} 
-  {\footcite[Vgl.][#1]{#2}}
+  {\footcite[Vgl.][\printfield{pages}]{#2}}% (trailing "%" ensure that the line break is not converted to a space)
+  {\footcite[Vgl.][#1]{#2}}%
 }
 % define command for quickly creating a direct quote citation
 \newcommand{\directcite}[2][]{
   \ifthenelse{\equal{#1}{}}
-  {\footcite[\printfield{pages}]{#2}} 
-  {\footcite[#1]{#2}}
+  {\footcite[\printfield{pages}]{#2}}%
+  {\footcite[#1]{#2}}%
 }
 
 % Anhang
