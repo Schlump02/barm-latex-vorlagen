@@ -41,7 +41,7 @@ In Visual Studio Code kann die Erweiterung <b>LaTeX Workshop</b> wie folgt genut
 4. Anpassung der VS Code-Einstellungen:
     - `Shift + Ctrl + P` (Windows) oder `Shift + Cmd + P` (macOS) für die Befehlseingabe
     - `Open User Settings (JSON)` eingeben und auswählen
-    - Den untenstehenden JSON-Content in die `settings.json` einfügen und abspeichern (den Text innerhalb der {} einfügen, JSON-Formatierung beachten)
+    - Den untenstehenden JSON-Content in die `settings.json` einfügen und abspeichern (JSON-Formatierung beachten; also den Text innerhalb der äußersten {} einfügen)
 
 ```json
     "latex-workshop.message.latexlog.exclude": [".*"],
@@ -98,13 +98,22 @@ In Visual Studio Code kann die Erweiterung <b>LaTeX Workshop</b> wie folgt genut
         },
     ],
 ```
-Im JSON wird festgelegt, dass bei jeder Ausführung die Befehle pdflatex ➞ biber ➞ pdflatex ➞ pdflatex verwendet werden, welche zuvor definiert wurden. Es wird also die MikTex-Engine zum Erstellen der PDF-Datei ausgeführt.
+
+Im JSON wird festgelegt, dass bei jeder Ausführung die Befehle pdflatex ➞ biber ➞ pdflatex ➞ pdflatex ➞ copyPDF verwendet werden, welche zuvor definiert wurden. Es wird also die MikTex-Engine zum Erstellen der PDF-Datei ausgeführt.
 
 Ein Dokument kann nun kompiliert werden, indem die entsprechende main.tex geöffnet und dort der grüne Ausführen-Button oben rechts oder `Ctrl + Alt + B` verwendet wird.
 Das fertige PDF-Dokument `main.pdf` wird nach einigen Sekunden im selben Ordner generiert worden sein.
 
-> [!NOTE]  
+> [!WARNING]
 > Die Ausführung kann fehlschlagen, wenn es Fehler im Dokument gibt oder das PDF-Dokument in einer anderen Anwendung (wie. z.B. dem Adobe Acrobat Reader) geöffnet ist.
+
+
+> [!NOTE]  
+> ggf. muss nun noch der Installationspfad von MikTex zu den Umgebungsvariablen hinzugefügt werden, damit das Betriebssystem auch weiß, wo es die ausführbaren Dateien zu den Befehlen `pdflatex` etc. finden kann. Dies sollte bei der Installation von MikTex automatisch passieren, aber falls sich die Befehle auch nach einem Neustart nicht ausführen lassen, kann man folgende Schritte befolgen;
+> - Den Installationsordner von MikTex finden (üblicherweise in `C:\Programme` oder `C:\Users\nutzername\AppData\Local\Programs`)
+> - Den Unterordner, der u.a. `pdflatex.exe` enthält, finden (üblicherweise in `...\miktex\bin\x64\`)
+> - Den gesamten Pfad (nur ohne `pdflatex.exe`) in die Path-Variable eintragen, siehe z.B. [dieses](https://ekiwi-blog.de/19215/path-variable-in-windows-konfigurieren-und-bearbeiten/) Tutorial
+> - VS Code oder Rechner neustarten
 
 ## Nutzung
 
@@ -146,10 +155,6 @@ Kurzbelege in Form von Fußnoten können mit den Befehlen `\directcite` oder `\i
 Um eine Fußnote in einer Tabellen- oder Bildunterschrift zu setzen, muss `\captionwithfootnotemark` und später `\footcitetext` oder `\footnotetext` genutzt werden. Die genaue Verwendung dieser Befehle wird in der `demoSection.tex` gezeigt. `\directcite` oder `\indirectcite` funktionieren in diesem Fall nicht korrekt. Wenn die in eckigen Klammern angegebenen Argumente in `\footcitetext[Vgl.][\printfield{pages}]{...}\\` nicht verwendet werden, sollten die eckigen Klammern zwar leer gelassen, aber nicht entfernt werden.
 
 Es ist nicht erforderlich, einen Vollbeleg als Fußnote zu setzen.
-
-### Cleanup-Skript
-
-Im Hauptverzeichnis dieses Repositories befindet sich das Skript `cleanup_helper_files.sh`, welches alte Hilfsdateien wie z.B. Logs entfernt, die von der LaTeX-Engine während der Ausführung erstellt wurden. Unter Windows kann man das Skript einfach doppelt anklicken, um es zu starten.
 
 ### Position der Seitenzahlen abwechseln lassen
 
