@@ -73,8 +73,13 @@
 
 % create captions where the text on the page ends with a footnotemark
 \newcommand{\captionwithfootnotemark}[1]{\caption[#1]{#1\footnotemark}}
-% do not force all \footcite texts to end with a dot
+
+% do not force all footcite texts to end with a dot
 \renewcommand{\bibfootnotewrapper}[1]{\bibsentence#1\addspace}
+% place a colon after the name of the author or organisation
+\renewcommand{\labelnamepunct}{\addcolon\space}
+% improve the german bibliography strings for online references
+\DefineBibliographyStrings{ngerman}{retrieved={Abgerufen am},from={von},}
 
 % create a counter for the numbering in Verzeichnis headlines
 \newcounter{verzeichnisnummer}
