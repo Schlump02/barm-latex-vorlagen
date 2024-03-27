@@ -55,9 +55,6 @@
 
 % definitions
 
-\definecolor{ba-blau}{HTML}{093a80}
-\definecolor{dark_gray}{rgb}{0.4,0.4,0.4}
-
 % define command for quickly creating an indirect citation
 \newcommand{\indirectcite}[2][]{
   \ifthenelse{\equal{#1}{}}
@@ -110,54 +107,38 @@
 
 % styling
 
-% dark mode colors for code blocks
-%\definecolor{darkgray}{gray}{0.2} % Dunkelgrauer Hintergrund
-%\definecolor{dkgreen}{rgb}{0,0.6,0}
-%\definecolor{gray}{rgb}{0.5,0.5,0.5}
-%\definecolor{mauve}{rgb}{0.58,0,0.82}
-%
-% styling for dark mode code blocks
-%\lstset{ 
-%  language=python,
-%  aboveskip=3mm,
-%  belowskip=3mm,
-%  showstringspaces=false,
-%  columns=flexible,
-%  basicstyle={\small\ttfamily\color{white}}, % Textfarbe weiß
-%  backgroundcolor=\color{darkgray},          % Dunkler Hintergrund
-%  numbers=left,
-%  numberstyle=\tiny\color{gray},
-%  keywordstyle=\color{blue},
-%  commentstyle=\color{dkgreen},
-%  stringstyle=\color{mauve},
-%  breaklines=true,
-%  breakatwhitespace=true,
-%  tabsize=3,
-%  frame=none,  % Keine Linien oben und unten
-%  lineskip=-0.5pt
-%}
+\definecolor{ba-blau}{HTML}{093a80}
+\definecolor{darkgray}{gray}{0.2}
+\definecolor{gray}{HTML}{606060}
+\definecolor{darkgreen}{HTML}{009900}
+\definecolor{mauve}{HTML}{9400C5}
 
-% light mode colors for code blocks
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
-
-% styling for light mode code blocks
+% styling for code blocks
+% please note that PDF should not be used to distribute code meant for anything but reading
 \lstset{frame=tb,
-  language=python,
+  language=python,% this example uses python code styling
   aboveskip=3mm,
   belowskip=3mm,
   showstringspaces=false,
   columns=flexible,
+  % for light mode:
   basicstyle={\small\ttfamily},
+  % for dark mode:
+  %basicstyle={\small\ttfamily\color{white}}, % white text
+  %backgroundcolor=\color{darkgray},          % dark background
   numbers=left,
   numberstyle=\tiny\color{gray},
   keywordstyle=\color{blue},
-  commentstyle=\color{dkgreen},
+  commentstyle=\color{darkgreen},
   stringstyle=\color{mauve},
   breaklines=true,
   breakatwhitespace=true,
-  tabsize=3
+  tabsize=3,
+  % no lines above and below the block:
+  %frame=none,
+  inputencoding=utf8,
+  extendedchars=true,
+  literate={ä}{{\"a}}1 {ö}{{\"o}}1 {ü}{{\"u}}1 {Ä}{{\"A}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1 {ß}{{\"s}}1,
 }
 
 % set default line spacing
@@ -204,8 +185,8 @@
     %\fancyfoot[LE,RO]{\thepage}% or use this command to alternate the page number position. See README.md for more info first.
 }
 % color horizontal lines in header and footer
-\renewcommand{\headrule}{\color{dark_gray}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}
-\renewcommand{\footrule}{\color{dark_gray}\hrule width\headwidth height\footrulewidth \vskip-\footrulewidth}
+\renewcommand{\headrule}{\color{gray}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}
+\renewcommand{\footrule}{\color{gray}\hrule width\headwidth height\footrulewidth \vskip-\footrulewidth}
 \renewcommand{\headrulewidth}{0.4pt}
 
 % styling of the document title
