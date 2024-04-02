@@ -36,12 +36,15 @@ Wer trotz allem kein Git verwenden will, kann die Dateien auch als zip-Archiv he
 In Visual Studio Code kann die Erweiterung <b>LaTeX Workshop</b> wie folgt genutzt werden;
 
 1. ggf. Installation von [VS Code](https://code.visualstudio.com/)
-2. ggf. Installation von [MikTeX](https://miktex.org/download), einer TeX-Engine und TeX-Paketmanager
+2. ggf. Installation einer TeX-Engine und einem TeX-Paketmanager, z.B.:
+    - für Windows: [MikTeX](https://miktex.org/download)
+    - für macOS: [MacTeX](https://tug.org/mactex/mactex-download.html)
+    - für Linux: [LiveTeX](https://tug.org/texlive/quickinstall.html)
 3. Installation der Erweiterung [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) (am einfachsten direkt im VS Code Marketplace)
 4. Anpassung der VS Code-Einstellungen:
     - `Shift + Ctrl + P` (Windows) oder `Shift + Cmd + P` (macOS) für die Befehlseingabe
     - `Open User Settings (JSON)` eingeben und auswählen
-    - Den untenstehenden JSON-Content in die `settings.json` einfügen und abspeichern (JSON-Formatierung beachten; also den Text innerhalb der äußersten {} einfügen)
+    - Den untenstehenden JSON-Content in die `settings.json` einfügen und abspeichern (JSON-Formatierung beachten; also den Text direkt innerhalb der äußersten `{}` einfügen)
 
 ```json
     "latex-workshop.message.latexlog.exclude": [".*"],
@@ -107,6 +110,9 @@ Das fertige PDF-Dokument `main.pdf` wird nach einigen Sekunden im selben Ordner 
 > [!WARNING]
 > Die Ausführung kann fehlschlagen, wenn es Fehler im Dokument gibt oder das PDF-Dokument in einer anderen Anwendung (wie. z.B. dem Adobe Acrobat Reader) geöffnet ist.
 
+
+> [!NOTE]  
+> Bei der Verwendung von macOS oder Linux müssen im JSON-Content alle `\\` durch ein `/` und `copy` durch `cp` ersetzt werden.
 
 > [!NOTE]  
 > ggf. muss nun noch der Installationspfad von MikTex zu den Umgebungsvariablen hinzugefügt werden, damit das Betriebssystem auch weiß, wo es die ausführbaren Dateien zu den Befehlen `pdflatex` etc. finden kann. Dies sollte bei der Installation von MikTex automatisch passieren, aber falls sich die Befehle auch nach einem Neustart nicht ausführen lassen, kann man folgende Schritte befolgen;
