@@ -115,7 +115,7 @@ Das fertige PDF-Dokument `main.pdf` wird nach einigen Sekunden im selben Ordner 
 > Bei der Verwendung von macOS oder Linux müssen im JSON-Content alle `\\` durch ein `/` und `copy` durch `cp` ersetzt werden.
 
 > [!NOTE]  
-> ggf. muss nun noch der Installationspfad von MikTex zu den Umgebungsvariablen hinzugefügt werden, damit das Betriebssystem auch weiß, wo es die ausführbaren Dateien zu den Befehlen `pdflatex` etc. finden kann. Dies sollte bei der Installation von MikTex automatisch passieren, aber falls sich die Befehle auch nach einem Neustart nicht ausführen lassen, kann man folgende Schritte befolgen;
+> Falls nach der Installation von MikTeX unter Windows die Befehle `pdflatex` etc. nicht funktionieren, muss warscheinlich noch der Installationspfad von MikTex zu den Umgebungsvariablen hinzugefügt werden, damit das Betriebssystem auch weiß, wo es die ausführbaren Dateien zu den Befehlen finden kann. Dies sollte bei der Installation von MikTex automatisch passieren, aber falls sich die Befehle auch nach einem Systemneustart nicht ausführen lassen, kann man folgende Schritte befolgen;
 > - Den Installationsordner von MikTex finden (üblicherweise in `C:\Programme` oder `C:\Users\nutzername\AppData\Local\Programs`)
 > - Den Unterordner, der u.a. `pdflatex.exe` enthält, finden (üblicherweise in `...\miktex\bin\x64\`)
 > - Den gesamten Pfad (nur ohne `pdflatex.exe`) in die Path-Variable eintragen, siehe z.B. [dieses](https://ekiwi-blog.de/19215/path-variable-in-windows-konfigurieren-und-bearbeiten/) Tutorial
