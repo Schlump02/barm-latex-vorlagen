@@ -4,6 +4,8 @@
 
 In diesem Repository befinden sich LaTeX-Vorlagen für alle wichtigen Dokumente, die im Laufe Studiums an der BA Rhein-Main erstellt werden müssen. Dazu zählen u.a. [Handout](https://github.com/Schlump02/barm-latex-vorlagen/blob/main/Handout/Beispiel.pdf), [Seminararbeit](https://github.com/Schlump02/barm-latex-vorlagen/blob/main/Seminararbeit/Beispiel.pdf) und [Bachelor Thesis](https://github.com/Schlump02/barm-latex-vorlagen/blob/main/Bachelorarbeit/Beispiel.pdf). Durch die Verwendung dieser Vorlagen spart man sich die lästige Formatierung in Word und kann sich sicher sein, dass die resultierenden Arbeiten die formalen Ansprüche der BA einhalten können.
 
+Zusätzlich bietet diese Vorlage die Möglichkeit, die Wörter im Text der Arbeit automatisch zählen zu lassen. Eine Anleitung dazu befindet sich auf [dieser](https://github.com/Schlump02/barm-latex-vorlagen/wiki/W%C3%B6rter-automatisch-z%C3%A4hlen-in-VS-Code) Wiki-Seite.
+
 > [!TIP]
 > Für einen einfachen Einstieg in LaTeX wird es wärmstens empfohlen, diese README (Anleitung) *vollständig* zu lesen.
 
@@ -107,19 +109,15 @@ Im JSON wird festgelegt, dass bei jeder Ausführung die Befehle pdflatex ➞ bib
 Ein Dokument kann nun kompiliert werden, indem die entsprechende main.tex geöffnet und dort der grüne Ausführen-Button oben rechts oder `Ctrl + Alt + B` verwendet wird.
 Das fertige PDF-Dokument `main.pdf` wird nach einigen Sekunden im selben Ordner generiert worden sein.
 
+> [!TIP]
+> Mit einer Anpassung des JSON-Contents können automatisch die Wörter im Dokument gezählt werden. Eine Anleitung dazu befindet sich auf [dieser](https://github.com/Schlump02/barm-latex-vorlagen/wiki/W%C3%B6rter-automatisch-z%C3%A4hlen-in-VS-Code) Wiki-Seite. Zudem gibt es einige nützliche Erweiterungen, wie eine Rechtschreibprüfung, die auf [dieser](https://github.com/Schlump02/barm-latex-vorlagen/wiki/N%C3%BCtzliche-Erweiterungen) Wiki-Seite beschrieben sind.
+
+### Lösungen für bekannte Probleme
+
 > [!WARNING]
 > Die Ausführung kann fehlschlagen, wenn es Fehler im Dokument gibt oder das PDF-Dokument in einer anderen Anwendung (wie. z.B. dem Adobe Acrobat Reader) geöffnet ist.
 
-
-> [!NOTE]  
-> Bei der Verwendung von macOS oder Linux müssen im JSON-Content alle `\\` durch ein `/` und `copy` durch `cp` ersetzt werden.
-
-> [!NOTE]  
-> Falls nach der Installation von MikTeX unter Windows die Befehle `pdflatex` etc. nicht funktionieren, muss warscheinlich noch der Installationspfad von MikTex zu den Umgebungsvariablen hinzugefügt werden, damit das Betriebssystem auch weiß, wo es die ausführbaren Dateien zu den Befehlen finden kann. Dies sollte bei der Installation von MikTex automatisch passieren, aber falls sich die Befehle auch nach einem Systemneustart nicht ausführen lassen, kann man folgende Schritte befolgen;
-> - Den Installationsordner von MikTex finden (üblicherweise in `C:\Programme` oder `C:\Users\nutzername\AppData\Local\Programs`)
-> - Den Unterordner, der u.a. `pdflatex.exe` enthält, finden (üblicherweise in `...\miktex\bin\x64\`)
-> - Den gesamten Pfad (nur ohne `pdflatex.exe`) in die Path-Variable eintragen, siehe z.B. [dieses](https://ekiwi-blog.de/19215/path-variable-in-windows-konfigurieren-und-bearbeiten/) Tutorial
-> - VS Code oder Rechner neustarten
+Eine Sammlung von Problemlösungen befindet sich auf [dieser](https://github.com/Schlump02/barm-latex-vorlagen/wiki/L%C3%B6sungen-f%C3%BCr-bekannte-Fehler) Wiki-Seite.
 
 ## Nutzung
 
