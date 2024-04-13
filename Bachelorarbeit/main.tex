@@ -28,6 +28,7 @@
 \usepackage{color}
 \usepackage[printonlyused]{acronym}
 \usepackage[titletoc]{appendix}
+\usepackage[all]{nowidow}
 
 % display quotation marks ("") as their german counterparts („“)
 \usepackage{csquotes}
@@ -167,7 +168,7 @@
 \newcommand{\subsubsubsection}[1]{
     \refstepcounter{subsubsubsection}
     \paragraph{#1}
-    \leavevmode\\
+    \leavevmode\\\nopagebreak
 }
 % color section headings
 \addtokomafont{disposition}{\color{ba-blau}}
