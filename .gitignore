@@ -4,6 +4,7 @@
 TODO.md
 rename.sh
 tester.tex
+word-count*
 
 *.synctex
 *.synctex(busy)
@@ -24,4 +25,4 @@ tester.tex
 *.app
 *.mf
 .DS_Store
-.vscode/ltex.hiddenFalsePositives.de-DE.txt
+.vscode*

@@ -8,21 +8,21 @@ Auf dieser Seite befinden sich Umsetzungsbeispiele für häufig benötigte Eleme
         \hline
         \textbf{Datum} & \textbf{Aktivitäten} \\
         \hline
-        Kebab & 7€ \\
+        Kebab & 7 € \\
         \hline
         Adana & \begin{itemize}
-            \item \textbf{Groß}: 8€
-            \item \textbf{Klein}: 6€
+            \item \textbf{Groß}: 8 €
+            \item \textbf{Klein}: 6 €
         \end{itemize} \\
         \hline
         Köfte & \begin{itemize}
-            \item 5 Stück: 8€
-            \item 2 Stück: 6€
+            \item 5 Stück: 8 €
+            \item 2 Stück: 6 €
         \end{itemize}\\
         \hline
-        Mercimek Suppe & 3€ \\
+        Mercimek Suppe & 3 € \\
         \hline
-        Dönerteller & 15€ \\
+        Dönerteller & 15 € \\
         \hline
     \end{tabular}
     \captionwithfootnotemark{Beispiel Tabelle.}% Die (verpflichtende) Quellenangabe hierzu wird durch den \footcitetext-Befehl weiter unten gesetzt
@@ -47,9 +47,22 @@ Der folgende Abschnitt könnte hilfreich für eine Ausarbeitung in der Informati
     \captionwithfootnotemark{Ausschnitt aus main.py.}% Die (verpflichtende) Quellenangabe hierzu wird durch den \footnotetext-Befehl weiter unten gesetzt
     \label{fig:meincode}
 \end{figure}
-\footnotetext{Quelle: Eigene Erstellung}
+\footnotetext{Quelle: eigene Erstellung}
+
+Ein wörtliches Zitat sollte "[\ldots] so formatiert werden."\directcite{theisen2011}
+Anführungszeichen sollten nur für wörtliche Zitate genutzt werden; Hervorhebungen sollten \textbf{fett} oder \textit{kursiv} formatiert sein.
 
 \subsection{Zitierbeispiele}
+\subsubsection{Beispiele für verschiedene Arten von Zitaten}% Es genügt den Anforderungen, Kurzbelege zu setzen, die auf den Vollbeleg im Literaturverzeichnis verweisen.
+
+indirektes Zitat (Seitenzahlen aus der .bib)\indirectcite{theisen2011}\\% Indirekte (sinngemäße) Zitate geben den Inhalt der Quelle in eigenen Worten wieder.
+indirektes Zitat (individuelle Seitenzahlen)\indirectcite[23f.]{theisen2011}\\% f. (folgend) bezeichnet diese und die nächste Seite
+direktes Zitat (Seitenzahlen aus der .bib)\directcite{theisen2011}\\% Direkte Zitate geben den Wortlaut der Quelle wieder. Sie müssen in Anführungszeichen gesetzt werden.
+direktes Zitat (individuelle Seitenzahlen)\directcite[23f.]{theisen2011}
+
+\subsubsubsection{Beispiel für eine sub-sub-sub-Überschrift}% Diese Vorlage unterstützt (technisch und moralisch) nur max. vierfache Untergliederung
+
+\newpage
 \subsubsection{Beispiel für jeden Quelltyp}% "Vgl." steht nur in Fußnoten für indirekte (nicht wörtliche) Zitate.
 % Wenn eine Quellenangabe sich auf einen ganzen Satz bzw. Absatz bezieht, wird die Fußnote erst am Satzende nach dem Punkt platziert.
 
@@ -62,14 +75,4 @@ Gesetzestext\footnote{Vgl. §433 Abs. 1 Satz 1 BGB}\nocite{bgb}\\
 Gerichtsurteil\indirectcite{bverfgh1968}\\
 öffentliches Dokument\indirectcite{eu2022access}\\
 internes Dokument\indirectcite{abcorganigramm}\\% muss auf separatem Datenträger beigefügt werden. Am besten sammelt man schon frühzeitig alle Dokumente in einem Ordner.
-(unvollständige Quellenangaben)\indirectcite{blankmaier}
-
-\newpage
-\subsubsection{Beispiele für verschiedene Arten von Zitaten}% Es genügt den Anforderungen, Kurzbelege zu setzen, die auf den Vollbeleg im Literaturverzeichnis verweisen.
-
-indirektes Zitat (Seitenzahlen aus der .bib)\indirectcite{theisen2011}\\% Indirekte (sinngemäße) Zitate geben den Inhalt der Quelle in eigenen Worten wieder.
-indirektes Zitat (individuelle Seitenzahlen)\indirectcite[23f.]{theisen2011}\\% f. (folgend) bezeichnet diese und die nächste Seite
-direktes Zitat (Seitenzahlen aus der .bib)\directcite{theisen2011}\\% Direkte Zitate geben den Wortlaut der Quelle wieder. Sie müssen in Anführungszeichen gesetzt werden.
-direktes Zitat (individuelle Seitenzahlen)\directcite[23f.]{theisen2011}
-
-\subsubsubsection{Beispiel für eine sub-sub-sub-Überschrift}% Diese Vorlage unterstützt (technisch und moralisch) nur max. vierfache Untergliederung
+(unvollständige Quellenangaben)\indirectcite[ ]{blankmaier}
