@@ -46,65 +46,9 @@ In Visual Studio Code kann die Erweiterung <b>LaTeX Workshop</b> wie folgt genut
 4. Anpassung der VS Code-Einstellungen:
     - `Shift + Ctrl + P` (Windows) oder `Shift + Cmd + P` (macOS) für die Befehlseingabe
     - `Open User Settings (JSON)` eingeben und auswählen
-    - Den untenstehenden JSON-Content in die `settings.json` einfügen und abspeichern (JSON-Formatierung beachten; also den Text direkt innerhalb der äußersten `{}` einfügen)
-
-```json
-    "latex-workshop.message.latexlog.exclude": [".*"],
-    "latex-workshop.latex.tools": [
-        {
-            "name": "pdflatex",
-            "command": "pdflatex",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-aux-directory=latex-cache",
-                "-output-directory=latex-cache",
-                "-file-line-error",
-                "%DOC%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "biber",
-            "command": "biber",
-            "args": [
-                "--output_directory=latex-cache",
-                "%DOCFILE%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "copyPDF",
-            "command": "copy",
-            "args": [
-                "latex-cache\\main.pdf",
-                "main.pdf"
-            ],
-            "env": {}
-        }
-    ],
-    "latex-workshop.latex.recipes": [
-        {
-            "name": "pdflatex ➞ biber ➞ pdflatex * 2",
-            "tools": [
-                "pdflatex",
-                "biber",
-                "pdflatex",
-                "pdflatex",
-                "copyPDF"
-            ]
-        },
-        {
-            "name": "pdfLaTeX",
-            "tools": [
-                "pdflatex",
-                "copyPDF"
-            ]
-        },
-    ],
-```
-
-Im JSON wird festgelegt, dass bei jeder Ausführung die Befehle pdflatex ➞ biber ➞ pdflatex ➞ pdflatex ➞ copyPDF verwendet werden, welche zuvor definiert wurden. Es wird also die MikTex-Engine zum Erstellen der PDF-Datei ausgeführt.
+    - den untenstehenden JSON-Content in die `settings.json` einfügen und abspeichern (JSON-Formatierung beachten; also den Text direkt innerhalb der äußersten `{}` einfügen)
+        - [für Windows](https://github.com/Schlump02/barm-latex-vorlagen/wiki/LaTeX%E2%80%90Workshop-Konfigurationen-f%C3%BCr-verschiedene-Plattformen#setup-f%C3%BCr-windows)
+        - [für macOS/Linux](https://github.com/Schlump02/barm-latex-vorlagen/wiki/LaTeX%E2%80%90Workshop-Konfigurationen-f%C3%BCr-verschiedene-Plattformen#setup-f%C3%BCr-linuxmacos)
 
 Ein Dokument kann nun kompiliert werden, indem die entsprechende main.tex geöffnet und dort der grüne Ausführen-Button oben rechts oder `Ctrl + Alt + B` verwendet wird.
 Das fertige PDF-Dokument `main.pdf` wird nach einigen Sekunden im selben Ordner generiert worden sein.
