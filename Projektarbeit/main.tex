@@ -156,10 +156,13 @@
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
 \newcounter{subsubsubsection}[subsubsection]
-\newcommand{\subsubsubsection}[1]{
-    \refstepcounter{subsubsubsection}
-    \paragraph{#1}
-    \leavevmode\\\nopagebreak
+\newcommand{\subsubsubsection}[1]{%
+    \refstepcounter{subsubsubsection}%
+    \paragraph{#1}%
+    \leavevmode\\
+    \hangindent=3.38em%
+    \hangafter=1%
+    \nopagebreak%
 }
 % color section headings
 \addtokomafont{disposition}{\color{ba-blau}}
