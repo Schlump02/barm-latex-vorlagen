@@ -112,6 +112,12 @@
 % do not force all \footcite texts to end with a dot
 \renewcommand{\bibfootnotewrapper}[1]{\bibsentence#1\addspace}
 
+% define command for the headlines
+\newcommand{\newsection}[1]{
+  \section*{#1}
+  \addcontentsline{toc}{section}{#1}
+}
+
 
 % styling
 
