@@ -75,6 +75,23 @@
   {\footcite[#1]{#2}}%
 }
 
+%define commands to quickly reference tables and figures
+\newcommand{\abb}[1]{Abbildung \ref{fig:#1}}
+\newcommand{\tab}[1]{Tabelle \ref{tab:#1}}
+\newcommand{\anh}[1]{Anhang \hyperref[sec:A#1]{#1}}
+% define command for quickly including an image
+\newcommand{\image}[6][]{%
+  \begin{figure}[h]
+    \centering
+    \ifthenelse{\equal{#1}{}}
+      {\includegraphics[width=0.6\textwidth]{#2}}%
+      {\includegraphics[width=#1\textwidth]{#2}}%
+    \captionwithfootnotemark{#4}
+    \label{fig:#3}
+  \end{figure}
+  \footcitetext[Vgl.][#6]{#5}
+}
+
 % Anhang
 \newcommand{\listappendixname}{Anhangsverzeichnis}% name (resulting in headline) is optional
 \newlistof{appendices}{app}{\listappendixname}

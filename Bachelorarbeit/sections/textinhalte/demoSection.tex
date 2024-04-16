@@ -26,7 +26,7 @@ Auf dieser Seite befinden sich Umsetzungsbeispiele für häufig benötigte Eleme
         \hline
     \end{tabular}
     \captionwithfootnotemark{Beispiel Tabelle.}% Die (verpflichtende) Quellenangabe hierzu wird durch den \footcitetext-Befehl weiter unten gesetzt
-    \label{tab:example}
+    \label{tab:preistabelle}% wichtig für die Benutzung mit \tab{} (siehe weiter unten)
     \end{table}
 \end{center}
 \footcitetext[Vgl.][\printfield{pages}]{DemoQuelle}\\ [-4em]
@@ -44,10 +44,20 @@ Der folgende Abschnitt könnte hilfreich für eine Ausarbeitung in der Informati
         def hello_world():
             print("Hello, World!")
     \end{lstlisting}
-    \captionwithfootnotemark{Ausschnitt aus main.py.}% Die (verpflichtende) Quellenangabe hierzu wird durch den \footnotetext-Befehl weiter unten gesetzt
-    \label{fig:meincode}
+    \captionwithfootnotemark{Ausschnitt aus main.py}% Die (verpflichtende) Quellenangabe hierzu wird durch den \footnotetext-Befehl weiter unten gesetzt
+    \label{fig:meincode}% wichtig für die Benutzung mit \abb{} (siehe weiter unten)
 \end{figure}
+%\footcitetext[Vgl.][\printfield{pages}]{DemoQuelle} falls es eine Quelle aus der Bib ist
 \footnotetext{Quelle: eigene Erstellung}
+
+% Abbildung einfügen
+% Dateiname, Kurzbeschriftung, Beschriftung, Quelle in der Bib, Seitenzahl(en) [gibt es keine Seitenzahl, ein leerzeichen einfügen]
+\image{deckbild.jpeg}{logo}{Das Logo der BA}{theisen2011}{6}
+% um die Breite relativ zur Zeilenlänge anzupassen, kann ein Wert zwischen 0 und 1 mitgegeben werden: \image[0.9]...
+
+Auf \abb{logo} kann im Text verwiesen werden.% Hierfür ist die Kurzbeschriftung notwendig.
+% Für Tabellen: \tab{Kurzbeschriftung}
+% Für Anhänge:  \anh{1}
 
 Ein wörtliches Zitat sollte "[\ldots] so formatiert werden."\directcite{theisen2011}
 Anführungszeichen sollten nur für wörtliche Zitate genutzt werden; Hervorhebungen sollten \textbf{fett} oder \textit{kursiv} formatiert sein.
@@ -57,7 +67,6 @@ Anführungszeichen sollten nur für wörtliche Zitate genutzt werden; Hervorhebu
 Diese \ac{CPU} verarbeitet Daten in einem Takt von mehreren \ac{kHz}.\\
 Das kleine Kind war ganz fasziniert von den \acp{BluM}, und wollte unbedingt eine eigene \ac{BluM} als Spielzeug haben. 
 Auf dem Kinderfest waren zahlreiche \acp{BluM} zu sehen, jede bunter und fröhlicher als die andere.\\
-
 Erzwungene Kurzschreibweise: \acs{CPU}\\
 Erzwungene Langschreibweise: \acl{CPU}
 
