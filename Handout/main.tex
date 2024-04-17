@@ -75,10 +75,10 @@
   {\footcite[#1]{#2}}%
 }
 
-%define commands to quickly reference tables and figures
+%define commands to quickly reference tables, figures and appendixes
 \newcommand{\abb}[1]{Abbildung \ref{fig:#1}}
 \newcommand{\tab}[1]{Tabelle \ref{tab:#1}}
-\newcommand{\anh}[1]{Anhang \hyperref[sec:A#1]{#1}}
+\newcommand{\anh}[1]{Anhang \hyperref[sec:A#1]{A#1}}
 % define command for quickly including an image
 \newcommand{\image}[6][]{%
   \begin{figure}[h]
