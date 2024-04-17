@@ -54,7 +54,7 @@ Ein Dokument kann nun kompiliert werden, indem die entsprechende main.tex geöff
 Das fertige PDF-Dokument `main.pdf` wird nach einigen Sekunden im selben Ordner generiert worden sein.
 
 > [!TIP]
-> Mit einer Anpassung des JSON-Contents können automatisch die Wörter im Dokument gezählt werden. Eine Anleitung dazu befindet sich auf [dieser](https://github.com/Schlump02/barm-latex-vorlagen/wiki/W%C3%B6rter-automatisch-z%C3%A4hlen-in-VS-Code) Wiki-Seite. Zudem gibt es einige nützliche Erweiterungen, wie eine Rechtschreibprüfung, die auf [dieser](https://github.com/Schlump02/barm-latex-vorlagen/wiki/N%C3%BCtzliche-Erweiterungen) Wiki-Seite beschrieben sind.
+> Mit einer Anpassung des JSON-Contents können automatisch die Wörter im Dokument gezählt werden. Eine Anleitung dazu befindet sich auf [dieser](https://github.com/Schlump02/barm-latex-vorlagen/wiki/W%C3%B6rter-automatisch-z%C3%A4hlen-in-VS-Code) Wiki-Seite. Zudem gibt es einige nützliche Links und Erweiterungen, wie eine Rechtschreibprüfung, die auf [dieser](https://github.com/Schlump02/barm-latex-vorlagen/wiki/N%C3%BCtzliche-Links-und-Erweiterungen) Wiki-Seite beschrieben sind.
 
 ### Lösungen für bekannte Probleme
 
