@@ -15,13 +15,13 @@
 \usepackage[nospace]{varioref}
 \usepackage[backend=biber, style=apa6, sorting=none]{biblatex}
 \usepackage{booktabs}
-\usepackage[font=footnotesize, justification=centering]{caption}
+\usepackage{caption}
 \usepackage[titles]{tocloft}
 \usepackage{tabularx}
 \usepackage{setspace}
 \usepackage{sectsty}
 \usepackage{units}
-\usepackage{xcolor}
+\usepackage[table, xcdraw]{xcolor}
 \usepackage{parskip}
 \usepackage{hyperref}
 \usepackage{listings}
@@ -38,6 +38,7 @@
 % optional: disable automatic hyphenation (Silbentrennung)
 \usepackage[none]{hyphenat}
 \sloppy
+
 
 % set metadata for the PDF
 \hypersetup{
@@ -79,9 +80,9 @@
 \newcommand{\abb}[1]{Abbildung \ref{fig:#1}}
 \newcommand{\tab}[1]{Tabelle \ref{tab:#1}}
 \newcommand{\anh}[1]{Anhang \hyperref[sec:A#1]{A#1}}
-% define command for quickly including an image
+% define command for quickly including an image with a bib entry as its source
 \newcommand{\image}[6][]{%
-  \begin{figure}[h]
+  \begin{figure}[H]
     \centering
     \ifthenelse{\equal{#1}{}}
       {\includegraphics[width=0.6\textwidth]{#2}}%
@@ -91,14 +92,26 @@
   \end{figure}
   \footcitetext[Vgl.][#6]{#5}
 }
+% define command for quickly including an image with a custom footnote
+\newcommand{\customimage}[5][]{%
+  \begin{figure}[H]
+    \centering
+    \ifthenelse{\equal{#1}{}}
+      {\includegraphics[width=0.6\textwidth]{#2}}%
+      {\includegraphics[width=#1\textwidth]{#2}}%
+    \captionwithfootnotemark{#4}
+    \label{fig:#3}
+  \end{figure}
+  \footnotetext{#5}
+}
 
-\newcommand{\listappendixname}{Anhangsverzeichnis}
+% Appendix (Anhang)
+\newcommand{\listappendixname}{Anhangsverzeichnis}% name (resulting in headline) is optional
 \newlistof{appendices}{app}{\listappendixname}
-
+% counter for Anhang-Subsections
 \newcounter{anhangsubsec}
 \renewcommand{\theanhangsubsec}{\arabic{anhangsubsec}}
-
-% Anhang-Subsections
+% command to create Anhang-Subsections
 \newcommand{\anhangsec}[1]{
    \stepcounter{anhangsubsec}
    \subsection*{A\theanhangsubsec\ #1} % asterisk to suppress automatic numbering
@@ -109,7 +122,8 @@
 
 % create captions where the text on the page ends with a footnotemark
 \newcommand{\captionwithfootnotemark}[1]{\caption[#1]{#1\footnotemark}}
-% do not force all \footcite texts to end with a dot
+
+% do not force all footcite texts to end with a dot
 \renewcommand{\bibfootnotewrapper}[1]{\bibsentence#1\addspace}
 
 % define command for the headlines
@@ -144,6 +158,7 @@
   breaklines=true,
   breakatwhitespace=true,
   tabsize=3,
+  lineskip=1pt,
   % no lines above and below the block:
   %frame=none,
   inputencoding=utf8,
@@ -189,12 +204,32 @@
 
 % styling of the document title
 \newcommand{\documentTitle}[1]{{\fontsize{20pt}{24pt}\selectfont\textbf{\color{ba-blau}#1}}}
+% styling of the document subtitle
+\newcommand{\documentSubtitle}[1]{{\fontsize{14pt}{17pt}\selectfont\textbf{\color{ba-blau}#1}}}
 %styling of non-chapter page titles
-\newcommand{\pageTitle}[1]{{\fontsize{14pt}{17pt}\selectfont\textbf{\color{ba-blau}#1}}\\}
+\newcommand{\pageTitle}[1]{{\fontsize{14pt}{17pt}\selectfont\fontfamily{ptm}\textbf{\color{ba-blau}#1}}\\}
 
 % place the dots that lead to the page numbers in the table of contents
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections
 \renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}} % for subsections
+
+% do not justify table cells by default
+\renewcommand{\tabularxcolumn}[1]{>{\raggedright\arraybackslash}p{#1}}
+% caption styling
+\captionsetup{
+    font=footnotesize,% use fontsize 10pt
+    justification=centering,% center cations horizontally
+    width=0.8\linewidth,% only span max. 80% of the width of a text line
+    format=plain,% do not hangindent lines from the label
+    % print the label in bold:
+    %labelfont=bf,
+}
+
+% add some spacing after the number in the footnote
+\let\oldfootnote\footnote
+\renewcommand\footnote[1]{\oldfootnote{\hspace{0.2em}#1}}
+\let\oldfootnotetext\footnotetext
+\renewcommand\footnotetext[1]{\oldfootnotetext{\hspace{0.2em}#1}}
 
 
 % start of document

@@ -15,13 +15,13 @@
 \usepackage[nospace]{varioref}
 \usepackage[backend=biber, style=apa6, sorting=none]{biblatex}
 \usepackage{booktabs}
-\usepackage[font=footnotesize, justification=centering]{caption}
+\usepackage{caption}
 \usepackage[titles]{tocloft}
 \usepackage{tabularx}
 \usepackage{setspace}
 \usepackage{sectsty}
 \usepackage{units}
-\usepackage{xcolor}
+\usepackage[table, xcdraw]{xcolor}
 \usepackage{parskip}
 \usepackage{hyperref}
 \usepackage{listings}
@@ -79,9 +79,9 @@
 \newcommand{\abb}[1]{Abbildung \ref{fig:#1}}
 \newcommand{\tab}[1]{Tabelle \ref{tab:#1}}
 \newcommand{\anh}[1]{Anhang \hyperref[sec:A#1]{A#1}}
-% define command for quickly including an image
+% define command for quickly including an image with a bib entry as its source
 \newcommand{\image}[6][]{%
-  \begin{figure}[h]
+  \begin{figure}[H]
     \centering
     \ifthenelse{\equal{#1}{}}
       {\includegraphics[width=0.6\textwidth]{#2}}%
@@ -91,8 +91,20 @@
   \end{figure}
   \footcitetext[Vgl.][#6]{#5}
 }
+% define command for quickly including an image with a custom footnote
+\newcommand{\customimage}[5][]{%
+  \begin{figure}[H]
+    \centering
+    \ifthenelse{\equal{#1}{}}
+      {\includegraphics[width=0.6\textwidth]{#2}}%
+      {\includegraphics[width=#1\textwidth]{#2}}%
+    \captionwithfootnotemark{#4}
+    \label{fig:#3}
+  \end{figure}
+  \footnotetext{#5}
+}
 
-% Anhang
+% Appendix (Anhang)
 \newcommand{\listappendixname}{Anhangsverzeichnis}% name (resulting in headline) is optional
 \newlistof{appendices}{app}{\listappendixname}
 % counter for Anhang-Subsections
@@ -115,7 +127,7 @@
 % place a colon after the name of the author or organisation
 \renewcommand{\labelnamepunct}{\addcolon\space}
 % improve the german bibliography strings for online references
-\DefineBibliographyStrings{ngerman}{retrieved={Abgerufen am},from={von},}
+\DefineBibliographyStrings{ngerman}{retrieved={Abgerufen am},from={von},nodate={o.J.},}
 
 % create a counter for the numbering in Verzeichnis headlines
 \newcounter{verzeichnisnummer}
@@ -169,6 +181,7 @@
   breaklines=true,
   breakatwhitespace=true,
   tabsize=3,
+  lineskip=1pt,
   % no lines above and below the block:
   %frame=none,
   inputencoding=utf8,
@@ -179,23 +192,26 @@
 % set default line spacing
 \setstretch{1.5}
 
+% Allow up to 4 levels of sectioning
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+\newcounter{subsubsubsection}[subsubsection]
+% indent subsubsubsections correctly
+\newlength{\subsubsubsectionwidth}
+\setlength{\subsubsubsectionwidth}{\linewidth}
+\addtolength{\subsubsubsectionwidth}{-3.38em}
+\newcommand{\subsubsubsection}[1]{%
+    \refstepcounter{subsubsubsection}%
+    \paragraph{\parbox[t]{\subsubsubsectionwidth}{#1}}%
+    \nopagebreak%
+    \leavevmode\\ [1em]
+}
+
 % set section headings fontsizes, font family (Times New Roman) and line spacing
 \sectionfont{\fontsize{14}{16.8}\selectfont\fontfamily{ptm}\selectfont}
 \subsectionfont{\fontsize{12}{14.4}\selectfont\fontfamily{ptm}\selectfont}
 \subsubsectionfont{\fontsize{12}{14.4}\selectfont\fontfamily{ptm}\selectfont}
 \paragraphfont{\fontsize{12}{14.4}\selectfont\fontfamily{ptm}\selectfont}
-% Allow up to 4 levels of sectioning
-\setcounter{secnumdepth}{4}
-\setcounter{tocdepth}{4}
-\newcounter{subsubsubsection}[subsubsection]
-\newcommand{\subsubsubsection}[1]{%
-    \refstepcounter{subsubsubsection}%
-    \paragraph{#1}%
-    \leavevmode\\
-    \hangindent=3.38em%
-    \hangafter=1%
-    \nopagebreak%
-}
 % color section headings
 \addtokomafont{disposition}{\color{ba-blau}}
 \addtokomafont{sectionentry}{\color{ba-blau}}
@@ -237,6 +253,18 @@
 % place the dots that lead to the page numbers in the table of contents
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections
 \renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}} % for subsections
+
+% do not justify table cells by default
+\renewcommand{\tabularxcolumn}[1]{>{\raggedright\arraybackslash}p{#1}}
+% caption styling
+\captionsetup{
+    font=footnotesize,% use fontsize 10pt
+    justification=centering,% center cations horizontally
+    width=0.8\linewidth,% only span max. 80% of the width of a text line
+    format=plain,% do not hangindent lines from the label
+    % print the label in bold:
+    %labelfont=bf,
+}
 
 % add some spacing after the number in the footnote
 \let\oldfootnote\footnote
@@ -291,7 +319,7 @@
 \include{sections/textinhalte/fazit}
 
 \begin{appendices}
-\input{sections/nebeninhalte/anhang/anhang}
+  \input{sections/nebeninhalte/anhang/anhang}
 \end{appendices}
 
 % set page numbering to roman for bibliography

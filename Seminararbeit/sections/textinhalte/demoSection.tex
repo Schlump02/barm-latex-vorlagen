@@ -2,9 +2,9 @@
 Auf dieser Seite befinden sich Umsetzungsbeispiele für häufig benötigte Elemente im Fließtext.\\
 
 \begin{center}
-    \begin{table}[h]
+    \begin{table}[H]
     \centering
-    \begin{tabular}{|c|p{6cm}|}
+    \begin{tabular}{|c|p{6cm}|}% einfach Tabellen erstellen: https://github.com/Schlump02/barm-latex-vorlagen/wiki/N%C3%BCtzliche-Links-und-Erweiterungen#einfach-tabellen-erstellen
         \hline
         \textbf{Datum} & \textbf{Aktivitäten} \\
         \hline
@@ -29,7 +29,7 @@ Auf dieser Seite befinden sich Umsetzungsbeispiele für häufig benötigte Eleme
     \label{tab:preistabelle}% wichtig für die Benutzung mit \tab{} (siehe weiter unten)
     \end{table}
 \end{center}
-\footcitetext[Vgl.][\printfield{pages}]{DemoQuelle}\\ [-4em]
+\footnotetext{\cite[10]{DemoQuelle}}
 
 Die Tabelle zeigt den Preis eines Dönertellers, dieser lässt sich wie folgt berechnen:
 \begin{equation}
@@ -38,7 +38,7 @@ Die Tabelle zeigt den Preis eines Dönertellers, dieser lässt sich wie folgt be
 
 \newpage
 Der folgende Abschnitt könnte hilfreich für eine Ausarbeitung in der Informatik sein.
-\begin{figure}[h]
+\begin{figure}[H]
     \begin{lstlisting}
         # say hi
         def hello_world():
@@ -47,13 +47,16 @@ Der folgende Abschnitt könnte hilfreich für eine Ausarbeitung in der Informati
     \captionwithfootnotemark{Ausschnitt aus main.py}% Die (verpflichtende) Quellenangabe hierzu wird durch den \footnotetext-Befehl weiter unten gesetzt
     \label{fig:meincode}% wichtig für die Benutzung mit \abb{} (siehe weiter unten)
 \end{figure}
-%\footcitetext[Vgl.][\printfield{pages}]{DemoQuelle} falls es eine Quelle aus der Bib ist
 \footnotetext{Quelle: eigene Erstellung}
+%\footnotetext{\cite[10]{DemoQuelle}} falls es eine Quelle aus der Bib ist
 
 % Abbildung einfügen
 % Dateiname, Kurzbeschriftung, Beschriftung, Quelle in der Bib, Seitenzahl(en) [gibt es keine Seitenzahl, ein leerzeichen einfügen]
 \image{deckbild.jpeg}{logo}{Das Logo der BA}{theisen2011}{6}
 % um die Breite relativ zur Zeilenlänge anzupassen, kann ein Wert zwischen 0 und 1 mitgegeben werden: \image[0.9]...
+
+% für eine Freitext-Fußzeile:
+%\customimage{deckbild.jpeg}{logo}{Das Logo der BA}{adaptiert aus \cite[6-7]{theisen2011}}
 
 Auf \abb{logo} kann im Text verwiesen werden.% Hierfür ist die Kurzbeschriftung notwendig.
 % Für Tabellen: \tab{Kurzbeschriftung}
