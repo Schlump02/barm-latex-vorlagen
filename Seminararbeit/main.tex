@@ -196,14 +196,16 @@
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
 \newcounter{subsubsubsection}[subsubsection]
+\renewcommand{\thesubsubsubsection}{\thesubsubsection.\arabic{subsubsubsection}}
 % indent subsubsubsections correctly
 \newlength{\subsubsubsectionwidth}
 \setlength{\subsubsubsectionwidth}{\linewidth}
 \addtolength{\subsubsubsectionwidth}{-3.38em}
+% create subsubsubsection command
 \newcommand{\subsubsubsection}[1]{%
     \refstepcounter{subsubsubsection}%
-    \paragraph{\parbox[t]{\subsubsubsectionwidth}{#1}}%
-    \nopagebreak%
+    \addcontentsline{toc}{paragraph}{\protect\numberline{\thesubsubsubsection}#1}%
+    \paragraph*{\thesubsubsubsection\hspace{1em}\parbox[t]{\subsubsubsectionwidth}{#1}\nopagebreak}%
     \leavevmode\\ [1em]
 }
 
@@ -268,9 +270,9 @@
 
 % add some spacing after the number in the footnote
 \let\oldfootnote\footnote
-\renewcommand\footnote[1]{\oldfootnote{\hspace{0.2em}#1}}
+\renewcommand{\footnote}[1]{\oldfootnote{\hspace{0.2em}#1}}
 \let\oldfootnotetext\footnotetext
-\renewcommand\footnotetext[1]{\oldfootnotetext{\hspace{0.2em}#1}}
+\renewcommand{\footnotetext}[1]{\oldfootnotetext{\hspace{0.2em}#1}}
 
 
 % start of document
