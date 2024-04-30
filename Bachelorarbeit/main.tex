@@ -129,6 +129,17 @@
 % improve the german bibliography strings for online references
 \DefineBibliographyStrings{ngerman}{retrieved={Abgerufen am},from={von},nodate={o.J.},}
 
+% define german name for figure labels
+\addto\captionsngerman{\renewcommand{\figurename}{Abbildung}}
+\addto\extrasngerman{\renewcommand\figureautorefname{Abbildung}}
+\renewcommand{\cftfigpresnum}{Abbildung }
+\settowidth{\cftfignumwidth}{Abbildung 10\quad}
+% define german name for table labels
+\addto\captionsngerman{\renewcommand{\tablename}{Tabelle}}
+\addto\extrasngerman{\renewcommand\tablename{Tabelle}}
+\renewcommand{\cfttabpresnum}{Tabelle }
+\settowidth{\cfttabnumwidth}{Tabelle 10\quad}
+
 % create a counter for the numbering in Verzeichnis headlines
 \newcounter{verzeichnisnummer}
 \renewcommand{\theverzeichnisnummer}{\Roman{verzeichnisnummer}\ }% Counter representation
