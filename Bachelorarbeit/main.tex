@@ -75,6 +75,9 @@
   {\footcite[#1]{#2}}%
 }
 
+% create captions where the text on the page ends with a footnotemark
+\newcommand{\captionwithfootnotemark}[1]{\caption[#1]{#1\footnotemark}}
+
 %define commands to quickly reference tables, figures and appendixes
 \newcommand{\abb}[1]{\autoref{fig:#1}}
 \newcommand{\tab}[1]{\autoref{tab:#1}}
@@ -119,9 +122,6 @@
    \addcontentsline{app}{subsection}{\protect\numberline{A\theanhangsubsec} #1}
 }
 
-% create captions where the text on the page ends with a footnotemark
-\newcommand{\captionwithfootnotemark}[1]{\caption[#1]{#1\footnotemark}}
-
 % do not force all footcite texts to end with a dot
 \renewcommand{\bibfootnotewrapper}[1]{\bibsentence#1\addspace}
 % place a colon after the name of the author or organisation
@@ -164,6 +164,19 @@
   \printbibliography[title={\theverzeichnisnummer Literaturverzeichnis}]
   \addcontentsline{toc}{section}{\theverzeichnisnummer Literaturverzeichnis}
   \newpage
+}
+
+% make sure that \ac{} acronyms are not expanded in the table of contents, list of figures, and list of tables
+\DeclareRobustCommand{\noexpandedacronyms}[1]{{\renewcommand{\ac}[1]{\acs{##1}}#1}}
+\let\oldcontentsline\contentsline
+\renewcommand{\contentsline}[4]{\oldcontentsline{#1}{\noexpandedacronyms{#2}}{#3}{#4}}
+
+% command for mentioning an acronym for the first time using \ac{}, but using a different spelling in the long form
+\let\defaultac\ac%
+\renewcommand{\ac}[2][]{%
+  \ifthenelse{\equal{#1}{}}%
+  {\defaultac{#2}}%
+  {#1 (\acsu{#2})\label{acro:#2}}%
 }
 
 
@@ -261,7 +274,7 @@
 % styling of the document subtitle
 \newcommand{\documentSubtitle}[1]{{\fontsize{14pt}{17pt}\selectfont\textbf{\color{ba-blau}#1}}}
 %styling of non-chapter page titles
-\newcommand{\pageTitle}[1]{{\fontsize{14pt}{17pt}\selectfont\fontfamily{ptm}\textbf{\color{ba-blau}#1}}\\}
+\newcommand{\pageTitle}[1]{{\fontsize{14pt}{17pt}\selectfont\fontfamily{ptm}\textbf{\color{ba-blau}#1}}\\ [1em]}
 
 % place the dots that lead to the page numbers in the table of contents
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections

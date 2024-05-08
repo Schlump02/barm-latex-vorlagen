@@ -76,6 +76,9 @@
   {\footcite[#1]{#2}}%
 }
 
+% create captions where the text on the page ends with a footnotemark
+\newcommand{\captionwithfootnotemark}[1]{\caption[#1]{#1\footnotemark}}
+
 %define commands to quickly reference tables, figures and appendixes
 \newcommand{\abb}[1]{\autoref{fig:#1}}
 \newcommand{\tab}[1]{\autoref{tab:#1}}
@@ -119,9 +122,6 @@
    \addcontentsline{toc}{subsection}{\protect\numberline{A\theanhangsubsec} #1}
    \addcontentsline{app}{subsection}{\protect\numberline{A\theanhangsubsec} #1}
 }
-
-% create captions where the text on the page ends with a footnotemark
-\newcommand{\captionwithfootnotemark}[1]{\caption[#1]{#1\footnotemark}}
 
 % do not force all footcite texts to end with a dot
 \renewcommand{\bibfootnotewrapper}[1]{\bibsentence#1\addspace}
@@ -207,7 +207,7 @@
 % styling of the document subtitle
 \newcommand{\documentSubtitle}[1]{{\fontsize{14pt}{17pt}\selectfont\textbf{\color{ba-blau}#1}}}
 %styling of non-chapter page titles
-\newcommand{\pageTitle}[1]{{\fontsize{14pt}{17pt}\selectfont\fontfamily{ptm}\textbf{\color{ba-blau}#1}}\\}
+\newcommand{\pageTitle}[1]{{\fontsize{14pt}{17pt}\selectfont\fontfamily{ptm}\textbf{\color{ba-blau}#1}}\\ [1em]}
 
 % place the dots that lead to the page numbers in the table of contents
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections
