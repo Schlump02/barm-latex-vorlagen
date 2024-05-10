@@ -1,10 +1,9 @@
 \section{Demo-Seite}
 Auf dieser Seite befinden sich Umsetzungsbeispiele für häufig benötigte Elemente im Fließtext.\\
 
-\begin{center}
-    \begin{table}[H]
-    \centering
-    \begin{tabular}{|c|p{6cm}|}% einfach Tabellen erstellen: https://github.com/Schlump02/barm-latex-vorlagen/wiki/N%C3%BCtzliche-Links-und-Erweiterungen#einfach-tabellen-erstellen
+% einfach Tabellen erstellen: https://github.com/Schlump02/barm-latex-vorlagen/wiki/N%C3%BCtzliche-Links-und-Erweiterungen#einfach-tabellen-erstellen
+\listedtable{
+    \begin{tabular}{|c|p{6cm}|}
         \hline
         \textbf{Datum} & \textbf{Aktivitäten} \\
         \hline
@@ -25,11 +24,8 @@ Auf dieser Seite befinden sich Umsetzungsbeispiele für häufig benötigte Eleme
         Dönerteller & 15 € \\
         \hline
     \end{tabular}
-    \captionwithfootnotemark{Beispiel Tabelle.}% Die (verpflichtende) Quellenangabe hierzu wird durch den \footcitetext-Befehl weiter unten gesetzt
-    \label{tab:preistabelle}% wichtig für die Benutzung mit \tab{} (siehe weiter unten)
-    \end{table}
-\end{center}
-\footnotetext{\cite[10]{DemoQuelle}}
+}{preistabelle}{Beispiel Tabelle}{Vgl. \cite[10]{DemoQuelle}}
+% Kurzbeschriftung (wichtig für den \tab{}-Befehl, siehe weiter unten), Beschriftung, Fußnote
 
 Die Tabelle zeigt den Preis eines Dönertellers, dieser lässt sich wie folgt berechnen:
 \begin{equation}
@@ -38,7 +34,7 @@ Die Tabelle zeigt den Preis eines Dönertellers, dieser lässt sich wie folgt be
 
 \newpage
 Der folgende Abschnitt könnte hilfreich für eine Ausarbeitung in der Informatik sein.
-\begin{figure}[H]
+\begin{figure}[H] % Abschnitt als Abbildung kennzeichnen (H = hier im Text platzieren)
     \begin{lstlisting}
         # say hi
         def hello_world():
@@ -55,7 +51,7 @@ Der folgende Abschnitt könnte hilfreich für eine Ausarbeitung in der Informati
 \image{deckbild.jpeg}{logo}{Das Logo der BA}{theisen2011}{6}
 % um die Breite relativ zur Zeilenlänge anzupassen, kann ein Wert zwischen 0 und 1 mitgegeben werden: \image[0.9]...
 
-% für eine Freitext-Fußzeile:
+% für eine Freitext-Fußnote:
 %\customimage{deckbild.jpeg}{logo}{Das Logo der BA}{adaptiert aus \cite[6-7]{theisen2011}}
 
 Auf \abb{logo}, \tab{preistabelle} und \anh{2} kann im Text verwiesen werden.% Hierfür ist die Kurzbeschriftung notwendig.
@@ -71,7 +67,7 @@ Alle Abkürzungen werden bei der ersten Verwendung ausgeschrieben, wie beispiels
 Die Langschreibweise kann erzwungen werden: \acl{IT} \\
 Auch ein Plural kann zusätzlich definiert werden: \aclp{IT} \\
 Die Kurzschreibweise kann auch direkt erzwungen werden, wie bei \acs{UN}. \\% Dies sollte immer in Überschriften genutzt werden, da das Akronym ansonsten ggf. dort definiert wird
-Wenn bei der Definition einer Abkürzung nicht der Nominativ verwendet wird, kann die deklinierte Form angeben werden: die \ac[Vereinten Nationen]{UN} % funktioniert bei der ersten Verwendung des \ac{}-Befehls
+Wenn bei der Definition einer Abkürzung nicht der Nominativ verwendet wird, kann die deklinierte Form angeben werden: die \ac[Vereinten Nationen]{UN}
 
 
 \newpage

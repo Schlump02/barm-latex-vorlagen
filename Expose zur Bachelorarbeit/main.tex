@@ -34,10 +34,6 @@
 \usepackage{csquotes}
 \MakeOuterQuote{"}
 
-% optional: disable automatic hyphenation (Silbentrennung)
-\usepackage[none]{hyphenat}
-\sloppy
-
 
 % set metadata for the PDF
 \hypersetup{
@@ -82,6 +78,7 @@
 \newcommand{\abb}[1]{\autoref{fig:#1}}
 \newcommand{\tab}[1]{\autoref{tab:#1}}
 \newcommand{\anh}[1]{\hyperref[sec:A#1]{Anhang A#1}}
+
 % define command for quickly including an image with a bib entry as its source
 \newcommand{\image}[6][]{%
   \begin{figure}[H]
@@ -105,6 +102,17 @@
     \label{fig:#3}
   \end{figure}
   \footnotetext{#5}
+}
+
+% define command for quickly including a table with a custom footnote
+\newcommand{\listedtable}[4]{%
+  \begin{table}[H]
+    \centering
+    #1
+    \captionwithfootnotemark{#3}
+    \label{tab:#2}
+  \end{table}
+  \footnotetext{#4}
 }
 
 % Appendix (Anhang)
@@ -177,7 +185,7 @@
 
 % styling for code blocks
 % please note that PDF should not be used to distribute code meant for anything but reading
-\lstset{frame=tb,
+\lstset{
   language=python,% this example uses python code styling
   aboveskip=3mm,
   belowskip=3mm,
@@ -195,6 +203,7 @@
   lineskip=1pt,
   % no lines above and below the block:
   %frame=none,
+  frame=tb,
   inputencoding=utf8,
   extendedchars=true,
   literate={ä}{{\"a}}1 {ö}{{\"o}}1 {ü}{{\"u}}1 {Ä}{{\"A}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1 {ß}{{\"s}}1,
@@ -202,6 +211,10 @@
 
 % set default line spacing
 \setstretch{1.5}
+
+% optional: set very high tolerance for whitespace between words before enacting automatic hyphenation (Silbentrennung)
+\tolerance=9999 % for normal hyphenation, set the value to 200
+\emergencystretch=10em % remove for normal hyphenation
 
 % Allow up to 4 levels of sectioning
 \setcounter{secnumdepth}{4}
