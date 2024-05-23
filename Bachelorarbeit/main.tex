@@ -121,6 +121,21 @@
   \footnotetext{#4}
 }
 
+% define command for numbering and displaying interview questions
+\newcounter{interviewquestion}
+\newlength{\questionwidth}
+\setlength{\questionwidth}{\linewidth}
+\addtolength{\questionwidth}{-1.4em}
+\newcommand{\question}[1]{%
+    \par
+    \setstretch{1.4}
+    \vspace{1em}
+    \textbf{\selectfont\fontfamily{ptm}\selectfont\theinterviewquestion.\hspace{0.5em}\parbox[t]{\questionwidth}{#1}\nopagebreak}%
+    \stepcounter{interviewquestion}
+    \par
+    \setstretch{1.5}
+}
+
 % Appendix (Anhang)
 \newcommand{\listappendixname}{Anhangsverzeichnis}% name (resulting in headline) is optional
 \newlistof{appendices}{app}{\listappendixname}
@@ -130,6 +145,7 @@
 % command to create Anhang-Subsections
 \newcommand{\anhangsec}[1]{
    \stepcounter{anhangsubsec}
+   \setcounter{interviewquestion}{1}
    \subsection*{A\theanhangsubsec\ #1}% asterisk to suppress automatic numbering
    \label{sec:A\theanhangsubsec}
    %\addcontentsline{toc}{subsection}{\protect\numberline{A\theanhangsubsec} #1}% add subsection headline to table of contents
