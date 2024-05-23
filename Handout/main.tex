@@ -82,6 +82,7 @@
 
 % define command for quickly including an image with a bib entry as its source
 \newcommand{\image}[6][]{%
+  \vspace{1em}%
   \begin{figure}[H]
     \centering
     \ifthenelse{\equal{#1}{}}
@@ -90,10 +91,12 @@
     \captionwithfootnotemark{#4}
     \label{fig:#3}
   \end{figure}
+  \vspace{-1em}%
   \footcitetext[Vgl.][#6]{#5}
 }
 % define command for quickly including an image with a custom footnote
 \newcommand{\customimage}[5][]{%
+  \vspace{1em}%
   \begin{figure}[H]
     \centering
     \ifthenelse{\equal{#1}{}}
@@ -102,17 +105,20 @@
     \captionwithfootnotemark{#4}
     \label{fig:#3}
   \end{figure}
+  \vspace{-1em}%
   \footnotetext{#5}
 }
 
 % define command for quickly including a table with a custom footnote
 \newcommand{\listedtable}[4]{%
+  \vspace{1em}%
   \begin{table}[H]
     \centering
     #1
     \captionwithfootnotemark{#3}
     \label{tab:#2}
   \end{table}
+  \vspace{-1em}%
   \footnotetext{#4}
 }
 
@@ -179,10 +185,16 @@
 \setstretch{1.5}
 
 % optional: set very high tolerance for whitespace between words before enacting automatic hyphenation (Silbentrennung)
-\tolerance=9999 % for normal hyphenation, set the value to 200
-\emergencystretch=10em % remove for normal hyphenation
+% remove these commands for normal automatic hyphenation
+\hyphenpenalty=7000
+\exhyphenpenalty=7000
+\tolerance=10000
 
-% set section headings fontsizes and line spacing
+% improve labels for unordered lists
+\renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemiii}{-}
+
+% set section headings fontsizes, font family (Times New Roman) and line spacing
 \sectionfont{\fontsize{14}{16.8}\selectfont\fontfamily{ptm}\selectfont}
 \subsectionfont{\fontsize{12}{14.4}\selectfont\fontfamily{ptm}\selectfont}
 % color section headings
@@ -226,8 +238,13 @@
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections
 \renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}} % for subsections
 
+% remove indentation from entries of the list of figures, tables and appendices
+\setlength{\cftfigindent}{0pt}
+\setlength{\cfttabindent}{0pt}
+
 % do not justify table cells by default
 \renewcommand{\tabularxcolumn}[1]{>{\raggedright\arraybackslash}p{#1}}
+
 % caption styling
 \captionsetup{
     font=footnotesize,% use fontsize 10pt

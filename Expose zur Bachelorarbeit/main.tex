@@ -81,6 +81,7 @@
 
 % define command for quickly including an image with a bib entry as its source
 \newcommand{\image}[6][]{%
+  \vspace{1em}%
   \begin{figure}[H]
     \centering
     \ifthenelse{\equal{#1}{}}
@@ -89,10 +90,12 @@
     \captionwithfootnotemark{#4}
     \label{fig:#3}
   \end{figure}
+  \vspace{-1em}%
   \footcitetext[Vgl.][#6]{#5}
 }
 % define command for quickly including an image with a custom footnote
 \newcommand{\customimage}[5][]{%
+  \vspace{1em}%
   \begin{figure}[H]
     \centering
     \ifthenelse{\equal{#1}{}}
@@ -101,17 +104,20 @@
     \captionwithfootnotemark{#4}
     \label{fig:#3}
   \end{figure}
+  \vspace{-1em}%
   \footnotetext{#5}
 }
 
 % define command for quickly including a table with a custom footnote
 \newcommand{\listedtable}[4]{%
+  \vspace{1em}%
   \begin{table}[H]
     \centering
     #1
     \captionwithfootnotemark{#3}
     \label{tab:#2}
   \end{table}
+  \vspace{-1em}%
   \footnotetext{#4}
 }
 
@@ -135,16 +141,12 @@
 % place a colon after the name of the author or organisation
 \renewcommand{\labelnamepunct}{\addcolon\space}
 % improve the german bibliography strings for online references
-\DefineBibliographyStrings{ngerman}{retrieved={Abgerufen am},from={von},nodate={o.J.},}
+\DefineBibliographyStrings{ngerman}{retrieved={Abgerufen am}, from={von}, nodate={o.J.},}
 
 % define german name for figure labels
-\addto\captionsngerman{\renewcommand{\figurename}{Abbildung}}
-\addto\extrasngerman{\renewcommand\figureautorefname{Abbildung}}
 \renewcommand{\cftfigpresnum}{Abbildung }
 \settowidth{\cftfignumwidth}{Abbildung 10\quad}
 % define german name for table labels
-\addto\captionsngerman{\renewcommand{\tablename}{Tabelle}}
-\addto\extrasngerman{\renewcommand\tablename{Tabelle}}
 \renewcommand{\cfttabpresnum}{Tabelle }
 \settowidth{\cfttabnumwidth}{Tabelle 10\quad}
 
@@ -213,8 +215,14 @@
 \setstretch{1.5}
 
 % optional: set very high tolerance for whitespace between words before enacting automatic hyphenation (Silbentrennung)
-\tolerance=9999 % for normal hyphenation, set the value to 200
-\emergencystretch=10em % remove for normal hyphenation
+% remove these commands for normal automatic hyphenation
+\hyphenpenalty=7000
+\exhyphenpenalty=7000
+\tolerance=10000
+
+% improve labels for unordered lists
+\renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemiii}{-}
 
 % Allow up to 4 levels of sectioning
 \setcounter{secnumdepth}{4}
@@ -280,8 +288,13 @@
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections
 \renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}} % for subsections
 
+% remove indentation from entries of the list of figures, tables and appendices
+\setlength{\cftfigindent}{0pt}
+\setlength{\cfttabindent}{0pt}
+
 % do not justify table cells by default
 \renewcommand{\tabularxcolumn}[1]{>{\raggedright\arraybackslash}p{#1}}
+
 % caption styling
 \captionsetup{
     font=footnotesize,% use fontsize 10pt
