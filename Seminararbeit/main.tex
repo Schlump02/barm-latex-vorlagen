@@ -1,5 +1,5 @@
-% this document uses paper size A4, default fontsize 12 and properties from the KoMa script scartl class
-\documentclass[a4paper, 12pt]{scrartcl}
+% this document uses paper size A4, default fontsize 12, creates toc entries for lists and uses properties from the KoMa script scartl class
+\documentclass[a4paper, 12pt, listof=totoc]{scrartcl}
 
 % necessary imports
 \usepackage{lmodern}
@@ -158,20 +158,18 @@
 \addto\captionsngerman{\renewcommand{\listfigurename}{\theverzeichnisnummer Abbildungsverzeichnis}}
 \newcommand{\showlistoffigures}{
   \listoffigures
-  \addcontentsline{toc}{section}{\theverzeichnisnummer Abbildungsverzeichnis}
   \stepcounter{verzeichnisnummer}
   \newpage
 }
 \addto\captionsngerman{\renewcommand{\listtablename}{\theverzeichnisnummer Tabellenverzeichnis}}
 \newcommand{\showlistoftables}{
   \listoftables
-  \addcontentsline{toc}{section}{\theverzeichnisnummer Tabellenverzeichnis}
   \stepcounter{verzeichnisnummer}
   \newpage
 }
 \newcommand{\bib}{
-  \printbibliography[title={\theverzeichnisnummer Literaturverzeichnis}]
-  \addcontentsline{toc}{section}{\theverzeichnisnummer Literaturverzeichnis}
+  \newpage
+  \printbibliography[heading=bibintoc, title={\theverzeichnisnummer Literaturverzeichnis}]
   \newpage
 }
 
