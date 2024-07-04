@@ -3,7 +3,7 @@ Auf dieser Seite befinden sich Umsetzungsbeispiele für häufig benötigte Eleme
 
 % einfach Tabellen erstellen: https://github.com/Schlump02/barm-latex-vorlagen/wiki/N%C3%BCtzliche-Links-und-Erweiterungen#einfach-tabellen-erstellen
 \listedtable{
-    \begin{tabular}{|c|p{6cm}|}
+    \begin{tabular}{|P{3cm}|P{5cm}|}
         \hline
         \textbf{Datum} & \textbf{Aktivitäten} \\
         \hline
@@ -28,7 +28,7 @@ Auf dieser Seite befinden sich Umsetzungsbeispiele für häufig benötigte Eleme
 % Kurzbeschriftung (wichtig für den \tab{}-Befehl, siehe weiter unten), Beschriftung, Fußnote
 
 Die Tabelle zeigt den Preis eines Dönertellers, dieser lässt sich wie folgt berechnen:
-\begin{equation}
+\begin{equation}% Gleichungen müssen nicht ins Abbildungsverzeichnis
     15 = \sum_{n=1}^{10} \frac{n}{20} + \sum_{k=1}^{5} \frac{2k}{10} - \sum_{i=1}^{3} i
 \end{equation}
 
@@ -47,9 +47,9 @@ Der folgende Abschnitt könnte hilfreich für eine Ausarbeitung in der Informati
 %\footnotetext{\cite[10]{DemoQuelle}} falls es eine Quelle aus der Bib ist
 
 % Abbildung einfügen
-% Dateiname, Kurzbeschriftung, Beschriftung, Quelle in der Bib, Seitenzahl(en) [gibt es keine Seitenzahl, ein leerzeichen einfügen]
-\image{deckbild.jpeg}{logo}{Das Logo der BA}{theisen2011}{6}
-% um die Breite relativ zur Zeilenlänge anzupassen, kann ein Wert zwischen 0 und 1 mitgegeben werden: \image[0.9]...
+% Breite, Dateiname, Kurzbeschriftung, Beschriftung, Quelle in der Bib, Seitenzahl(en) [gibt es keine Seitenzahl, ein leerzeichen einfügen]
+\image[0.6]{deckbild.jpeg}{logo}{Das Logo der BA}{theisen2011}{6}
+% Die Breite wird relativ zur Zeilenlänge angepasst, der Wert zwischen 0.5 entspricht also der halben Zeilenlänge
 
 % für eine Freitext-Fußnote:
 %\customimage{deckbild.jpeg}{logo}{Das Logo der BA}{adaptiert aus \cite[6-7]{theisen2011}}
@@ -81,8 +81,10 @@ internes Dokument\indirectcite{abcorganigramm}\\% muss auf separatem Datenträge
 \subsubsection{Beispiele für verschiedene Arten von Zitaten}
 
 indirektes Zitat (Seitenzahlen aus der .bib)\indirectcite{theisen2011}\\% Indirekte (sinngemäße) Zitate geben den Inhalt der Quelle in eigenen Worten wieder.
-indirektes Zitat (individuelle Seitenzahlen)\indirectcite[23f.]{theisen2011}\\% f. (folgend) bezeichnet diese und die nächste Seite
+indirektes Zitat (individuelle Seitenzahlen)\indirectcite[23]{theisen2011}\\
 direktes Zitat (Seitenzahlen aus der .bib)\directcite{theisen2011}\\% Direkte Zitate geben den Wortlaut der Quelle wieder. Sie müssen in Anführungszeichen gesetzt werden.
-direktes Zitat (individuelle Seitenzahlen)\directcite[23f.]{theisen2011}
+direktes Zitat (individuelle Seitenzahlen)\directcite[23]{theisen2011}
 
-\subsubsubsection{Beispiel für eine sub-sub-sub-Überschrift}% Diese Vorlage unterstützt (technisch und moralisch) nur max. vierfache Untergliederung
+\subsubsubsection{Beispiel für eine sub-sub-sub-Überschrift}
+% Diese Vorlage unterstützt (technisch und moralisch) nur max. vierfache Untergliederung
+% Informationen zur mehr als vierfachen Untergliederung: https://github.com/Schlump02/barm-latex-vorlagen/wiki/L%C3%B6sungen-f%C3%BCr-bekannte-Fehler#mehr-als-vierfache-untergliederung

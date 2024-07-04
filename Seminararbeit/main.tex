@@ -1,4 +1,5 @@
-% this document uses paper size A4, default fontsize 12, creates toc entries for lists and uses properties from the KoMa script scartl class
+% this document uses paper size A4, default fontsize 12 and creates toc entries for lists
+% also uses properties from the KoMa script scrarctl class
 \documentclass[a4paper, 12pt, listof=totoc]{scrartcl}
 
 % necessary imports
@@ -113,6 +114,7 @@
   \vspace{1em}%
   \begin{table}[H]
     \centering
+    \small
     #1
     \captionwithfootnotemark{#3}
     \label{tab:#2}
@@ -197,7 +199,7 @@
   numberstyle=\tiny\color{gray},
   numbers=left,
   breaklines=true,
-  breakatwhitespace=true,
+  %breakatwhitespace=true, % nur bei Leerzeichen Zeilenumbrüche einfügen
   tabsize=3,
   lineskip=1pt,
   % no lines above and below the block:
@@ -229,13 +231,12 @@
 % indent subsubsubsections correctly
 \newlength{\subsubsubsectionwidth}
 \setlength{\subsubsubsectionwidth}{\linewidth}
-\addtolength{\subsubsubsectionwidth}{-3.38em}
+\addtolength{\subsubsubsectionwidth}{-3.5em}
 % create subsubsubsection command
 \newcommand{\subsubsubsection}[1]{%
     \refstepcounter{subsubsubsection}%
     \addcontentsline{toc}{paragraph}{\protect\numberline{\thesubsubsubsection}#1}%
-    \paragraph*{\thesubsubsubsection\hspace{1em}\parbox[t]{\subsubsubsectionwidth}{#1}\nopagebreak}%
-    \leavevmode\\ [1em]
+    \paragraph*{\thesubsubsubsection\hspace{0.5em}\parbox[t]{\subsubsubsectionwidth}{#1\\ }\nopagebreak}%
 }
 
 % set section headings fontsizes, font family (Times New Roman) and line spacing
@@ -249,22 +250,22 @@
 
 % styling of the title page header and footer
 \fancypagestyle{Deckblatt}{
-    \setlength{\headheight}{10pt}
     \pagestyle{fancy}
     \fancyhead{}
-    \setlength{\headheight}{2cm}
-    \setlength{\headsep}{80pt}
+    \setlength{\headheight}{65pt}
+    \setlength{\headsep}{30pt}
     \chead{\includegraphics[]{deckbild.jpeg} \\}
+    %page footer
+    \fancyfoot{}% clear footer
 }
 % styling of the default page header and footer
 \fancypagestyle{defaultPageStyle}{
-    \setlength{\headheight}{10pt}
     \pagestyle{fancy}
     \fancyhead{}
-    \setlength{\headheight}{2cm}
-    \setlength{\headsep}{40pt}
+    \setlength{\headheight}{65pt}
+    \setlength{\headsep}{30pt}
     \chead{\includegraphics[]{deckbild.jpeg} \\}
-    %pagefooter
+    %page footer
     \fancyfoot{}
     \fancyfoot[R]{\thepage}% place page numbers in the lower right corner
     %\fancyfoot[LE,RO]{\thepage}% or use this command to alternate the page number position. See README.md for more info first.
@@ -290,7 +291,10 @@
 \setlength{\cfttabindent}{0pt}
 
 % do not justify table cells by default
-\renewcommand{\tabularxcolumn}[1]{>{\raggedright\arraybackslash}p{#1}}
+% set behaviour of some table columns (hyphenation, fontsize 10)
+\newcommand{\HY}{\hyphenpenalty=25\exhyphenpenalty=25}% re-enable hyphenation locally inside the column
+\renewcommand{\tabularxcolumn}[1]{>{\HY\raggedright\arraybackslash\hspace{0pt}}p{#1}}% tabularx table cells default
+\newcolumntype{P}[1]{>{\HY\raggedright\arraybackslash\hspace{0pt}}p{#1}}% define tabular P table cell
 
 % caption styling
 \captionsetup{
@@ -298,8 +302,7 @@
     justification=centering,% center cations horizontally
     width=0.8\linewidth,% only span max. 80% of the width of a text line
     format=plain,% do not hangindent lines from the label
-    % print the label in bold:
-    %labelfont=bf,
+    labelfont=bf,% print the label in bold
 }
 
 % add some spacing after the number in the footnote
