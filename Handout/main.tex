@@ -53,7 +53,7 @@
 }
 
 % location of bib and graphics
-\addbibresource{myBib.bib}
+\addbibresource{Quellen.bib}
 \graphicspath{{images/}}
 
 
@@ -81,18 +81,17 @@
 \newcommand{\anh}[1]{\hyperref[sec:A#1]{Anhang A#1}}
 
 % define command for quickly including an image with a custom footnote
-\newcommand{\image}[5][]{%
+\newcommand{\image}[4][]{%
   \vspace{1em}%
   \begin{figure}[H]
     \centering
     \ifthenelse{\equal{#1}{}}
       {\includegraphics[width=0.6\textwidth]{#2}}%
       {\includegraphics[width=#1\textwidth]{#2}}%
-    \captionwithfootnotemark{#4}
+    \caption{#4}
     \label{fig:#3}
   \end{figure}
   \vspace{-1em}%
-  \footnotetext{#5}
 }
 
 % define command for quickly including a table with a custom footnote
@@ -271,7 +270,7 @@
 \setcounter{page}{1}
 \renewcommand{\footrulewidth}{0.4pt}
 % set default line spacing
-\setstretch{1.0}
+\setstretch{1.2}
 
 \include{sections/gliederung}
 
@@ -285,7 +284,8 @@
 % include the text section pages located in the given folder
 \include{sections/inhalte}
 
-\begin{appendices}
+\setstretch{1.5}
+\begin{appendices}% Anhang - wenn leer, auskommentieren (bis inklusive \end{appendices})
 \input{sections/anhang/anhang}
 \end{appendices}
 

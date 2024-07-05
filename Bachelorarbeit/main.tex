@@ -53,7 +53,7 @@
 }
 
 % location of bib and graphics
-\addbibresource{myBib.bib}
+\addbibresource{Quellen.bib}
 \graphicspath{{images/}}
 
 
@@ -356,9 +356,9 @@
 \tableofcontents
 \newpage
 
-\showlistoffigures
+\showlistoffigures % Abbildungsverzeichnis - wenn leer, auskommentieren
 
-\showlistoftables
+\showlistoftables % Tabellenverzeichnis - wenn leer, auskommentieren
 
 \include{sections/nebeninhalte/abkuerzungsverzeichnis}
 
@@ -375,7 +375,7 @@
 \include{sections/textinhalte/kapitelvorlage}
 \include{sections/textinhalte/fazit}
 
-\begin{appendices}
+\begin{appendices}% Anhang - wenn leer, auskommentieren (bis inklusive \end{appendices})
   \input{sections/nebeninhalte/anhang/anhang}
 \end{appendices}
 
