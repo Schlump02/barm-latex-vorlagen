@@ -47,43 +47,37 @@ Der folgende Abschnitt könnte hilfreich für eine Ausarbeitung in der Informati
 %\footnotetext{\cite[10]{DemoQuelle}} falls es eine Quelle aus der Bib ist
 
 % Abbildung einfügen
-% Breite, Dateiname, Kurzbeschriftung, Beschriftung, Quelle in der Bib, Seitenzahl(en) [gibt es keine Seitenzahl, ein leerzeichen einfügen]
-\image[0.6]{deckbild.jpeg}{logo}{Das Logo der BA}{theisen2011}{6}
+% Breite, Dateiname, Kurzbeschriftung, Beschriftung, Fußnote mit Quelle aus der Bib
+\listedimage[0.6]{deckbild.jpeg}{logo}{Das Logo der BA}{adaptiert aus \cite[6-7]{theisen2011}}
 % Die Breite wird relativ zur Zeilenlänge angepasst, der Wert zwischen 0.5 entspricht also der halben Zeilenlänge
-
-% für eine Freitext-Fußnote:
-%\customimage{deckbild.jpeg}{logo}{Das Logo der BA}{adaptiert aus \cite[6-7]{theisen2011}}
 
 Auf \abb{logo}, \tab{preistabelle} und \anh{2} kann im Text verwiesen werden.% Hierfür ist die Kurzbeschriftung notwendig.
 
-Ein wörtliches Zitat sollte "[\ldots] so formatiert werden."\directcite{theisen2011} % Für Zitate in Zitaten (einzelne Anführungszeichen): ,Zitat`
+\subsection{Zitierbeispiele}
+
+\subsubsection{Direkte und indirekte Zitate}
+
+Nach indirekten Zitaten steht die Fußnotenzahl hinter dem Punkt.\indirectcite[10-11]{theisen2011}\\% Indirekte (sinngemäße) Zitate geben den Inhalt der Quelle in eigenen Worten wieder.
+Bei "direkten Zitaten"\directcite[12]{theisen2011} steht sie "[\ldots] direkt nach den Anführungszeichen."\directcite[13]{theisen2011}\\% Direkte Zitate geben den Wortlaut der Quelle wieder. Sie müssen in Anführungszeichen gesetzt werden.
+% Für Zitate in Zitaten (einzelne Anführungszeichen): ,Zitat`
 Anführungszeichen sollten nur für wörtliche Zitate genutzt werden; Hervorhebungen sollten \textbf{fett} oder \textit{kursiv} formatiert sein.
 
 \newpage
-\subsection{Zitierbeispiele}
 \subsubsection{Beispiel für jeden Quelltyp}
 % "Vgl." steht nur in Fußnoten für indirekte (nicht wörtliche) Zitate.
-% Wenn eine Quellenangabe sich auf einen ganzen Satz bzw. Absatz bezieht, wird die Fußnote erst am Satzende nach dem Punkt platziert.
 % Es genügt den Anforderungen, Kurzbelege zu setzen, die auf den Vollbeleg im Literaturverzeichnis verweisen.
+% Wenn eine fremdsprachige Aussage ins Deutsche übersetzt wird, stellt das eine Paraphrase dar und ist somit ein indirektes Zitat.
 
-Buch/Monografie\indirectcite{theisen2011}\\
-Sammelwerk\indirectcite{maier2004}\\
-Zeitschriften-/Journalartikel\indirectcite{chodorowreich2022loan}\\
-Zeitungsartikel\indirectcite{dick2012neugierige}\\
-Internet\indirectcite[ ]{capital2014}\\% falls es keine Seitenzahlen gibt, ein Leerzeichen als Seitenzahl-Argument übergeben (wird nicht in der PDF eingetragen)
+Buch/Monografie\indirectcite[40-58]{theisen2011}\\
+Sammelwerk\indirectcite[204-205]{maier2004}\\
+Zeitschriften-/Journalartikel\indirectcite[10-12]{chodorowreich2022loan}\\
+Zeitungsartikel\indirectcite[12-15]{dick2012neugierige}\\
+Internet\indirectcite{capital2014}\\
 Gesetzestext\footnote{Vgl. §433 Abs. 1 Satz 1 BGB}\nocite{bgb}\\
-Gerichtsurteil\indirectcite{bverfgh1968}\\
-öffentliches Dokument\indirectcite{eu2022access}\\
-internes Dokument\indirectcite{abcorganigramm}\\% muss auf separatem Datenträger beigefügt werden. Am besten sammelt man schon frühzeitig alle Dokumente in einem Ordner.
-(unvollständige Quellenangaben)\indirectcite[ ]{blankmaier}
-
-\newpage
-\subsubsection{Beispiele für verschiedene Arten von Zitaten}
-
-indirektes Zitat (Seitenzahlen aus der .bib)\indirectcite{theisen2011}\\% Indirekte (sinngemäße) Zitate geben den Inhalt der Quelle in eigenen Worten wieder.
-indirektes Zitat (individuelle Seitenzahlen)\indirectcite[23]{theisen2011}\\
-direktes Zitat (Seitenzahlen aus der .bib)\directcite{theisen2011}\\% Direkte Zitate geben den Wortlaut der Quelle wieder. Sie müssen in Anführungszeichen gesetzt werden.
-direktes Zitat (individuelle Seitenzahlen)\directcite[23]{theisen2011}
+Gerichtsurteil\indirectcite[460]{bverfgh1968}\\
+öffentliches Dokument\indirectcite[12-15]{eu2022access}\\
+internes Dokument\indirectcite[12-15]{abcorganigramm}\\% muss auf separatem Datenträger beigefügt werden. Am besten sammelt man schon frühzeitig alle Dokumente in einem Ordner.
+(unvollständige Quellenangaben)\indirectcite{blankmaier}
 
 \subsubsubsection{Beispiel für eine sub-sub-sub-Überschrift}
 % Diese Vorlage unterstützt (technisch und moralisch) nur max. vierfache Untergliederung

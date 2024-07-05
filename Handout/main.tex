@@ -62,13 +62,13 @@
 % define command for quickly creating an indirect citation
 \newcommand{\indirectcite}[2][]{
   \ifthenelse{\equal{#1}{}}
-  {\footcite[Vgl.][\printfield{pages}]{#2}}% (trailing "%" ensure that the line break is not converted to a space)
+  {\footcite[Vgl.][ ]{#2}}% (trailing "%" ensure that the line break is not converted to a space)
   {\footcite[Vgl.][#1]{#2}}%
 }
 % define command for quickly creating a direct quote citation
 \newcommand{\directcite}[2][]{
   \ifthenelse{\equal{#1}{}}
-  {\footcite[\printfield{pages}]{#2}}%
+  {\footcite[ ]{#2}}%
   {\footcite[#1]{#2}}%
 }
 
@@ -80,22 +80,8 @@
 \newcommand{\tab}[1]{\autoref{tab:#1}}
 \newcommand{\anh}[1]{\hyperref[sec:A#1]{Anhang A#1}}
 
-% define command for quickly including an image with a bib entry as its source
-\newcommand{\image}[6][]{%
-  \vspace{1em}%
-  \begin{figure}[H]
-    \centering
-    \ifthenelse{\equal{#1}{}}
-      {\includegraphics[width=0.6\textwidth]{#2}}%
-      {\includegraphics[width=#1\textwidth]{#2}}%
-    \captionwithfootnotemark{#4}
-    \label{fig:#3}
-  \end{figure}
-  \vspace{-1em}%
-  \footcitetext[Vgl.][#6]{#5}
-}
 % define command for quickly including an image with a custom footnote
-\newcommand{\customimage}[5][]{%
+\newcommand{\image}[5][]{%
   \vspace{1em}%
   \begin{figure}[H]
     \centering
