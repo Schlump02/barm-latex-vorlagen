@@ -87,12 +87,12 @@
 \newcounter{anhangsubsec}
 \renewcommand{\theanhangsubsec}{\arabic{anhangsubsec}}
 % command to create Anhang-Subsections
-\newcommand{\anhangsec}[1]{
-   \stepcounter{anhangsubsec}
-   \subsection*{A\theanhangsubsec\ #1} % asterisk to suppress automatic numbering
-   \label{sec:A\theanhangsubsec}
-   \addcontentsline{toc}{subsection}{\protect\numberline{A\theanhangsubsec} #1}
-   \addcontentsline{app}{subsection}{\protect\numberline{A\theanhangsubsec} #1}
+\newcommand{\appendixheadline}[1]{
+  \stepcounter{anhangsubsec}
+  \subsection*{A\theanhangsubsec\hspace{0.5em}\parbox[t]{13cm}{#1\\ }}% asterisk to suppress automatic numbering
+  \label{sec:A\theanhangsubsec}
+  %\addcontentsline{toc}{subsection}{\protect\numberline{A\theanhangsubsec} #1}% add subsection headline to table of contents
+  \addcontentsline{app}{subsection}{\protect\numberline{A\theanhangsubsec}\hspace{0.1em}#1}
 }
 
 % do not force all footcite texts to end with a dot
