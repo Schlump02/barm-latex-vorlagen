@@ -1,38 +1,54 @@
 \section{Demo-Seite}
-Auf dieser Seite befinden sich Umsetzungsbeispiele für häufig benötigte Elemente im Fließtext.\\
+Auf dieser Seite befinden sich Umsetzungsbeispiele für häufig benötigte Elemente, wie beispielsweise:
+\begin{itemize}
+    \item ungeordnete Listen
+    \item mit mehreren Elementen
+\end{itemize}
+\begin{enumerate}
+    \item geordnete Listen
+    \item und vieles mehr
+\end{enumerate}
 
 % einfach Tabellen erstellen: https://github.com/Schlump02/barm-latex-vorlagen/wiki/N%C3%BCtzliche-Links-und-Erweiterungen#einfach-tabellen-erstellen
 \listedtable{
-    \begin{tabular}{|P{3cm}|P{5cm}|}
+    \begin{tabular}{|P{4cm}|P{3cm}|}% | = senkrechte Linie, P{4cm} = linksbündige Zeile mit 3cm Breite, | = weitere senkrechte Linie etc.
         \hline
-        \textbf{Datum} & \textbf{Aktivitäten} \\
+        \textbf{Angebot} & \textbf{Preis} \\% fette Texte mit \textbf{...}
         \hline
-        Kebab & 7 € \\
+        Kebab & 7 € \\% Zeilen werden mit & unterteilt und enden mit \\
         \hline
-        Adana & \begin{itemize}
-            \item \textbf{Groß}: 8 €
-            \item \textbf{Klein}: 6 €
-        \end{itemize} \\
-        \hline
-        Köfte & \begin{itemize}
-            \item 5 Stück: 8 €
-            \item 2 Stück: 6 €
-        \end{itemize}\\
+        Adana & 6 € \\
+        \hline % horizontale Linie
+        Dönerteller & 10 € \\
         \hline
         Mercimek Suppe & 3 € \\
         \hline
-        Dönerteller & 15 € \\
-        \hline
     \end{tabular}
-}{preistabelle}{Beispiel Tabelle}{Vgl. \cite[10]{DemoQuelle}}
+}{preistabelle}{Beispiel für eine einfache Tabelle}{Vgl. \cite[10]{DemoQuelle}}
 % Kurzbeschriftung (wichtig für den \tab{}-Befehl, siehe weiter unten), Beschriftung, Fußnote
 
-Die Tabelle zeigt den Preis eines Dönertellers, dieser lässt sich wie folgt berechnen:
-\begin{equation}% Gleichungen müssen nicht ins Abbildungsverzeichnis
-    15 = \sum_{n=1}^{10} \frac{n}{20} + \sum_{k=1}^{5} \frac{2k}{10} - \sum_{i=1}^{3} i
-\end{equation}
 
-\newpage
+\listedtable{% Tabelle zu 
+    \begin{tabularx}{0.5\textwidth}{X|X}% 0.5\textwidth = Tabelle hat 50% der Breite einer Zeile (100%=15,5cm), X = Spalte mit dynamischer Breite
+        \rowcolor[HTML]{D7DCE1}
+        \textbf{Angebot} & \textbf{Preis} \\
+        \rowcolor[HTML]{F0F3F5}
+        Kebab & 7 € \\
+        \rowcolor[HTML]{F8F9F9}% Hexcode der Zeilenhintergrundfarbe
+        Adana & 6 € \\
+        \rowcolor[HTML]{F0F3F5}
+        Dönerteller & 10 € \\
+        \rowcolor[HTML]{F8F9F9}
+        Mercimek Suppe & \cellcolor[HTML]{C9EB9E} 3 € \\% Zellenfarbe verändert
+    \end{tabularx}
+}{preistabelle_farbig}{Eine Tabelle mit angepassten Hintergrundfarben}{adaptiert aus \cite[10]{DemoQuelle}}
+% Kurzbeschriftung (wichtig für den \tab{}-Befehl, siehe weiter unten), Beschriftung, Fußnote
+
+Die Tabelle zeigt den Preis eines Dönertellers. Dieser lässt sich wie folgt berechnen:
+\begin{equation}
+    15 = \sum_{n=1}^{10} \frac{n}{20} + \sum_{k=1}^{5} \frac{2k}{10} - \sum_{i=1}^{3} i
+\end{equation}% Gleichungen müssen nicht ins Abbildungsverzeichnis
+
 Der folgende Abschnitt könnte hilfreich für eine Ausarbeitung in der Informatik sein.
 \begin{figure}[H] % Abschnitt als Abbildung kennzeichnen (H = hier im Text platzieren)
     \begin{lstlisting}[language=python]

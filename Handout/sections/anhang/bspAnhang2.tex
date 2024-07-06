@@ -1,7 +1,29 @@
-\anhangsec{Code}
+\anhangsec{Code, Bild und Tabelle}
 
 \begin{lstlisting}[language=python]
     # say hi
     def hello_world():
         print("Hello, World!")
 \end{lstlisting}
+
+
+\includegraphics[width=0.6\textwidth]{deckbild.jpeg}\\% Bild einfügen
+
+
+% einfach Tabellen erstellen: https://github.com/Schlump02/barm-latex-vorlagen/wiki/N%C3%BCtzliche-Links-und-Erweiterungen#einfach-tabellen-erstellen
+\begin{table}[h]
+  \small
+  \begin{tabular}{|P{4cm}|P{3cm}|}% | = senkrechte Linie, P{4cm} = linksbündige Zeile mit 3cm Breite, | = weitere senkrechte Linie etc.
+    \hline
+    \textbf{Angebot} & \textbf{Preis} \\% fette Texte mit \textbf{...}
+    \hline
+    Kebab & 7 € \\% Zeilen werden mit & unterteilt und enden mit \\
+    \hline
+    Adana & 6 € \\
+    \hline % horizontale Linie
+    Dönerteller & 10 € \\
+    \hline
+    Mercimek Suppe & 3 € \\
+    \hline
+  \end{tabular}\\
+\end{table}

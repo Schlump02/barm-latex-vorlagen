@@ -80,34 +80,6 @@
 \newcommand{\tab}[1]{\autoref{tab:#1}}
 \newcommand{\anh}[1]{\hyperref[sec:A#1]{Anhang A#1}}
 
-% define command for quickly including an image with a custom footnote
-\newcommand{\image}[4][]{%
-  \vspace{1em}%
-  \begin{figure}[H]
-    \centering
-    \ifthenelse{\equal{#1}{}}
-      {\includegraphics[width=0.6\textwidth]{#2}}%
-      {\includegraphics[width=#1\textwidth]{#2}}%
-    \caption{#4}
-    \label{fig:#3}
-  \end{figure}
-  \vspace{-1em}%
-}
-
-% define command for quickly including a table with a custom footnote
-\newcommand{\listedtable}[4]{%
-  \vspace{1em}%
-  \begin{table}[H]
-    \centering
-    \small
-    #1
-    \captionwithfootnotemark{#3}
-    \label{tab:#2}
-  \end{table}
-  \vspace{-1em}%
-  \footnotetext{#4}
-}
-
 % Appendix (Anhang)
 \newcommand{\listappendixname}{Anhangsverzeichnis}% name (resulting in headline) is optional
 \newlistof{appendices}{app}{\listappendixname}
@@ -233,6 +205,7 @@
 \newcommand{\HY}{\hyphenpenalty=25\exhyphenpenalty=25}% re-enable hyphenation locally inside the column
 \renewcommand{\tabularxcolumn}[1]{>{\HY\raggedright\arraybackslash\hspace{0pt}}p{#1}}% tabularx table cells default
 \newcolumntype{P}[1]{>{\HY\raggedright\arraybackslash\hspace{0pt}}p{#1}}% define tabular P table cell
+\renewcommand{\arraystretch}{2.2}% padding around table cell contents
 
 % caption styling
 \captionsetup{
