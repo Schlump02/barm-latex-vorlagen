@@ -78,11 +78,11 @@ Eine beispielhafte Verwendung vieler nützlicher LaTeX-Befehle wird in der `demo
 #### Nutzung einer Bib
 
 In den Vorlagen wird für alle eingefügten Quellen automatisch ein Literaturverzeichnis erstellt.
-Die dazu benötigten Informationen (Autor, Titel etc.) müssen in eine .bib-Datei eingetragen werden.
+Die dazu benötigten Informationen (Autor, Titel etc.) müssen in eine .bib-Datei eingetragen werden. Nur Einträge zu Quellen, die in der Arbeit zitiert werden, werden ins Literaturverzeichnis geschrieben.
 
-In der Vorlage wird mit der beispielhaften `myBib.bib` gearbeitet, eine beispielhafte Fußnote befindet sich in der `demoSection.tex`.
+In der Vorlage wird mit der beispielhaften `Quellen.bib` gearbeitet, eine beispielhafte Fußnote befindet sich in der `demoSection.tex`.
 
-Zum automatischen Erstellen von bib-Daten aus Internetquellen kann <a href="https://www.zotero.org/">Zotero</a> genutzt werden.
+Zum automatischen Erstellen von bib-Daten aus Internetquellen kann <a href="https://www.zotero.org/">Zotero</a> genutzt werden. PDF-Dateien sind niemals als Webseiten zu zitieren, sondern entsprechend als Buch/Artikel/Dokument etc.
 
 Damit die Bib auch von der LaTeX Engine genutzt werden kann, muss sie zunächst verarbeitet werden.
 Dazu (bei Nutzung von MikTex) diese drei Shell-Befehle im Verzeichnis der `main.tex` ausführen;
@@ -103,7 +103,7 @@ Diese Schritte müssen jedesmal neu ausgeführt werden, wenn sich die Daten in d
 
 Kurzbelege in Form von Fußnoten können mit den Befehlen `\directcite` oder `\indirectcite` gesetzt werden, je nachdem, ob es sich um ein wörtliches oder sinngemäßes Zitat handelt. Optional können in den Kurzbelegen individuelle Seitenzahlen angegeben werden, wie auf der Demo-Seite (`demoSection.tex`) gezeigt.
 
-Um eine Fußnote in einer Tabellen- oder Bildunterschrift zu setzen, muss `\captionwithfootnotemark` und später `\footcitetext` oder `\footnotetext` genutzt werden. Die genaue Verwendung dieser Befehle wird in der `demoSection.tex` gezeigt. `\directcite` oder `\indirectcite` funktionieren in diesem Fall nicht korrekt. Wenn die in eckigen Klammern angegebenen Argumente in `\footcitetext[Vgl.][\printfield{pages}]{...}\\` nicht verwendet werden, sollten die eckigen Klammern zwar leer gelassen, aber nicht entfernt werden.
+Um eine Fußnote in einer Tabellen- oder Bildunterschrift zu setzen, sollten `\listedimage` bzw. `\listedtable` genutzt werden. Die genaue Verwendung dieser Befehle wird in der `demoSection.tex` gezeigt.
 
 Es ist nicht erforderlich, einen Vollbeleg als Fußnote zu setzen.
 
