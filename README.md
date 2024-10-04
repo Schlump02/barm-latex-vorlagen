@@ -1,6 +1,3 @@
-> [!CAUTION]
-> In den neuesten Commits (ab 055501c) wurden einige Befehlsdefinitionen verändert. Die neueste Version der main.tex ist deshalb nicht mit auf alten Versionen basierenden Dateien kompatibel.
-
 # BA Rhein-Main LaTeX Vorlagen
 
 ## Motivation
