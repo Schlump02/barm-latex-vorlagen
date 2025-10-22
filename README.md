@@ -41,7 +41,7 @@ In Visual Studio Code kann die Erweiterung <b>LaTeX Workshop</b> wie folgt genut
 2. ggf. Installation einer TeX-Engine und einem TeX-Paketmanager, z.B.:
     - für Windows: [MikTeX](https://miktex.org/download)
     - für macOS: [MacTeX](https://tug.org/mactex/mactex-download.html)
-    - für Linux: [LiveTeX](https://tug.org/texlive/quickinstall.html)
+    - für Linux: [TeX Live](https://tug.org/texlive/quickinstall.html)
 3. Installation der Erweiterung [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) (am einfachsten direkt im VS Code Marketplace)
 4. Anpassung der VS Code-Einstellungen:
     - `Shift + Ctrl + P` (Windows) oder `Shift + Cmd + P` (macOS) für die Befehlseingabe
@@ -50,8 +50,8 @@ In Visual Studio Code kann die Erweiterung <b>LaTeX Workshop</b> wie folgt genut
         - [für Windows](https://github.com/Schlump02/barm-latex-vorlagen/wiki/LaTeX%E2%80%90Workshop-Konfigurationen-f%C3%BCr-verschiedene-Plattformen#setup-f%C3%BCr-windows)
         - [für macOS/Linux](https://github.com/Schlump02/barm-latex-vorlagen/wiki/LaTeX%E2%80%90Workshop-Konfigurationen-f%C3%BCr-verschiedene-Plattformen#setup-f%C3%BCr-linuxmacos)
 
-Ein Dokument kann nun kompiliert werden, indem die entsprechende main.tex geöffnet und dort der grüne Ausführen-Button oben rechts oder `Ctrl + Alt + B` verwendet wird.
-Das fertige PDF-Dokument `main.pdf` wird nach einigen Sekunden im selben Ordner generiert worden sein.
+Um die Installation abzuschließen, kann ein Neustart des Betriebssystems notwendig sein. Ein Dokument kann nun kompiliert werden, indem die entsprechende main.tex geöffnet und dort der grüne Ausführen-Button oben rechts oder `Ctrl + Alt + B` verwendet wird.
+Das fertige PDF-Dokument `main.pdf` wird nach einigen Sekunden im selben Ordner generiert worden sein. Die erste Ausführung kann länger dauern, falls noch TeX-Pakete nachinstalliert werden.
 
 > [!TIP]
 > Mit einer Anpassung des JSON-Contents können automatisch die Wörter im Dokument gezählt werden. Eine Anleitung dazu befindet sich auf [dieser](https://github.com/Schlump02/barm-latex-vorlagen/wiki/W%C3%B6rter-automatisch-z%C3%A4hlen-in-VS-Code) Wiki-Seite. Zudem gibt es einige nützliche Links und Erweiterungen, wie eine Rechtschreibprüfung, die auf [dieser](https://github.com/Schlump02/barm-latex-vorlagen/wiki/N%C3%BCtzliche-Links-und-Erweiterungen) Wiki-Seite beschrieben sind.
@@ -102,39 +102,16 @@ Kurzbelege in Form von Fußnoten können mit den Befehlen `\directcite` oder `\i
 
 Um eine Fußnote in einer Tabellen- oder Bildunterschrift zu setzen, sollten `\listedimage` bzw. `\listedtable` genutzt werden. Die genaue Verwendung dieser Befehle wird in der `demoSection.tex` gezeigt.
 
-Es ist nicht erforderlich, einen Vollbeleg als Fußnote zu setzen.
-
-### Position der Seitenzahlen abwechseln lassen
-
-In Büchern und gebundenen Dokumenten befinden sich die Seitenzahlen üblicherweise jeweils an den Außenkanten der Seiten. Dies kann auch leicht in LaTeX umgesetzt werden.
-
-> [!CAUTION]
-> Laut den BA-Richtlinien dürfen Dokumente nur einseitig bedruckt abgegeben werden. Dies gilt auch für die Bachelor Thesis, die u.a. als gebundenes Buch einzureichen ist. Hier muss also jede "linke" Seite frei bleiben. Die Seitenzahlen müssen (dementsprechend) immer auf der Seite unten rechts positioniert sein.
-
-Falls man eine eigene, private Kopie der Bachelor Thesis im beidseitigen Druck erstellen möchte, können die untenstehenden Schritte genutzt werden, um die Seitenzahlen sinnvoll zu positionieren.
-
-#### Änderungen in der main.tex
-Bei der `Documentclass` muss die Option "twoside" hinzugefügt werden.
-
-```LaTeX
-\documentclass[a4paper, 12pt, twoside]{scrartcl}
-```
-Im `defaultPageStyle` muss im Bereich "fancyfoot" je nach Bedarf entweder "LE,RO" (Left Even, Right Odd) oder "LO,RE" (Left Odd, Right Even) eingefügt werden. 
-
-```LaTeX
-\fancyfoot[LO,RE]{\thepage}
-```
-
-Wenn das Deckblatt als erste Seite rechts im gebundenen Buch liegt, kann es sein, dass die Seitenzahlen dann doch innen liegen und nicht außen. Getestet werden kann dies z.B. mit dem Adobe Reader oder dem [pdf24 Reader](https://www.pdf24.org/de/) in der 2-Seiten-Ansicht mit Deckblatt einzeln oben.
+Es ist nicht erforderlich, einen Vollbeleg (wie im Literaturverzeichnis) als Fußnote zu setzen.
 
 ## Barrierefreiheits- und PDF/A-Standards
 
 > [!NOTE]  
-> Die BA macht zum PDF-Standard keine Vorgaben. Der folgende Abschnitt ist rein informativ und auf dem Stand vom Februar 2024.
+> Die BA macht zum PDF-Standard keine Vorgaben. Der folgende Abschnitt ist rein informativ und auf dem Stand vom Oktober 2025.
 
 Es gibt bestimmte PDF-Standards, die auf Langzeitarchivierung (PDF/A) oder auf Barrierefreiheit (PDF/UA) oder beides (z.B. PDF/A-2a) ausgelegt sind.
 
-Leider ist es zurzeit noch nicht möglich, mithilfe von LaTeX ein barrierefreies PDF zu erstellen. Das [LaTeX Project](https://www.latex-project.org/) hat es sich im Rahmen des Vorhabens [Tagged PDF](https://www.latex-project.org/publications/2020-FMi-TUB-tb129mitt-tagpdf.pdf) zum Ziel gesetzt, bis 2025 umfassende Barrierefreiheitsstandards in den LaTeX-Kernel zu integrieren.
+Leider ist es zurzeit noch nicht möglich, mithilfe von LaTeX ein barrierefreies PDF zu erstellen. Das [LaTeX Project](https://www.latex-project.org/) hat es sich im Rahmen des Vorhabens [Tagged PDF](https://www.latex-project.org/publications/2020-FMi-TUB-tb129mitt-tagpdf.pdf) zum Ziel gesetzt, in den nächsten jahren umfassende Barrierefreiheitsstandards in den LaTeX-Kernel zu integrieren.
 
 Einige PDF/A-Standards sind jedoch bereits heute erreichbar. [Dieser](https://texwelt.de/fragen/758/pdfa-konforme-dokumente-mit-latex) Thread zeigt konkrete Schritte zur Umsetzung auf. Eine Übersicht und Erklärung zu PDF/A-Standards findet sich z.B. [hier](https://www.bundesarchiv.de/DE/Content/Downloads/Anbieten/Behoerdenberatung/beratungsangebote-einfuehrung-eab-empfehlungen-pdf-a-versionen.pdf?__blob=publicationFile).
 
