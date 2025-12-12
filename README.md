@@ -39,7 +39,7 @@ In Visual Studio Code kann die Erweiterung <b>LaTeX Workshop</b> wie folgt genut
 
 1. ggf. Installation von [VS Code](https://code.visualstudio.com/)
 2. ggf. Installation einer TeX-Engine und einem TeX-Paketmanager, z.B.:
-    - für Windows: [MikTeX](https://miktex.org/download)
+    - für Windows: [MiKTeX](https://miktex.org/download) 
     - für macOS: [MacTeX](https://tug.org/mactex/mactex-download.html)
     - für Linux: [TeX Live](https://tug.org/texlive/quickinstall.html)
 3. Installation der Erweiterung [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) (am einfachsten direkt im VS Code Marketplace)
