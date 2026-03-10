@@ -144,13 +144,13 @@
 \setcounter{verzeichnisnummer}{1}% start value
 
 % implement counter in the headlines
-\addto\captionsngerman{\renewcommand{\listfigurename}{\theverzeichnisnummer Abbildungsverzeichnis}}
+\addto\captionsngerman{\renewcommand{\listfigurename}{Abbildungsverzeichnis}}
 \newcommand{\showlistoffigures}{
   \listoffigures
   \stepcounter{verzeichnisnummer}
   \newpage
 }
-\addto\captionsngerman{\renewcommand{\listtablename}{\theverzeichnisnummer Tabellenverzeichnis}}
+\addto\captionsngerman{\renewcommand{\listtablename}{Tabellenverzeichnis}}
 \newcommand{\showlistoftables}{
   \listoftables
   \stepcounter{verzeichnisnummer}
@@ -172,7 +172,7 @@
 
 \newcommand{\bib}{
   \newpage
-  \printbibliography[heading=bibintoc, title={\theverzeichnisnummer Literaturverzeichnis}]
+  \printbibliography[heading=bibintoc, title={Literaturverzeichnis}]
   \newpage
 }
 
