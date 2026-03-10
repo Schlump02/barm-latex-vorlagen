@@ -65,6 +65,7 @@
   {\footcite[Vgl.][ ]{#2}}% (trailing "%" ensure that the line break is not converted to a space)
   {\footcite[Vgl.][#1]{#2}}%
 }
+
 % define command for quickly creating a direct quote citation
 \newcommand{\directcite}[2][]{
   \ifthenelse{\equal{#1}{}}
@@ -155,6 +156,20 @@
   \stepcounter{verzeichnisnummer}
   \newpage
 }
+
+% Abkürzungsverzeichnis
+\newcommand{\listacronymname}{Abkürzungsverzeichnis}
+
+\newcommand{\showlistofabbreviations}{
+  \section*{\listacronymname}
+  \addcontentsline{toc}{section}{\listacronymname}
+  \begin{acronym}
+    \input{sections/nebeninhalte/abkuerzungsverzeichnis_content.tex}
+  \end{acronym}
+  \stepcounter{verzeichnisnummer}
+  \newpage
+}
+
 \newcommand{\bib}{
   \newpage
   \printbibliography[heading=bibintoc, title={\theverzeichnisnummer Literaturverzeichnis}]
