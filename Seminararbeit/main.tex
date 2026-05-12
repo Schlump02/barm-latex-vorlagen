@@ -109,6 +109,21 @@
   \footnotetext{#4}
 }
 
+% define command for numbering and displaying interview questions
+\newcounter{interviewquestion}
+\newlength{\questionwidth}
+\setlength{\questionwidth}{\linewidth}
+\addtolength{\questionwidth}{-1.4em}
+\newcommand{\question}[1]{%
+    \par
+    \setstretch{1.4}
+    \vspace{1em}
+    \textbf{\selectfont\fontfamily{ptm}\selectfont\theinterviewquestion.\hspace{0.5em}\parbox[t]{\questionwidth}{#1}\nopagebreak}%
+    \stepcounter{interviewquestion}
+    \par
+    \setstretch{1.5}
+}
+
 % Appendix (Anhang)
 \newcommand{\listappendixname}{Anhangsverzeichnis}% name (resulting in headline) is optional
 \newlistof{appendices}{app}{\listappendixname}
@@ -116,13 +131,15 @@
 \newcounter{anhangsubsec}
 \renewcommand{\theanhangsubsec}{\arabic{anhangsubsec}}
 % command to create Anhang-Subsections
-\newcommand{\anhangsec}[1]{
-   \stepcounter{anhangsubsec}
-   \subsection*{A\theanhangsubsec\ #1}% asterisk to suppress automatic numbering
-   \label{sec:A\theanhangsubsec}
-   %\addcontentsline{toc}{subsection}{\protect\numberline{A\theanhangsubsec} #1}% add subsection headline to table of contents
-   \addcontentsline{app}{subsection}{\protect\numberline{A\theanhangsubsec} #1}
+\newcommand{\appendixheadline}[1]{
+  \stepcounter{anhangsubsec}
+  \setcounter{interviewquestion}{1}
+  \subsection*{A\theanhangsubsec\hspace{0.5em}\parbox[t]{13cm}{\noexpandedacronyms{#1}\\ }}% asterisk to suppress automatic numbering
+  \label{sec:A\theanhangsubsec}
+  %\addcontentsline{toc}{subsection}{\protect\numberline{A\theanhangsubsec} #1}% add subsection headline to table of contents
+  \addcontentsline{app}{subsection}{\protect\numberline{A\theanhangsubsec}\hspace{0.1em}#1}
 }
+
 % do not force all footcite texts to end with a dot
 \renewcommand{\bibfootnotewrapper}[1]{\bibsentence#1\addspace}
 % place a colon after the name of the author or organisation
@@ -160,6 +177,11 @@
   \printbibliography[heading=bibintoc, title={\theverzeichnisnummer Literaturverzeichnis}]
   \newpage
 }
+
+% make sure that \ac{} acronyms are not expanded in the table of contents, list of figures, and list of tables
+\DeclareRobustCommand{\noexpandedacronyms}[1]{{\renewcommand{\ac}[1]{\acs{##1}}#1}}
+\let\oldcontentsline\contentsline
+\renewcommand{\contentsline}[4]{\oldcontentsline{#1}{\noexpandedacronyms{#2}}{#3}{#4}}
 
 
 % styling
@@ -221,7 +243,7 @@
 \newcommand{\subsubsubsection}[1]{%
     \refstepcounter{subsubsubsection}%
     \addcontentsline{toc}{paragraph}{\protect\numberline{\thesubsubsubsection}#1}%
-    \paragraph*{\thesubsubsubsection\hspace{0.5em}\parbox[t]{\subsubsubsectionwidth}{#1\\ }\nopagebreak}%
+    \paragraph*{\thesubsubsubsection\hspace{0.5em}\parbox[t]{\subsubsubsectionwidth}{\noexpandedacronyms{#1}\\ }\nopagebreak}%
 }
 
 % set section headings fontsizes, font family (Times New Roman) and line spacing
@@ -240,6 +262,7 @@
     \setlength{\headheight}{65pt}
     \setlength{\headsep}{30pt}
     \chead{\includegraphics[]{deckbild.jpeg} \\}
+    %\lhead{\raisebox{30pt}{\includegraphics[height=0.6cm]{db_intern.png}} \\} % use this to add a confidentiality disclaimer to the title page header. Change the png file to match your companies policy; the current file shows the disclaimer of Deutsche Bahn AG.
     %page footer
     \fancyfoot{}% clear footer
 }
@@ -338,6 +361,10 @@
 \include{sections/textinhalte/demoSection}
 \include{sections/textinhalte/einleitung}
 \include{sections/textinhalte/kapitelvorlage}
+
+\begin{appendices}% Anhang - wenn leer, auskommentieren (bis inklusive \end{appendices})
+  \input{sections/nebeninhalte/anhang/anhang}
+\end{appendices}
 
 % set page numbering to roman for bibliography
 \pagenumbering{Roman}

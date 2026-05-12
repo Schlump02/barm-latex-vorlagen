@@ -162,6 +162,11 @@
   \newpage
 }
 
+% make sure that \ac{} acronyms are not expanded in the table of contents, list of figures, and list of tables
+\DeclareRobustCommand{\noexpandedacronyms}[1]{{\renewcommand{\ac}[1]{\acs{##1}}#1}}
+\let\oldcontentsline\contentsline
+\renewcommand{\contentsline}[4]{\oldcontentsline{#1}{\noexpandedacronyms{#2}}{#3}{#4}}
+
 
 % styling
 
@@ -241,6 +246,7 @@
     \setlength{\headheight}{65pt}
     \setlength{\headsep}{30pt}
     \chead{\includegraphics[]{deckbild.jpeg} \\}
+    %\lhead{\raisebox{30pt}{\includegraphics[height=0.6cm]{db_intern.png}} \\} % use this to add a confidentiality disclaimer to the title page header. Change the png file to match your companies policy; the current file shows the disclaimer of Deutsche Bahn AG.
     %page footer
     \fancyfoot{}% clear footer
 }
