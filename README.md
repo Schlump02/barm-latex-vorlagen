@@ -17,7 +17,7 @@ Die Nutzung von TeX/LaTeX zur Erstellung der Bachelor Thesis muss in jedem Fall 
 
 ## Setup
 
-LaTeX kann von jedem Textverarbeitungsprogramm gelesen werden. Im Folgenden wird beschrieben, wie man Visual Studio Code als Editor und MikTex zum Erstellen der fertigen PDF nutzen kann. Alternativ könnte man z.B. auch [Texmaker](https://www.xm1math.net/texmaker/download.html) als Editor verwenden.
+LaTeX kann von jedem Textverarbeitungsprogramm gelesen werden. Im Folgenden wird beschrieben, wie man Visual Studio Code als Editor und MiKTeX zum Erstellen der fertigen PDF nutzen kann. Alternativ könnte man z.B. auch [Texmaker](https://www.xm1math.net/texmaker/download.html) als Editor verwenden.
 
 ### Vorlage Initialisieren
 
@@ -82,7 +82,7 @@ In der Vorlage wird mit der beispielhaften `Quellen.bib` gearbeitet, eine beispi
 Zum automatischen Erstellen von bib-Daten aus Internetquellen kann <a href="https://www.zotero.org/">Zotero</a> genutzt werden. PDF-Dateien sind niemals als Webseiten zu zitieren, sondern entsprechend als Buch/Artikel/Dokument etc.
 
 Damit die Bib auch von der LaTeX Engine genutzt werden kann, muss sie zunächst verarbeitet werden.
-Dazu (bei Nutzung von MikTex) diese drei Shell-Befehle im Verzeichnis der `main.tex` ausführen;
+Dazu (bei Nutzung von MiKTeX) diese drei Shell-Befehle im Verzeichnis der `main.tex` ausführen;
 
 ```console
 pdflatex main.tex
@@ -119,7 +119,7 @@ Einige PDF/A-Standards sind jedoch bereits heute erreichbar. [Dieser](https://te
 
 Basierend auf einer ursprünglichen Vorlage von Jan Bauer.
 
-Erweitert durch die Mitwirkenden (Contributors) an diesem Repository.
+Erweitert durch die Mitwirkenden (Contributors) an diesem Repository sowie durch [Jonas Busche](https://github.com/Jonas-Busche).
 
 ## Lizenz / License
 
